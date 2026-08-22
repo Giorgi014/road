@@ -17,7 +17,7 @@ export function useCinematicScroll({
   titleRef,
   copyRef,
   headerRef,
-  scrubEndPx = 900,
+  scrubEndPx = 2500,
 }: Options) {
   const cleanupRef = useRef<(() => void) | null>(null);
 
@@ -84,11 +84,7 @@ export function useCinematicScroll({
         };
       };
 
-      if (video.readyState >= 1) {
-        buildTimeline();
-      } else {
-        video.addEventListener("loadedmetadata", buildTimeline, { once: true });
-      }
+      buildTimeline();
     },
     { scope: sectionRef as React.RefObject<HTMLElement> },
   );

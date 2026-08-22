@@ -2,10 +2,10 @@ import { Cpu, Hand, ShieldCheck, Bitcoin } from "lucide-react";
 import type { FeatureItem, NavLink, Product } from "../types";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Explore", href: "#explore" },
-  { label: "Marketplace", href: "#marketplace" },
+  { label: "Marketplace", href: "/marketplace" },
   { label: "Resources", href: "#resources" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const HERO_COPY = {
@@ -15,6 +15,7 @@ export const HERO_COPY = {
   paragraph:
     "Garments engineered for the next century — intelligent fabrics, interactive weaves, and blockchain-verified authenticity.",
   cta: "Explore Collection",
+  learn: "Learn More",
 };
 
 export const MISSION = {
@@ -101,8 +102,6 @@ export const FOOTER = {
   ],
   legal: ["Privacy", "Terms", "Cookies", "Imprint"],
 };
-
-export const HERO_IMAGE = "/kling_20260815_VIDEO_Preserve_t_5313_0.mp4";
 
 export const PORTAL_IMAGE =
   "https://images.pexels.com/photos/20434858/pexels-photo-20434858.jpeg?auto=compress&cs=tinysrgb&w=900";

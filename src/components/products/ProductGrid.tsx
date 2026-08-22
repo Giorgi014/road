@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "../../lib/gsap";
-import { PRODUCTS } from "../../data/content";
+import { HERO_COPY, PRODUCTS } from "../../data/content";
 import ProductCard from "./ProductCard";
 import Eyebrow from "../ui/Eyebrow";
+import { Button } from "../ui/Button";
 
 export default function ProductGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -48,30 +49,32 @@ export default function ProductGrid() {
   );
 
   return (
-    <section id="explore" className="relative bg-[#0a0e27] py-[96px]">
+    <section id="explore" className="relative bg-[#07102b] py-[96px]">
       <div className="mx-auto max-w-[1600px] px-6">
-        <div
-          ref={headerRef}
-          className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between"
-        >
-          <div>
-            <Eyebrow text="Categories" />
-            <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1] tracking-[-0.02em] text-white">
+        <Eyebrow text="Categories" />
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+          <div
+            ref={gridRef}
+            className="grid flex-1 grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4"
+          >
+            {PRODUCTS.map((product, i) => (
+              <ProductCard key={product.id} product={product} index={i} />
+            ))}
+          </div>
+
+          <div
+            ref={headerRef}
+            className="flex flex-col gap-8 lg:w-[250px] lg:shrink-0"
+          >
+            <h2 className="font-display text-[clamp(1.5rem,5vw,3.5rem)] font-bold leading-[1] tracking-[-0.02em] text-white">
               Shop by <span className="text-gradient-blue">System</span>
             </h2>
+            <p className="text-sm leading-6 text-[#c9d0e8]">
+              Four engineered categories. Each piece designed to integrate —
+              layer, carry, move, and protect.
+            </p>
+            <Button href="#explore" label={HERO_COPY.learn} />
           </div>
-          <p className="max-w-[448px] text-sm leading-6 text-[#a9b0d4]">
-            Four engineered categories. Each piece designed to integrate —
-            layer, carry, move, and protect.
-          </p>
-        </div>
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4"
-        >
-          {PRODUCTS.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "../../lib/gsap";
 import { MISSION, STATS } from "../../data/content";
 import Eyebrow from "../ui/Eyebrow";
-import Pill from "../ui/Pill";
+import { Button } from "../ui/Button";
 
 export default function MissionBlurb() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,9 +52,9 @@ export default function MissionBlurb() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#0d1233] py-[96px] pb-[128px]"
+      className="relative overflow-hidden bg-[#0b1745] py-[96px] pb-[128px]"
     >
-      <div className="pointer-events-none absolute -bottom-[160px] right-0 h-[600px] w-[600px] rounded-full bg-[#3b5bff]/[0.15] blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-[160px] right-0 h-[600px] w-[600px] rounded-full bg-[#3155ff]/[0.15] blur-[140px]" />
       <div className="relative mx-auto max-w-[1600px] px-6">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[7fr_5fr]">
           <div>
@@ -67,10 +67,10 @@ export default function MissionBlurb() {
             </h2>
           </div>
           <div className="lg:pl-8">
-            <p className="max-w-[480px] text-base leading-7 text-[#a9b0d4] mb-8">
+            <p className="max-w-[480px] text-base leading-7 text-[#c9d0e8] mb-8">
               {MISSION.paragraph}
             </p>
-            <Pill href="#explore" label={MISSION.cta} />
+            <Button href="#explore" label={MISSION.cta} />
           </div>
         </div>
         <div
@@ -78,7 +78,7 @@ export default function MissionBlurb() {
           className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 md:grid-cols-4"
         >
           {STATS.map((s) => (
-            <div key={s.v} className="mission-stat bg-[#0d1233] p-6 md:p-8">
+            <div key={s.v} className="mission-stat bg-[#0b1745] p-6 md:p-8">
               <p className="font-display text-[32px] font-bold text-gradient-blue md:text-[40px]">
                 {s.k}
               </p>

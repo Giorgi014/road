@@ -1,4 +1,4 @@
-import Pill from "../ui/Pill";
+import { Button } from "../ui/Button";
 import Eyebrow from "../ui/Eyebrow";
 import { HERO_COPY } from "../../data/content";
 
@@ -23,11 +23,11 @@ export default function HeroCopy({ titleRef, copyRef }: HeroCopyProps) {
           {HERO_COPY.titleBottom}
         </span>
       </h1>
-      <p className="mt-8 max-w-[420px] text-base leading-7 text-[#a9b0d4]">
+      <p className="mt-8 max-w-[420px] text-base leading-7 text-[#c9d0e8]">
         {HERO_COPY.paragraph}
       </p>
       <div className="mt-10 flex items-center gap-5">
-        <Pill href="#explore" label={HERO_COPY.cta} />
+        <Button href="#explore" label={HERO_COPY.cta} />
         <a
           href="#about"
           className="text-[10px] font-medium uppercase tracking-[0.35em] text-white/50 transition-colors hover:text-white"

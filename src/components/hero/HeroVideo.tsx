@@ -6,29 +6,17 @@ interface HeroVideoProps {
 }
 
 const HeroVideo = forwardRef<HTMLVideoElement, HeroVideoProps>(
-  ({ src, fallbackImage }, ref) => {
+  ({ src }, ref) => {
     return (
-      <>
-        <video
-          ref={ref}
-          src={src}
-          muted
-          autoPlay
-          playsInline
-          preload="auto"
-          poster={fallbackImage}
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          style={{ display: src ? "block" : "none" }}
-        />
-        {!src && fallbackImage && (
-          <div
-            className="absolute inset-0 z-0 h-full w-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${fallbackImage})`,
-            }}
-          />
-        )}
-      </>
+      <video
+        ref={ref}
+        src={src}
+        muted
+        autoPlay
+        playsInline
+        preload="auto"
+        className="absolute inset-0 z-0 h-full w-full object-cover"
+      />
     );
   },
 );

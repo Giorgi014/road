@@ -4,7 +4,7 @@ import { FOOTER } from "../../data/content";
 
 const CONTACT_ICONS = [Mail, Phone, MapPin];
 
-export default function SiteFooter() {
+export const Footer = () => {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -19,9 +19,9 @@ export default function SiteFooter() {
   return (
     <footer
       id="marketplace"
-      className="relative overflow-hidden border-t border-white/5 bg-[#05070f] pb-16 pt-20"
+      className="relative overflow-hidden border-t border-[#1b2d72] bg-[#030817] pb-16 pt-20"
     >
-      <div className="pointer-events-none absolute left-[33%] top-[-160px] h-[500px] w-[500px] rounded-full bg-[#2a44e6]/[0.15] blur-[140px]" />
+      <div className="pointer-events-none absolute left-[33%] top-[-160px] h-[500px] w-[500px] rounded-full bg-[#6847ff]/[0.15] blur-[140px]" />
       <div className="relative mx-auto max-w-[1600px] px-6">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[7fr_5fr]">
           <div>
@@ -32,7 +32,7 @@ export default function SiteFooter() {
               </span>
             </h2>
             <form onSubmit={submit} className="mt-10 max-w-[448px]">
-              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] p-1.5 backdrop-blur-xl focus-within:border-[#4d6eff]/40">
+              <div className="flex items-center gap-2 rounded-full border border-[#1b2d72] bg-[#07102b]/70 p-1.5 backdrop-blur-xl focus-within:border-[#4267ff]">
                 <input
                   type="email"
                   required
@@ -43,7 +43,7 @@ export default function SiteFooter() {
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(90deg,#3b5bff_0%,#6c4dff_100%)] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-shadow hover:shadow-[0_0_40px_-10px_rgba(77,110,255,0.6)]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[linear-gradient(90deg,#3155ff_0%,#6847ff_100%)] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-shadow hover:shadow-[0_0_40px_-10px_rgba(49,85,255,0.6)]"
                 >
                   Subscribe
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-1">
@@ -52,7 +52,7 @@ export default function SiteFooter() {
                 </button>
               </div>
               {sent && (
-                <p className="mt-3 text-xs text-[#7f96ff]">
+                <p className="mt-3 text-xs text-[#00a8ff]">
                   You're on the list. Welcome to the road.
                 </p>
               )}
@@ -70,7 +70,7 @@ export default function SiteFooter() {
                     key={c.label}
                     className="flex items-center gap-3 text-white/70 transition-colors hover:text-white"
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-[#7f96ff] backdrop-blur-xl">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#1b2d72] bg-[#07102b]/70 text-[#00a8ff] backdrop-blur-xl">
                       <Icon size={15} strokeWidth={1.8} />
                     </span>
                     <span className="text-sm">{c.label}</span>
@@ -101,4 +101,4 @@ export default function SiteFooter() {
       </div>
     </footer>
   );
-}
+};

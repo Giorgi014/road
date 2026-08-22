@@ -1,19 +1,15 @@
-import CinemaScroll from "./components/hero/CinemaScroll";
-import ProductGrid from "./components/products/ProductGrid";
-import MissionBlurb from "./components/products/MissionBlurb";
-import AiFeatureSection from "./components/ai/AiFeatureSection";
-import SiteFooter from "./components/layout/SiteFooter";
+import { Header } from "./components/layout/Header";
+import { Outlet } from "react-router-dom";
+import { Footer } from "./components/layout/Footer";
 
 export default function App() {
   return (
-    <main className="bg-[#05070f] text-[#f5f7ff]">
-      <CinemaScroll />
-      <section aria-label="Product types" className="bg-[#0d1233]">
-        <ProductGrid />
-        <MissionBlurb />
-      </section>
-      <AiFeatureSection />
-      <SiteFooter />
-    </main>
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   );
 }
