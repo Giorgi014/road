@@ -1,5 +1,11 @@
 import { Cpu, Hand, ShieldCheck, Bitcoin } from "lucide-react";
-import type { FeatureItem, NavLink, Product } from "../types";
+import type {
+  AllCategories,
+  FeatureItem,
+  NavLink,
+  Product,
+  Sizes,
+} from "../types";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Marketplace", href: "/marketplace" },
@@ -36,28 +42,28 @@ export const STATS = [
 
 export const PRODUCTS: Product[] = [
   {
-    id: "jackets",
+    id: 0,
     label: "Jackets",
     href: "#",
     imageSrc:
       "https://images.pexels.com/photos/8108297/pexels-photo-8108297.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "backpacks",
+    id: 1,
     label: "Backpacks",
     href: "#",
     imageSrc:
       "https://images.pexels.com/photos/16359250/pexels-photo-16359250.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "boots",
+    id: 2,
     label: "Boots",
     href: "#",
     imageSrc:
       "https://images.pexels.com/photos/33937416/pexels-photo-33937416.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
-    id: "fullfit",
+    id: 3,
     label: "Full Fit",
     href: "#",
     imageSrc:
@@ -108,3 +114,93 @@ export const PORTAL_IMAGE =
 
 export const MODEL_IMAGE =
   "https://images.pexels.com/photos/9781909/pexels-photo-9781909.jpeg?auto=compress&cs=tinysrgb&w=900";
+
+export const ALL_CATEGORIES: AllCategories[] = [
+  {
+    id: 0,
+    category: "all",
+  },
+  {
+    id: 1,
+    category: "jackets",
+  },
+  {
+    id: 2,
+    category: "hoodies",
+  },
+  {
+    id: 3,
+    category: "boots",
+  },
+  {
+    id: 4,
+    category: "pants",
+  },
+  {
+    id: 5,
+    category: "masks",
+  },
+  {
+    id: 6,
+    category: "vests",
+  },
+  {
+    id: 7,
+    category: "backpacks",
+  },
+  {
+    id: 8,
+    category: "bags",
+  },
+  {
+    id: 9,
+    category: "gloves",
+  },
+  {
+    id: 10,
+    category: "headphones",
+  },
+  {
+    id: 11,
+    category: "caps",
+  },
+  {
+    id: 12,
+    category: "goggles",
+  },
+  {
+    id: 13,
+    category: "helmets",
+  },
+  {
+    id: 14,
+    category: "smartwatches",
+  },
+  {
+    id: 15,
+    category: "necklaces",
+  },
+  {
+    id: 16,
+    category: "sunglasses",
+  },
+];
+
+export const SIZES: Sizes[] = [
+  {
+    id: 0,
+    size: "S",
+  },
+  {
+    id: 1,
+    size: "M",
+  },
+  {
+    id: 2,
+    size: "L",
+  },
+  {
+    id: 3,
+    size: "XL",
+  },
+];

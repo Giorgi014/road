@@ -1,0 +1,38 @@
+import type { ProductCardProps } from "@/types";
+import { Plus } from "lucide-react";
+
+export const ProductCard = ({
+  isNew,
+  src,
+  alt,
+  name,
+  price,
+}: ProductCardProps) => {
+  return (
+    <div className="group relative h-[clamp(20rem,25vw,31.25rem)] w-[clamp(15rem,18vw,22.125rem)] overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300 hover:border-electric-400/60 hover:shadow-[0_0_45px_-12px_rgba(66,103,255,0.55)] cursor-pointer">
+      {isNew && (
+        <div className="flex justify-center items-center absolute top-4 right-4 z-10 rounded-full bg-linear-to-r from-electric-500 to-electric-600 px-3 py-1 shadow-[0_0_20px_-4px_rgba(104,71,255,0.9)]">
+          <p className="mt-[0.5px] ml-0.5 text-[10px] tracking-ultra font-sans text-white">
+            NEW
+          </p>
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className="absolute top-[50%] translate-y-[-50%] z-0 h-[85%] w-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+      />
+      <div className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between gap-3 px-5 py-4">
+        <div className="min-w-0">
+          <h2 className="truncate font-display text-sm uppercase tracking-wide text-(--ink)">
+            {name}
+          </h2>
+          <p className="mt-1 text-sm font-sans text-(--ink-dim)">{`${price} $`}</p>
+        </div>
+        <div className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-electric-400/50 text-electric-300 transition-colors duration-300 hover:border-electric-500 hover:bg-electric-500 hover:text-white">
+          <Plus />
+        </div>
+      </div>
+    </div>
+  );
+};

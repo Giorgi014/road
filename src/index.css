@@ -86,6 +86,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+ul {
+  list-style: none;
+}
+
 ::selection {
   background: rgba(49, 85, 255, 0.4);
   color: #fff;
