@@ -22,7 +22,7 @@ export interface ProductCardProps {
 
 export type AllProducts = {
   id: number;
-  product_type: string;
+  category: string;
   name: string;
   description: string;
   price: number;
