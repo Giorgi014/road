@@ -1,8 +1,8 @@
 function Details() {
   return (
-    <div>
+    <article>
       <h1>Details</h1>
-    </div>
+    </article>
   );
 }
 

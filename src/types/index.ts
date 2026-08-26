@@ -49,3 +49,18 @@ export type Sizes = {
   id: number;
   size: string;
 };
+
+export type CategoriesProps = {
+  selected: string[];
+  onToggle: (category: string) => void;
+};
+
+export type OptionsType = {
+  value: string;
+  label: string;
+};
+
+export type SortingProps = {
+  value: OptionsType;
+  onChange: (option: OptionsType) => void;
+};

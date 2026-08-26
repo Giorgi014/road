@@ -3,6 +3,7 @@ import type {
   AllCategories,
   FeatureItem,
   NavLink,
+  OptionsType,
   Product,
   Sizes,
 } from "../types";
@@ -202,5 +203,28 @@ export const SIZES: Sizes[] = [
   {
     id: 3,
     size: "XL",
+  },
+];
+
+export const OPTIONS: OptionsType[] = [
+  {
+    value: "all",
+    label: "All",
+  },
+  {
+    value: "price-desc",
+    label: "Price: decreasing",
+  },
+  {
+    value: "price-asc",
+    label: "Price: increasing",
+  },
+  {
+    value: "name-asc",
+    label: "Name: A-Z",
+  },
+  {
+    value: "name-desc",
+    label: "Name: Z-A",
   },
 ];
