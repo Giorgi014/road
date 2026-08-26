@@ -1,20 +1,23 @@
+import { useData } from "@/context/use-data";
 import { ALL_CATEGORIES } from "@/data/content";
-import { All_PRODUCTS } from "@/data/products";
 import type { CategoriesProps } from "@/types";
 import { Check } from "lucide-react";
 import { useMemo } from "react";
 
 export const Categories = ({ selected, onToggle }: CategoriesProps) => {
-  const categoryCount = useMemo(() => {
-    const count: Record<string, number> = { all: All_PRODUCTS.length };
+  const { data } = useData();
+  const items = data ?? [];
 
-    for (const prod of All_PRODUCTS) {
+  const categoryCount = useMemo(() => {
+    const count: Record<string, number> = { all: items.length };
+
+    for (const prod of items) {
       const key = `${prod.category.toLocaleLowerCase()}s`;
 
       count[key] = (count[key] ?? 0) + 1;
     }
     return count;
-  }, []);
+  }, [items]);
 
   return (
     <article className="w-full">

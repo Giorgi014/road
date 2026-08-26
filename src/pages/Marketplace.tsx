@@ -1,5 +1,4 @@
 import { ProductCard } from "@/components/ui/ProductCard";
-import { All_PRODUCTS } from "../data/products";
 import { Categories } from "@/components/products/Categories";
 import { PriceRange } from "@/components/products/PriceRange";
 import { Size } from "@/components/products/Size";
@@ -7,10 +6,12 @@ import { Sorting } from "@/components/products/Sorting";
 import { useMemo, useState } from "react";
 import { OPTIONS } from "@/data/content";
 import type { OptionsType } from "@/types";
+import { useData } from "@/context/use-data";
 
 function Marketplace() {
   const [sort, setSort] = useState<OptionsType>(OPTIONS[0]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const { data } = useData();
 
   const toggleCategory = (category: string) => {
     if (category === "all") {
@@ -26,7 +27,7 @@ function Marketplace() {
   };
 
   const sortedProducts = useMemo(() => {
-    let products = [...All_PRODUCTS];
+    let products = data ? [...data] : [];
 
     if (selectedCategories.length > 0) {
       products = products.filter((prod) =>
@@ -46,7 +47,7 @@ function Marketplace() {
       default:
         return products;
     }
-  }, [sort, selectedCategories]);
+  }, [sort, selectedCategories, data]);
 
   return (
     <article className="flex justify-between items-start gap-5 p-5 mt-19">
@@ -74,6 +75,7 @@ function Marketplace() {
           {sortedProducts.map((item) => (
             <ProductCard
               key={item.id}
+              id={item.id}
               isNew={item.isNew}
               src={item.src}
               alt={item.name}

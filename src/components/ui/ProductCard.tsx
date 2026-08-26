@@ -1,15 +1,26 @@
 import type { ProductCardProps } from "@/types";
 import { Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const ProductCard = ({
+  id,
   isNew,
   src,
   alt,
   name,
   price,
 }: ProductCardProps) => {
+  const navigate = useNavigate();
+
+  const productDetails = () => {
+    navigate(`product/${id}/${name}`);
+  };
+
   return (
-    <div className="group relative lg:h-[clamp(13rem,24vw,31.25rem)] sm:h-[clamp(13rem,45vw,31.25rem)] h-[clamp(13rem,90vw,31.25rem)] lg:w-[clamp(8rem,17vw,22.125rem)] sm:w-[clamp(8rem,30vw,22.125rem)] w-[clamp(8rem,70vw,22.125rem)] overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300 hover:border-electric-400/60 hover:shadow-[0_0_45px_-12px_rgba(66,103,255,0.55)] cursor-pointer">
+    <div
+      className="group relative lg:h-[clamp(13rem,24vw,31.25rem)] sm:h-[clamp(13rem,45vw,31.25rem)] h-[clamp(13rem,90vw,31.25rem)] lg:w-[clamp(8rem,17vw,22.125rem)] sm:w-[clamp(8rem,30vw,22.125rem)] w-[clamp(8rem,70vw,22.125rem)] overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300 hover:border-electric-400/60 hover:shadow-[0_0_45px_-12px_rgba(66,103,255,0.55)] cursor-pointer"
+      onClick={productDetails}
+    >
       {isNew && (
         <div className="flex justify-center items-center absolute top-4 right-4 z-10 rounded-full bg-linear-to-r from-electric-500 to-electric-600 px-3 py-1 shadow-[0_0_20px_-4px_rgba(104,71,255,0.9)]">
           <p className="mt-[0.5px] ml-0.5 text-[10px] tracking-ultra font-sans text-white">

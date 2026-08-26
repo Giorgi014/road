@@ -13,6 +13,7 @@ export interface Product {
 }
 
 export interface ProductCardProps {
+  id: number;
   isNew?: boolean;
   src: string;
   alt: string;

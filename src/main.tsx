@@ -7,6 +7,7 @@ import Marketplace from "./pages/Marketplace.tsx";
 import "./index.css";
 import About from "./pages/About.tsx";
 import Details from "./pages/Details.tsx";
+import { DataProvider } from "./context/DataProvider.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DataProvider>
+      <RouterProvider router={router} />
+    </DataProvider>
   </StrictMode>,
 );
