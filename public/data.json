@@ -8,13 +8,13 @@
       "price": 100,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal"],
-      "src": "/src/assets/products/jacket1/front.webp",
+      "src": "/products/jacket1/front.webp",
       "images": [
-        "/src/assets/products/jacket1/behind.webp",
-        "/src/assets/products/jacket1/front-left.webp",
-        "/src/assets/products/jacket1/front.webp",
-        "/src/assets/products/jacket1/left.webp",
-        "/src/assets/products/jacket1/open.webp"
+        "/products/jacket1/behind.webp",
+        "/products/jacket1/front-left.webp",
+        "/products/jacket1/front.webp",
+        "/products/jacket1/left.webp",
+        "/products/jacket1/open.webp"
       ],
       "isNew": true
     },
@@ -26,16 +26,16 @@
       "price": 180,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal", "Olive"],
-      "src": "/src/assets/products/jacket2/front.webp",
+      "src": "/products/jacket2/front.webp",
       "images": [
-        "/src/assets/products/jacket2/back.webp",
-        "/src/assets/products/jacket2/front-left.webp",
-        "/src/assets/products/jacket2/front.webp",
-        "/src/assets/products/jacket2/left.webp",
-        "/src/assets/products/jacket2/hoodup-back.webp",
-        "/src/assets/products/jacket2/hoodup-front.webp",
-        "/src/assets/products/jacket2/hoodup-left.webp",
-        "/src/assets/products/jacket2/open.webp"
+        "/products/jacket2/back.webp",
+        "/products/jacket2/front-left.webp",
+        "/products/jacket2/front.webp",
+        "/products/jacket2/left.webp",
+        "/products/jacket2/hoodup-back.webp",
+        "/products/jacket2/hoodup-front.webp",
+        "/products/jacket2/hoodup-left.webp",
+        "/products/jacket2/open.webp"
       ]
     },
     {
@@ -46,16 +46,16 @@
       "price": 160,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Silver"],
-      "src": "/src/assets/products/jacket3/front.webp",
+      "src": "/products/jacket3/front.webp",
       "images": [
-        "/src/assets/products/jacket3/back.webp",
-        "/src/assets/products/jacket3/front-left.webp",
-        "/src/assets/products/jacket3/front.webp",
-        "/src/assets/products/jacket3/left.webp",
-        "/src/assets/products/jacket3/hoodup-back.webp",
-        "/src/assets/products/jacket3/hoodup-front.webp",
-        "/src/assets/products/jacket3/hoodup-left.webp",
-        "/src/assets/products/jacket3/open.webp"
+        "/products/jacket3/back.webp",
+        "/products/jacket3/front-left.webp",
+        "/products/jacket3/front.webp",
+        "/products/jacket3/left.webp",
+        "/products/jacket3/hoodup-back.webp",
+        "/products/jacket3/hoodup-front.webp",
+        "/products/jacket3/hoodup-left.webp",
+        "/products/jacket3/open.webp"
       ]
     },
     {
@@ -66,16 +66,16 @@
       "price": 150,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal", "Sand"],
-      "src": "/src/assets/products/jacket4/front.webp",
+      "src": "/products/jacket4/front.webp",
       "images": [
-        "/src/assets/products/jacket4/back.webp",
-        "/src/assets/products/jacket4/front-left.webp",
-        "/src/assets/products/jacket4/front.webp",
-        "/src/assets/products/jacket4/left.webp",
-        "/src/assets/products/jacket4/hoodup-back.webp",
-        "/src/assets/products/jacket4/hoodup-front.webp",
-        "/src/assets/products/jacket4/hoodup-left.webp",
-        "/src/assets/products/jacket4/open.webp"
+        "/products/jacket4/back.webp",
+        "/products/jacket4/front-left.webp",
+        "/products/jacket4/front.webp",
+        "/products/jacket4/left.webp",
+        "/products/jacket4/hoodup-back.webp",
+        "/products/jacket4/hoodup-front.webp",
+        "/products/jacket4/hoodup-left.webp",
+        "/products/jacket4/open.webp"
       ]
     },
     {
@@ -86,16 +86,16 @@
       "price": 220,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Navy"],
-      "src": "/src/assets/products/jacket5/front.webp",
+      "src": "/products/jacket5/front.webp",
       "images": [
-        "/src/assets/products/jacket5/back.webp",
-        "/src/assets/products/jacket5/front-left.webp",
-        "/src/assets/products/jacket5/front.webp",
-        "/src/assets/products/jacket5/left.webp",
-        "/src/assets/products/jacket5/hoodup-back.webp",
-        "/src/assets/products/jacket5/hoodup-front.webp",
-        "/src/assets/products/jacket5/hoodup-left.webp",
-        "/src/assets/products/jacket5/open.webp"
+        "/products/jacket5/back.webp",
+        "/products/jacket5/front-left.webp",
+        "/products/jacket5/front.webp",
+        "/products/jacket5/left.webp",
+        "/products/jacket5/hoodup-back.webp",
+        "/products/jacket5/hoodup-front.webp",
+        "/products/jacket5/hoodup-left.webp",
+        "/products/jacket5/open.webp"
       ]
     },
     {
@@ -106,16 +106,16 @@
       "price": 200,
       "size": ["S", "M", "L", "XL"],
       "color": ["Olive", "Charcoal", "Black"],
-      "src": "/src/assets/products/jacket6/front.webp",
+      "src": "/products/jacket6/front.webp",
       "images": [
-        "/src/assets/products/jacket6/back.webp",
-        "/src/assets/products/jacket6/front-left.webp",
-        "/src/assets/products/jacket6/front.webp",
-        "/src/assets/products/jacket6/left.webp",
-        "/src/assets/products/jacket6/hoodup-back.webp",
-        "/src/assets/products/jacket6/hoodup-front.webp",
-        "/src/assets/products/jacket6/hoodup-left.webp",
-        "/src/assets/products/jacket6/open.webp"
+        "/products/jacket6/back.webp",
+        "/products/jacket6/front-left.webp",
+        "/products/jacket6/front.webp",
+        "/products/jacket6/left.webp",
+        "/products/jacket6/hoodup-back.webp",
+        "/products/jacket6/hoodup-front.webp",
+        "/products/jacket6/hoodup-left.webp",
+        "/products/jacket6/open.webp"
       ]
     },
     {
@@ -126,16 +126,16 @@
       "price": 170,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal"],
-      "src": "/src/assets/products/jacket7/front.webp",
+      "src": "/products/jacket7/front.webp",
       "images": [
-        "/src/assets/products/jacket7/back.webp",
-        "/src/assets/products/jacket7/front-left.webp",
-        "/src/assets/products/jacket7/front.webp",
-        "/src/assets/products/jacket7/left.webp",
-        "/src/assets/products/jacket7/hoodup-back.webp",
-        "/src/assets/products/jacket7/hoodup-front.webp",
-        "/src/assets/products/jacket7/hoodup-left.webp",
-        "/src/assets/products/jacket7/open.webp"
+        "/products/jacket7/back.webp",
+        "/products/jacket7/front-left.webp",
+        "/products/jacket7/front.webp",
+        "/products/jacket7/left.webp",
+        "/products/jacket7/hoodup-back.webp",
+        "/products/jacket7/hoodup-front.webp",
+        "/products/jacket7/hoodup-left.webp",
+        "/products/jacket7/open.webp"
       ],
       "isNew": true
     },
@@ -147,16 +147,16 @@
       "price": 195,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Olive"],
-      "src": "/src/assets/products/jacket8/front.webp",
+      "src": "/products/jacket8/front.webp",
       "images": [
-        "/src/assets/products/jacket8/back.webp",
-        "/src/assets/products/jacket8/front-left.webp",
-        "/src/assets/products/jacket8/front.webp",
-        "/src/assets/products/jacket8/left.webp",
-        "/src/assets/products/jacket8/hoodup-back.webp",
-        "/src/assets/products/jacket8/hoodup-front.webp",
-        "/src/assets/products/jacket8/hoodup-left.webp",
-        "/src/assets/products/jacket8/open.webp"
+        "/products/jacket8/back.webp",
+        "/products/jacket8/front-left.webp",
+        "/products/jacket8/front.webp",
+        "/products/jacket8/left.webp",
+        "/products/jacket8/hoodup-back.webp",
+        "/products/jacket8/hoodup-front.webp",
+        "/products/jacket8/hoodup-left.webp",
+        "/products/jacket8/open.webp"
       ],
       "isNew": true
     },
@@ -168,16 +168,16 @@
       "price": 175,
       "size": ["S", "M", "L", "XL"],
       "color": ["Sand", "Charcoal", "Black"],
-      "src": "/src/assets/products/jacket9/front.webp",
+      "src": "/products/jacket9/front.webp",
       "images": [
-        "/src/assets/products/jacket9/back.webp",
-        "/src/assets/products/jacket9/front-left.webp",
-        "/src/assets/products/jacket9/front.webp",
-        "/src/assets/products/jacket9/left.webp",
-        "/src/assets/products/jacket9/hoodup-back.webp",
-        "/src/assets/products/jacket9/hoodup-front.webp",
-        "/src/assets/products/jacket9/hoodup-left.webp",
-        "/src/assets/products/jacket9/open.webp"
+        "/products/jacket9/back.webp",
+        "/products/jacket9/front-left.webp",
+        "/products/jacket9/front.webp",
+        "/products/jacket9/left.webp",
+        "/products/jacket9/hoodup-back.webp",
+        "/products/jacket9/hoodup-front.webp",
+        "/products/jacket9/hoodup-left.webp",
+        "/products/jacket9/open.webp"
       ]
     },
     {
@@ -188,16 +188,16 @@
       "price": 230,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Navy"],
-      "src": "/src/assets/products/jacket10/front.webp",
+      "src": "/products/jacket10/front.webp",
       "images": [
-        "/src/assets/products/jacket10/back.webp",
-        "/src/assets/products/jacket10/front-left.webp",
-        "/src/assets/products/jacket10/front.webp",
-        "/src/assets/products/jacket10/left.webp",
-        "/src/assets/products/jacket10/hoodup-back.webp",
-        "/src/assets/products/jacket10/hoodup-front.webp",
-        "/src/assets/products/jacket10/hoodup-left.webp",
-        "/src/assets/products/jacket10/open.webp"
+        "/products/jacket10/back.webp",
+        "/products/jacket10/front-left.webp",
+        "/products/jacket10/front.webp",
+        "/products/jacket10/left.webp",
+        "/products/jacket10/hoodup-back.webp",
+        "/products/jacket10/hoodup-front.webp",
+        "/products/jacket10/hoodup-left.webp",
+        "/products/jacket10/open.webp"
       ]
     },
     {
@@ -208,16 +208,16 @@
       "price": 165,
       "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Silver"],
-      "src": "/src/assets/products/jacket11/front.webp",
+      "src": "/products/jacket11/front.webp",
       "images": [
-        "/src/assets/products/jacket11/back.webp",
-        "/src/assets/products/jacket11/front-left.webp",
-        "/src/assets/products/jacket11/front.webp",
-        "/src/assets/products/jacket11/left.webp",
-        "/src/assets/products/jacket11/hoodup-back.webp",
-        "/src/assets/products/jacket11/hoodup-front.webp",
-        "/src/assets/products/jacket11/hoodup-left.webp",
-        "/src/assets/products/jacket11/open.webp"
+        "/products/jacket11/back.webp",
+        "/products/jacket11/front-left.webp",
+        "/products/jacket11/front.webp",
+        "/products/jacket11/left.webp",
+        "/products/jacket11/hoodup-back.webp",
+        "/products/jacket11/hoodup-front.webp",
+        "/products/jacket11/hoodup-left.webp",
+        "/products/jacket11/open.webp"
       ]
     }
   ]

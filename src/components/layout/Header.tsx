@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from "react";
-import { Search, ShoppingBag, Menu, X } from "lucide-react";
+import { Search, ShoppingBag, Menu, X, User } from "lucide-react";
 import { NAV_LINKS } from "../../data/content";
 import { Link } from "react-router-dom";
 
@@ -53,14 +53,16 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
             </ul>
             <div className="flex items-center gap-3">
               <button
+                type="button"
                 aria-label="Search"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
               >
                 <Search size={18} strokeWidth={1.8} />
               </button>
               <button
+                type="button"
                 aria-label="Cart"
-                className="relative flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
               >
                 <ShoppingBag size={18} strokeWidth={1.8} />
                 <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#3155ff] text-[9px] font-bold text-white">
@@ -68,8 +70,9 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
                 </span>
               </button>
               <button
+                type="button"
                 aria-label="Menu"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#3155ff] to-[#6847ff] text-white transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(49,85,255,0.6)]"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#3155ff] to-[#6847ff] text-white transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(49,85,255,0.6)] cursor-pointer"
                 onClick={() => setMenuOpen(true)}
               >
                 <Menu size={18} strokeWidth={2} />
@@ -93,8 +96,9 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
                 ROAD
               </span>
               <button
+                type="button"
                 aria-label="Close menu"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white transition-colors hover:bg-white/10"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white transition-colors hover:bg-white/10 cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
                 <X size={18} />
@@ -103,8 +107,8 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
             <ul className="m-0 list-none p-0">
               {NAV_LINKS.map((link, i) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="flex items-center gap-4 border-b border-white/5 py-4 text-white/80 no-underline transition-all hover:translate-x-2 hover:text-white"
                     onClick={() => setMenuOpen(false)}
                   >
@@ -114,9 +118,16 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
                     <span className="font-display text-[30px] font-medium text-white">
                       {link.label}
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
+              <li className="flex items-center gap-4 border-b border-white/5 py-4 text-white/80 no-underline transition-all hover:translate-x-2 hover:text-white cursor-pointer">
+                <span className="font-sans text-[12px] text-[#7d89ad]">06</span>
+                <User />
+                <span className="font-display text-[30px] font-medium text-white">
+                  Authorization
+                </span>
+              </li>
             </ul>
             <div className="mt-auto pt-8">
               <p className="mb-2 text-[11px] uppercase tracking-[0.35em] text-white/40">
