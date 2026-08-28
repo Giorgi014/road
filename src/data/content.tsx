@@ -5,6 +5,7 @@ import type {
   NavLink,
   OptionsType,
   Product,
+  SidebarLink,
   Sizes,
 } from "../types";
 
@@ -13,6 +14,14 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Resources", href: "#resources" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
+];
+
+export const SIDEBAR_LINKS: SidebarLink[] = [
+  { label: "Marketplace", href: "/marketplace" },
+  { label: "Resources", href: "#resources" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "#contact" },
+  { label: "Authorization", href: "#", action: "auth" },
 ];
 
 export const HERO_COPY = {

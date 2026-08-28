@@ -6,7 +6,7 @@ import { Sorting } from "@/components/products/Sorting";
 import { useMemo, useState } from "react";
 import { OPTIONS } from "@/data/content";
 import type { OptionsType } from "@/types";
-import { useData } from "@/context/use-data";
+import { useData } from "@/context/data/use-data";
 
 function Marketplace() {
   const [sort, setSort] = useState<OptionsType>(OPTIONS[0]);

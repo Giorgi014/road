@@ -1,4 +1,4 @@
-import { useData } from "@/context/use-data";
+import { useData } from "@/context/data/use-data";
 import { ALL_CATEGORIES } from "@/data/content";
 import type { CategoriesProps } from "@/types";
 import { Check } from "lucide-react";

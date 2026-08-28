@@ -5,6 +5,12 @@ export interface NavLink {
   href: string;
 }
 
+export interface SidebarLink {
+  label: string;
+  href: string;
+  action?: "auth";
+}
+
 export interface Product {
   id: number;
   label: string;

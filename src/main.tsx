@@ -7,7 +7,7 @@ import Marketplace from "./pages/Marketplace.tsx";
 import "./index.css";
 import About from "./pages/About.tsx";
 import Details from "./pages/Details.tsx";
-import { DataProvider } from "./context/DataProvider.tsx";
+import { DataProvider } from "./context/data/DataProvider.tsx";
 
 const router = createBrowserRouter([
   {
