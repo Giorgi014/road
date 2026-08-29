@@ -1,7 +1,7 @@
 import { AuthBtn } from "../ui/AuthBtn";
 import { Input } from "../ui/Input";
 
-export const Ragistration = () => {
+export const Registration = () => {
   return (
     <form
       action="signup"

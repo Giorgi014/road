@@ -27,6 +27,15 @@ export interface ProductCardProps {
   price: number;
 }
 
+export interface SearchedProductProps {
+  isNew?: boolean;
+  src: string;
+  alt: string;
+  name: string;
+  price: number;
+  onClick: () => void;
+}
+
 export type AllProducts = {
   id: number;
   category: string;

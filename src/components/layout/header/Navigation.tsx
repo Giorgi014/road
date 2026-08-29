@@ -1,5 +1,7 @@
+import { SearchValue } from "@/components/ui/Search";
 import { NAV_LINKS } from "@/data/content";
 import { Search, ShoppingBag, Menu } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 type NavigationProps = {
@@ -7,6 +9,8 @@ type NavigationProps = {
 };
 
 export const Navigation = ({ setMenuOpen }: NavigationProps) => {
+  const [isSearch, setIsSearch] = useState(false);
+
   return (
     <nav className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6">
       <Link
@@ -32,6 +36,7 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
           type="button"
           aria-label="Search"
           className="flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
+          onClick={() => setIsSearch(true)}
         >
           <Search size={18} strokeWidth={1.8} />
         </button>
@@ -54,6 +59,7 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
           <Menu size={18} strokeWidth={2} />
         </button>
       </div>
+      {isSearch && <SearchValue onClose={() => setIsSearch(false)} />}
     </nav>
   );
 };

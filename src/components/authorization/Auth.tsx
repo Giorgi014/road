@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LogIn } from "./LogIn";
-import { Ragistration } from "./Ragistration";
+import { Registration } from "./Registration";
 
 export const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -22,7 +22,7 @@ export const Auth = () => {
         </>
       ) : (
         <>
-          <Ragistration />
+          <Registration />
           <p className="mt-6 text-sm text-white/40">
             Already have an account?{" "}
             <button

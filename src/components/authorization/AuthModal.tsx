@@ -7,8 +7,8 @@ type AuthModalProps = {
 
 export const AuthModal = ({ onClose }: AuthModalProps) => {
   return (
-    <article className="fixed inset-0 z-99999 flex items-center justify-center bg-[rgba(3,8,23,0.85)] backdrop-blur-sm">
-      <div className="flex justify-center items-center relative w-full max-w-130 bg-[#0b1745] p-10">
+    <article className="fixed inset-0 z-99999 flex items-center justify-center bg-ink-900/85 backdrop-blur-sm">
+      <div className="flex justify-center items-center relative w-full rounded-4xl max-w-130 bg-ink-700 p-10">
         <button
           type="button"
           aria-label="Close"
