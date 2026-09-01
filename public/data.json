@@ -1,32 +1,28 @@
 {
   "allProducts": [
     {
-      "id": 0,
       "category": "Jacket",
-      "name": "Jacket",
-      "description": "Stripped-down utility shell built for daily wear in any conditions.",
-      "price": 100,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal"],
-      "src": "/products/jacket1/front.webp",
+      "description": "Stripped-down utility shell built for daily wear in any conditions.",
+      "id": 0,
       "images": [
+        "/products/jacket1/front.webp",
         "/products/jacket1/behind.webp",
         "/products/jacket1/front-left.webp",
-        "/products/jacket1/front.webp",
         "/products/jacket1/left.webp",
         "/products/jacket1/open.webp"
       ],
-      "isNew": true
+      "isNew": true,
+      "name": "Jacket",
+      "price": 100,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket1/front.webp"
     },
     {
-      "id": 1,
       "category": "Jacket",
-      "name": "Apex Shell Jacket",
-      "description": "Fully sealed weatherproof shell with responsive thermal regulation for extreme temperature shifts.",
-      "price": 180,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal", "Olive"],
-      "src": "/products/jacket2/front.webp",
+      "description": "Fully sealed weatherproof shell with responsive thermal regulation for extreme temperature shifts.",
+      "id": 1,
       "images": [
         "/products/jacket2/back.webp",
         "/products/jacket2/front-left.webp",
@@ -36,17 +32,17 @@
         "/products/jacket2/hoodup-front.webp",
         "/products/jacket2/hoodup-left.webp",
         "/products/jacket2/open.webp"
-      ]
+      ],
+      "name": "Apex Shell Jacket",
+      "price": 180,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket2/front.webp"
     },
     {
-      "id": 2,
       "category": "Jacket",
-      "name": "Signal Jacket",
-      "description": "Featherweight construction with reflective smart-fiber threading that lights up under low light.",
-      "price": 160,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Silver"],
-      "src": "/products/jacket3/front.webp",
+      "description": "Featherweight construction with reflective smart-fiber threading that lights up under low light.",
+      "id": 2,
       "images": [
         "/products/jacket3/back.webp",
         "/products/jacket3/front-left.webp",
@@ -56,17 +52,17 @@
         "/products/jacket3/hoodup-front.webp",
         "/products/jacket3/hoodup-left.webp",
         "/products/jacket3/open.webp"
-      ]
+      ],
+      "name": "Signal Jacket",
+      "price": 160,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket3/front.webp"
     },
     {
-      "id": 3,
       "category": "Jacket",
-      "name": "Vector Jacket",
-      "description": "Streamlined city armor cut for movement, built to handle whatever the block throws at you.",
-      "price": 150,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal", "Sand"],
-      "src": "/products/jacket4/front.webp",
+      "description": "Streamlined city armor cut for movement, built to handle whatever the block throws at you.",
+      "id": 3,
       "images": [
         "/products/jacket4/back.webp",
         "/products/jacket4/front-left.webp",
@@ -76,17 +72,17 @@
         "/products/jacket4/hoodup-front.webp",
         "/products/jacket4/hoodup-left.webp",
         "/products/jacket4/open.webp"
-      ]
+      ],
+      "name": "Vector Jacket",
+      "price": 150,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket4/front.webp"
     },
     {
-      "id": 4,
       "category": "Jacket",
-      "name": "Orbit Jacket",
-      "description": "Insulated core layer engineered to hold steady as the environment shifts around you.",
-      "price": 220,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Navy"],
-      "src": "/products/jacket5/front.webp",
+      "description": "Insulated core layer engineered to hold steady as the environment shifts around you.",
+      "id": 4,
       "images": [
         "/products/jacket5/back.webp",
         "/products/jacket5/front-left.webp",
@@ -96,17 +92,17 @@
         "/products/jacket5/hoodup-front.webp",
         "/products/jacket5/hoodup-left.webp",
         "/products/jacket5/open.webp"
-      ]
+      ],
+      "name": "Orbit Jacket",
+      "price": 220,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket5/front.webp"
     },
     {
-      "id": 5,
       "category": "Jacket",
-      "name": "Terrain Jacket",
-      "description": "Rugged field-tested build with modular storage for gear you don't want to leave behind.",
-      "price": 200,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Olive", "Charcoal", "Black"],
-      "src": "/products/jacket6/front.webp",
+      "description": "Rugged field-tested build with modular storage for gear you don't want to leave behind.",
+      "id": 5,
       "images": [
         "/products/jacket6/back.webp",
         "/products/jacket6/front-left.webp",
@@ -116,17 +112,17 @@
         "/products/jacket6/hoodup-front.webp",
         "/products/jacket6/hoodup-left.webp",
         "/products/jacket6/open.webp"
-      ]
+      ],
+      "name": "Terrain Jacket",
+      "price": 200,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket6/front.webp"
     },
     {
-      "id": 6,
       "category": "Jacket",
-      "name": "Flux Jacket",
-      "description": "Adaptive fit that moves with shifting urban terrain instead of fighting against it.",
-      "price": 170,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Charcoal"],
-      "src": "/products/jacket7/front.webp",
+      "description": "Adaptive fit that moves with shifting urban terrain instead of fighting against it.",
+      "id": 6,
       "images": [
         "/products/jacket7/back.webp",
         "/products/jacket7/front-left.webp",
@@ -137,17 +133,17 @@
         "/products/jacket7/hoodup-left.webp",
         "/products/jacket7/open.webp"
       ],
-      "isNew": true
+      "isNew": true,
+      "name": "Flux Jacket",
+      "price": 170,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket7/front.webp"
     },
     {
-      "id": 7,
       "category": "Jacket",
-      "name": "Recon Jacket",
-      "description": "Low-profile silhouette reinforced with stealth panels built to move unnoticed.",
-      "price": 195,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Olive"],
-      "src": "/products/jacket8/front.webp",
+      "description": "Low-profile silhouette reinforced with stealth panels built to move unnoticed.",
+      "id": 7,
       "images": [
         "/products/jacket8/back.webp",
         "/products/jacket8/front-left.webp",
@@ -158,17 +154,17 @@
         "/products/jacket8/hoodup-left.webp",
         "/products/jacket8/open.webp"
       ],
-      "isNew": true
+      "isNew": true,
+      "name": "Recon Jacket",
+      "price": 195,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket8/front.webp"
     },
     {
-      "id": 8,
       "category": "Jacket",
-      "name": "Nomad Jacket",
-      "description": "Travel-ready layer that packs down small without giving up warmth.",
-      "price": 175,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Sand", "Charcoal", "Black"],
-      "src": "/products/jacket9/front.webp",
+      "description": "Travel-ready layer that packs down small without giving up warmth.",
+      "id": 8,
       "images": [
         "/products/jacket9/back.webp",
         "/products/jacket9/front-left.webp",
@@ -178,17 +174,17 @@
         "/products/jacket9/hoodup-front.webp",
         "/products/jacket9/hoodup-left.webp",
         "/products/jacket9/open.webp"
-      ]
+      ],
+      "name": "Nomad Jacket",
+      "price": 175,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket9/front.webp"
     },
     {
-      "id": 9,
       "category": "Jacket",
-      "name": "Sentinel Jacket",
-      "description": "Heavy-duty shell built for extreme exposure when there's no room for compromise.",
-      "price": 230,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Navy"],
-      "src": "/products/jacket10/front.webp",
+      "description": "Heavy-duty shell built for extreme exposure when there's no room for compromise.",
+      "id": 9,
       "images": [
         "/products/jacket10/back.webp",
         "/products/jacket10/front-left.webp",
@@ -198,17 +194,17 @@
         "/products/jacket10/hoodup-front.webp",
         "/products/jacket10/hoodup-left.webp",
         "/products/jacket10/open.webp"
-      ]
+      ],
+      "name": "Sentinel Jacket",
+      "price": 230,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket10/front.webp"
     },
     {
-      "id": 10,
       "category": "Jacket",
-      "name": "Drift Jacket",
-      "description": "Minimalist soft-shell with an adaptive fit that stays out of your way.",
-      "price": 165,
-      "size": ["S", "M", "L", "XL"],
       "color": ["Black", "Silver"],
-      "src": "/products/jacket11/front.webp",
+      "description": "Minimalist soft-shell with an adaptive fit that stays out of your way.",
+      "id": 10,
       "images": [
         "/products/jacket11/back.webp",
         "/products/jacket11/front-left.webp",
@@ -218,7 +214,11 @@
         "/products/jacket11/hoodup-front.webp",
         "/products/jacket11/hoodup-left.webp",
         "/products/jacket11/open.webp"
-      ]
+      ],
+      "name": "Drift Jacket",
+      "price": 165,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/jacket11/front.webp"
     }
   ]
 }

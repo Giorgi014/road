@@ -36,6 +36,19 @@ export interface SearchedProductProps {
   onClick: () => void;
 }
 
+export interface ProductImageProps {
+  id: number;
+  src: string;
+  alt: string;
+  isSelected: boolean;
+  onSelect: () => void;
+}
+
+export interface ProductInfoProps {
+  details: AllProducts;
+  addCart: (product: AllProducts) => void;
+}
+
 export type AllProducts = {
   id: number;
   category: string;
