@@ -93,3 +93,12 @@ export type SortingProps = {
   value: OptionsType;
   onChange: (option: OptionsType) => void;
 };
+
+export interface PriceRangeProps {
+  min?: number;
+  max?: number;
+  step?: number;
+  defaultMin?: number;
+  defaultMax?: number;
+  onChange?: (range: [number, number]) => void;
+}

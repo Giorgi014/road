@@ -8,10 +8,17 @@ import { OPTIONS } from "@/data/content";
 import type { OptionsType } from "@/types";
 import { useData } from "@/context/data/use-data";
 
+const PRICE_MIN = 50;
+const PRICE_MAX = 1000;
+
 function Marketplace() {
   const [sort, setSort] = useState<OptionsType>(OPTIONS[0]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const { data } = useData();
+  const [priceRange, setPriceRange] = useState<[number, number]>([
+    PRICE_MIN,
+    500,
+  ]);
 
   const toggleCategory = (category: string) => {
     if (category === "all") {
@@ -28,6 +35,10 @@ function Marketplace() {
 
   const sortedProducts = useMemo(() => {
     let products = data ? [...data] : [];
+
+    products = products.filter(
+      (prod) => prod.price >= priceRange[0] && prod.price <= priceRange[1],
+    );
 
     if (selectedCategories.length > 0) {
       products = products.filter((prod) =>
@@ -47,7 +58,7 @@ function Marketplace() {
       default:
         return products;
     }
-  }, [sort, selectedCategories, data]);
+  }, [sort, selectedCategories, priceRange, data]);
 
   return (
     <article className="flex justify-between items-start gap-5 p-5 mt-19">
@@ -56,7 +67,13 @@ function Marketplace() {
           Categories
         </h3>
         <Categories selected={selectedCategories} onToggle={toggleCategory} />
-        <PriceRange />
+        <PriceRange
+          min={PRICE_MIN}
+          max={PRICE_MAX}
+          defaultMin={priceRange[0]}
+          defaultMax={priceRange[1]}
+          onChange={setPriceRange}
+        />
         <Size />
       </aside>
       <section className="w-full">
