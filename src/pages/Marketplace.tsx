@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 import { OPTIONS } from "@/data/content";
 import type { OptionsType } from "@/types";
 import { useData } from "@/context/data/use-data";
+import { SlidersHorizontal, X } from "lucide-react";
 
 const PRICE_MIN = 50;
 const PRICE_MAX = 1000;
@@ -14,6 +15,7 @@ const PRICE_MAX = 1000;
 function Marketplace() {
   const [sort, setSort] = useState<OptionsType>(OPTIONS[0]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   const { data } = useData();
   const [priceRange, setPriceRange] = useState<[number, number]>([
     PRICE_MIN,
@@ -62,7 +64,28 @@ function Marketplace() {
 
   return (
     <article className="flex justify-between items-start gap-5 p-5 mt-19">
-      <aside className="group relative h-max w-75 px-4 py-5 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300">
+      <button
+        type="button"
+        onClick={() => setIsFilterOpen(true)}
+        className="md:hidden fixed bottom-5 left-5 z-40 flex items-center gap-1.5 rounded-xl border border-(--border) bg-(--surface) px-4 py-2.5 text-sm font-sans uppercase text-(--ink-dim) shadow-lg"
+      >
+        <SlidersHorizontal className="w-4 h-4" />
+        Filters
+      </button>
+
+      <aside
+        className={`group relative h-max w-75 px-4 py-5 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300
+          max-md:fixed max-md:inset-x-0 max-md:bottom-0 max-md:top-auto max-md:z-50 max-md:w-full max-md:h-auto max-md:max-h-[85vh] max-md:overflow-y-auto max-md:rounded-b-none max-md:rounded-t-2xl
+          ${isFilterOpen ? "max-md:block" : "max-md:hidden"}`}
+      >
+        <button
+          type="button"
+          aria-label="Close filters"
+          onClick={() => setIsFilterOpen(false)}
+          className="md:hidden absolute top-4 right-4 text-(--ink-dim) hover:text-(--ink)"
+        >
+          <X className="w-5 h-5" />
+        </button>
         <h3 className="truncate font-display text-sm uppercase tracking-wide text-(--ink) mb-5">
           Categories
         </h3>
@@ -76,6 +99,16 @@ function Marketplace() {
         />
         <Size />
       </aside>
+
+      {isFilterOpen && (
+        <button
+          type="button"
+          aria-label="Close filters"
+          onClick={() => setIsFilterOpen(false)}
+          className="md:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+        />
+      )}
+
       <section className="w-full">
         <div className="flex justify-between items-start w-full">
           <div>
@@ -88,7 +121,7 @@ function Marketplace() {
           </div>
           <Sorting value={sort} onChange={setSort} />
         </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 place-items-center sm:grid-cols-2 lg:grid-cols-4">
           {sortedProducts.map((item) => (
             <ProductCard
               key={item.id}
