@@ -1,7 +1,7 @@
-import AiFeatureSection from "../components/ai/AiFeatureSection";
-import CinemaScroll from "../components/hero/CinemaScroll";
-import MissionBlurb from "../components/products/MissionBlurb";
-import ProductGrid from "../components/products/ProductGrid";
+import { AiFeatureSection } from "../components/ai/AiFeatureSection";
+import { CinemaScroll } from "../components/hero/CinemaScroll";
+import { MissionBlurb } from "../components/products/MissionBlurb";
+import { ProductGrid } from "../components/products/ProductGrid";
 
 export function Home() {
   return (

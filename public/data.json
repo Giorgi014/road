@@ -219,6 +219,90 @@
       "price": 165,
       "size": ["S", "M", "L", "XL"],
       "src": "/products/jacket11/front.webp"
+    },
+    {
+      "category": "Boot",
+      "color": ["Black", "Charcoal"],
+      "description": "Technical all-weather boot with a reinforced toe and stable grip for long days on the move.",
+      "id": 11,
+      "images": [
+        "/products/boot1/back.png",
+        "/products/boot1/bottom.png",
+        "/products/boot1/front-left.png",
+        "/products/boot1/front.png",
+        "/products/boot1/left.png"
+      ],
+      "isNew": true,
+      "name": "Vector Boot",
+      "price": 190,
+      "size": ["40", "41", "42", "43", "44", "45"],
+      "src": "/products/boot1/front.png"
+    },
+    {
+      "category": "Boot",
+      "color": ["Olive", "Black"],
+      "description": "Rugged field boot with a flexible sole and weather-ready finish for changing terrain.",
+      "id": 12,
+      "images": [
+        "/products/boot2/back.png",
+        "/products/boot2/bottom.png",
+        "/products/boot2/front-left.png",
+        "/products/boot2/front.png",
+        "/products/boot2/left.png"
+      ],
+      "name": "Terrain Boot",
+      "price": 210,
+      "size": ["40", "41", "42", "43", "44", "45"],
+      "src": "/products/boot2/front.png"
+    },
+    {
+      "category": "Pant",
+      "color": ["Black", "Charcoal"],
+      "description": "Streamlined utility pants with articulated movement and storage for daily carry.",
+      "id": 13,
+      "images": [
+        "/products/pant1/back.png",
+        "/products/pant1/front-left.png",
+        "/products/pant1/front.png",
+        "/products/pant1/left.png"
+      ],
+      "isNew": true,
+      "name": "Motion Pant",
+      "price": 125,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/pant1/front.png"
+    },
+    {
+      "category": "Pant",
+      "color": ["Olive", "Black"],
+      "description": "Hardwearing field trousers shaped for movement with a clean, low-profile finish.",
+      "id": 14,
+      "images": [
+        "/products/pant2/back.png",
+        "/products/pant2/front-left.png",
+        "/products/pant2/front.png",
+        "/products/pant2/left.png"
+      ],
+      "name": "Field Pant",
+      "price": 135,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/pant2/front.png"
+    },
+    {
+      "category": "Pant",
+      "color": ["Sand", "Charcoal"],
+      "description": "Lightweight travel pant with a relaxed technical cut built for all-day wear.",
+      "id": 15,
+      "images": [
+        "/products/pant3/back.png",
+        "/products/pant3/front-left.png",
+        "/products/pant3/front.png",
+        "/products/pant3/left.png"
+      ],
+      "name": "Nomad Pant",
+      "price": 115,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/pant3/front.png"
     }
   ]
 }

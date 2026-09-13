@@ -8,7 +8,7 @@ import { MODEL_IMAGE } from "../../data/content";
 
 const MODEL_PARTICLES = [0, 1, 2, 3, 4];
 
-export default function AiFeatureSection() {
+export const AiFeatureSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -113,4 +113,4 @@ export default function AiFeatureSection() {
       </div>
     </section>
   );
-}
+};

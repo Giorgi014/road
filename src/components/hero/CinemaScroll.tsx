@@ -2,10 +2,10 @@ import { useRef } from "react";
 import { useCinematicScroll } from "../../hooks/useCinematicScroll";
 import HeroVideo from "./HeroVideo";
 import HeroVignette from "./HeroVignette";
-import HeroCopy from "./HeroCopy";
+import { HeroCopy } from "./HeroCopy";
 import VideoHero from "@/assets/hero.mp4";
 
-export default function CinemaScroll() {
+export const CinemaScroll = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
@@ -32,4 +32,4 @@ export default function CinemaScroll() {
       </div>
     </section>
   );
-}
+};

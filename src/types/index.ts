@@ -102,3 +102,10 @@ export interface PriceRangeProps {
   defaultMax?: number;
   onChange?: (range: [number, number]) => void;
 }
+
+export type FooterFormProps = {
+  submit: (e: React.FormEvent) => void;
+  email: string;
+  sent: boolean;
+  setEmail: (value: string) => void;
+};

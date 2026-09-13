@@ -13,11 +13,10 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
 
   return (
     <nav className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6">
-      <Link
-        to="/"
-        className="shrink-0 font-display text-2xl font-bold tracking-[-0.02em] text-white no-underline"
-      >
-        ROAD
+      <Link to="/">
+        <h1 className="shrink-0 font-display text-2xl font-bold tracking-[-0.02em] text-white no-underline">
+          ROAD
+        </h1>
       </Link>
       <ul className="hidden items-center gap-10 list-none m-0 p-0 lg:flex">
         {NAV_LINKS.map((link) => (

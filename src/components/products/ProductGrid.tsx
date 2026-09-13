@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 import Eyebrow from "../ui/Eyebrow";
 import { Button } from "../ui/Button";
 
-export default function ProductGrid() {
+export const ProductGrid = () => {
   const gridRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -79,4 +79,4 @@ export default function ProductGrid() {
       </div>
     </section>
   );
-}
+};

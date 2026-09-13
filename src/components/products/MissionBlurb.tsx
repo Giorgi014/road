@@ -5,7 +5,7 @@ import { MISSION, STATS } from "../../data/content";
 import Eyebrow from "../ui/Eyebrow";
 import { Button } from "../ui/Button";
 
-export default function MissionBlurb() {
+export const MissionBlurb = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
@@ -91,4 +91,4 @@ export default function MissionBlurb() {
       </div>
     </section>
   );
-}
+};
