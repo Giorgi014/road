@@ -47,7 +47,7 @@ export const STATS = [
   { k: "12K+", v: "Explorers equipped" },
   { k: "48", v: "Lab-tested fabrics" },
   { k: "100%", v: "Blockchain verified" },
-  { k: "2031", v: "Design horizon" },
+  { k: "2026", v: "Design horizon" },
 ] as const;
 
 export const PRODUCTS: Product[] = [

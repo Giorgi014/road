@@ -22,7 +22,7 @@ export const Footer = () => {
   return (
     <footer
       id="marketplace"
-      className="relative overflow-hidden border-t border-[#1b2d72] bg-[#030817] pb-16 pt-20"
+      className="relative overflow-hidden border-t border-ink-400 bg-ink-900 pt-15 pb-5"
     >
       <BgCircle />
       <article className="relative mx-auto max-w-[1600px] px-6">
@@ -53,7 +53,7 @@ export const Footer = () => {
                     key={c.label}
                     className="flex items-center gap-3 text-white/70 transition-colors hover:text-white text-sm cursor-pointer"
                   >
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#1b2d72] bg-[#07102b]/70 text-[#00a8ff] backdrop-blur-xl">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-400 bg-ink-800/70 text-electric-300 backdrop-blur-xl">
                       <Icon size={15} strokeWidth={1.8} />
                     </span>
                     {c.label}
@@ -63,7 +63,7 @@ export const Footer = () => {
             </ul>
           </div>
         </section>
-        <section className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 md:flex-row">
+        <section className="mt-5 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-5 md:flex-row">
           <Link to={"/"}>
             <h2 className="font-display text-2xl font-bold text-white">ROAD</h2>
           </Link>

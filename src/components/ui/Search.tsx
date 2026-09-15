@@ -26,7 +26,7 @@ export const SearchValue = ({ onClose }: SearchProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-99999 flex items-start justify-center bg-[rgba(3,8,23,0.85)] backdrop-blur-sm">
+    <div className="fixed inset-0 z-99999 flex items-start justify-center bg-ink-900/85 backdrop-blur-sm">
       <div className="w-[90%] max-w-170 mt-20 lg:mt-10 flex flex-col gap-3">
         <div className="relative flex items-center rounded-full border border-ink-400 bg-ink-800/70 backdrop-blur-xl transition-colors focus-within:border-electric-400">
           <input

@@ -5,9 +5,9 @@ import { ProductGrid } from "../components/products/ProductGrid";
 
 export function Home() {
   return (
-    <main className="bg-[#030817] text-[#f5f7ff]">
+    <main className="bg-ink-900 text-(--ink)">
       <CinemaScroll />
-      <article aria-label="Product types" className="bg-[#0b1745]">
+      <article aria-label="Product types" className="bg-ink-700">
         <ProductGrid />
         <MissionBlurb />
       </article>

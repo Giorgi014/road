@@ -303,6 +303,60 @@
       "price": 115,
       "size": ["S", "M", "L", "XL"],
       "src": "/products/pant3/front.png"
+    },
+    {
+      "category": "Cap",
+      "color": ["Black", "Olive"],
+      "description": "Low-profile utility cap with a structured fit and weather-resistant finish for everyday movement.",
+      "id": 16,
+      "images": [
+        "/products/cap/back.png",
+        "/products/cap/bottom.png",
+        "/products/cap/front-left.png",
+        "/products/cap/front.png",
+        "/products/cap/left.png",
+        "/products/cap/top.png"
+      ],
+      "isNew": true,
+      "name": "Vector Cap",
+      "price": 65,
+      "size": ["S", "M", "L"],
+      "src": "/products/cap/front.png"
+    },
+    {
+      "category": "Helmet",
+      "color": ["Black", "Charcoal", "Silver"],
+      "description": "Impact-ready urban helmet with a ventilated shell and adjustable fit for fast commutes.",
+      "id": 17,
+      "images": [
+        "/products/helmet/back.png",
+        "/products/helmet/bottom.png",
+        "/products/helmet/front-left.png",
+        "/products/helmet/front.png",
+        "/products/helmet/left.png",
+        "/products/helmet/top.png"
+      ],
+      "name": "Apex Helmet",
+      "price": 145,
+      "size": ["S", "M", "L"],
+      "src": "/products/helmet/front.png"
+    },
+    {
+      "category": "Mask",
+      "color": ["Black", "Charcoal"],
+      "description": "Breathable technical face covering with a close fit that keeps its shape through long rides.",
+      "id": 18,
+      "images": [
+        "/products/mask/back.png",
+        "/products/mask/bottom.png",
+        "/products/mask/front.png",
+        "/products/mask/left.png"
+      ],
+      "isNew": true,
+      "name": "Signal Mask",
+      "price": 55,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/mask/front.png"
     }
   ]
 }

@@ -68,9 +68,9 @@ export const AiFeatureSection = () => {
     <section
       id="resources"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#07102b] py-[96px]"
+      className="relative overflow-hidden bg-ink-800 py-15"
     >
-      <div className="pointer-events-none absolute left-[25%] top-[25%] h-[500px] w-[500px] rounded-full bg-[#3155ff]/[0.15] blur-[130px]" />
+      <div className="pointer-events-none absolute left-[25%] top-[25%] h-[500px] w-[500px] rounded-full bg-electric-500/15 blur-[130px]" />
       <div className="relative mx-auto max-w-[1600px] px-6">
         <div className="mb-16 text-center">
           <Eyebrow text="AI / Technology" center />
@@ -81,18 +81,18 @@ export const AiFeatureSection = () => {
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.2fr_1fr_0.8fr]">
           <AiPortal />
           <FeatureList />
-          <div className="ai-model relative min-h-[440px] overflow-hidden rounded-[24px] border border-[#1b2d72] bg-[#030817]">
+          <div className="ai-model relative min-h-[440px] overflow-hidden rounded-3xl border border-ink-400 bg-ink-900">
             <img
               src={MODEL_IMAGE}
               alt="Model with tech goggles and cybernetic details"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,#030817,transparent,rgba(66,103,255,0.1))] shadow-[inset_0_0_100px_rgba(3,8,23,0.85)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--bg-deep),transparent,color-mix(in_srgb,var(--primary-light)_10%,transparent))] shadow-[inset_0_0_100px_var(--bg-deep)]" />
             {MODEL_PARTICLES.map((i) => (
               <span
                 key={i}
-                className="absolute h-1 w-1 rounded-full bg-[#00a8ff] shadow-[0_0_8px_rgba(0,168,255,0.9)] animate-[float_6s_ease-in-out_infinite]"
+                className="absolute h-1 w-1 rounded-full bg-electric-300 shadow-[0_0_8px_var(--cyan)] animate-[float_6s_ease-in-out_infinite]"
                 style={{
                   top: `${30 + ((i * 11) % 50)}%`,
                   left: `${20 + ((i * 19) % 60)}%`,
@@ -101,7 +101,7 @@ export const AiFeatureSection = () => {
               />
             ))}
             <div className="absolute inset-x-5 bottom-5">
-              <p className="mb-1 text-[10px] uppercase tracking-[0.35em] text-[#7d89ad]">
+              <p className="mb-1 text-[10px] uppercase tracking-ultra text-(--ink-dim)">
                 Cybernetic Series
               </p>
               <p className="font-display text-[18px] font-semibold text-white">

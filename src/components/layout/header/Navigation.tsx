@@ -13,11 +13,9 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
 
   return (
     <nav className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6">
-      <Link to="/">
-        <h1 className="shrink-0 font-display text-2xl font-bold tracking-[-0.02em] text-white no-underline">
-          ROAD
-        </h1>
-      </Link>
+      <h1 className="shrink-0 font-display text-2xl font-bold tracking-[-0.02em] text-white no-underline">
+        <Link to="/">ROAD</Link>
+      </h1>
       <ul className="hidden items-center gap-10 list-none m-0 p-0 lg:flex">
         {NAV_LINKS.map((link) => (
           <li key={link.label}>
@@ -45,14 +43,14 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
           className="relative flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
         >
           <ShoppingBag size={18} strokeWidth={1.8} />
-          <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#3155ff] text-[9px] font-bold text-white">
+          <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-electric-500 text-[9px] font-bold text-white">
             0
           </span>
         </button>
         <button
           type="button"
           aria-label="Menu"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#3155ff] to-[#6847ff] text-white transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(49,85,255,0.6)] cursor-pointer"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-electric-500 to-electric-600 text-white transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_-10px_var(--blue-glow)] cursor-pointer"
           onClick={() => setMenuOpen(true)}
         >
           <Menu size={18} strokeWidth={2} />

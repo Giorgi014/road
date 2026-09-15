@@ -18,7 +18,7 @@ export const CinemaScroll = () => {
     <section
       ref={sectionRef}
       id="cinema"
-      className="relative h-screen w-full overflow-hidden bg-[#030817]"
+      className="relative h-screen w-full overflow-hidden bg-ink-900"
       aria-label="ROAD cinematic intro"
     >
       <div className="absolute inset-0 h-full w-full">
@@ -28,7 +28,7 @@ export const CinemaScroll = () => {
       </div>
       <div className="pointer-events-none absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-white/30">
         <span className="text-[10px] uppercase tracking-[0.35em]">Scroll</span>
-        <span className="h-10 w-px bg-gradient-to-b from-[#4267ff] to-transparent" />
+        <span className="h-10 w-px bg-gradient-to-b from-electric-400 to-transparent" />
       </div>
     </section>
   );

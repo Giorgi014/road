@@ -22,7 +22,7 @@ export const HeroCopy = ({ titleRef, copyRef }: HeroCopyProps) => {
         <span className="block">{HERO_COPY.titleTop}</span>
         <span className="text-gradient-blue">{HERO_COPY.titleBottom}</span>
       </h2>
-      <p className="mt-8 max-w-[420px] text-base leading-7 text-[#c9d0e8]">
+      <p className="mt-8 max-w-[420px] text-base leading-7 text-(--ink-dim)">
         {HERO_COPY.paragraph}
       </p>
       <div className="mt-10 flex items-center gap-5">

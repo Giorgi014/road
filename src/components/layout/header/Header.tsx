@@ -21,9 +21,7 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
     const headerClass = [
       "fixed inset-x-0 top-0 z-50 px-0 py-5 transition-all duration-500",
       variant === "overlay" ? "bg-transparent" : "border-b border-transparent",
-      scrolled
-        ? "bg-[rgba(7,16,43,0.8)] py-3 backdrop-blur-xl border-[#1b2d72]"
-        : "",
+      scrolled ? "bg-ink-800/80 py-3 backdrop-blur-xl border-ink-400" : "",
     ]
       .filter(Boolean)
       .join(" ");

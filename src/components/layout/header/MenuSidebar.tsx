@@ -14,7 +14,7 @@ export const MenuSidebar = ({ menuOpen, setMenuOpen }: MenuSidebarProps) => {
   return (
     <>
       <aside
-        className={`absolute right-0 top-0 h-full w-full max-w-[448px] bg-[#0b1745] p-8 transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`absolute right-0 top-0 h-full w-full max-w-[448px] bg-ink-700 p-8 transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="mb-12 flex items-center justify-between">
           <span className="font-display text-2xl font-bold text-white">
@@ -47,7 +47,7 @@ export const MenuSidebar = ({ menuOpen, setMenuOpen }: MenuSidebarProps) => {
                     setMenuOpen(false);
                   }}
                 >
-                  <span className="font-sans text-[12px] text-[#7d89ad]">
+                  <span className="font-sans text-[12px] text-(--ink-dim)">
                     0{i + 1}
                   </span>
                   <span className="font-display text-[30px] font-medium text-white">

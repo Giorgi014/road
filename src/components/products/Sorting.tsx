@@ -14,14 +14,14 @@ export const Sorting = ({ value, onChange }: SortingProps) => {
     <article className="relative w-50">
       <button
         type="button"
-        className="flex justify-between items-center text-start w-full h-10 pl-2.5 pr-2.5 border rounded-md border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300 hover:border-electric-400/60 hover:shadow-[0_0_45px_-12px_rgba(66,103,255,0.55)] cursor-pointer"
+        className="flex justify-between items-center text-start w-full h-10 pl-2.5 pr-2.5 border rounded-md border-ink-400/40 bg-ink-800/60 backdrop-blur-sm transition-all duration-300 hover:border-electric-400/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)] cursor-pointer"
         onClick={() => openSorting()}
       >
         {value.label}
         <ChevronDown />
       </button>
       {open ? (
-        <ul className="absolute z-20 mt-2 w-full overflow-hidden rounded-md border border-ink-400/40 bg-ink-800/95 backdrop-blur-md shadow-[0_18px_50px_rgba(3,8,23,0.55)]">
+        <ul className="absolute z-20 mt-2 w-full overflow-hidden rounded-md border border-ink-400/40 bg-ink-800/95 backdrop-blur-md shadow-(--shadow-soft)">
           {OPTIONS.map((option) => (
             <li key={option.value}>
               <button

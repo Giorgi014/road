@@ -49,7 +49,7 @@ export const ProductGrid = () => {
   );
 
   return (
-    <section id="explore" className="relative bg-[#07102b] py-[96px]">
+    <section id="explore" className="relative bg-ink-800 py-15">
       <div className="mx-auto max-w-[1600px] px-6">
         <Eyebrow text="Categories" />
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
@@ -69,7 +69,7 @@ export const ProductGrid = () => {
             <h2 className="font-display text-[clamp(1.5rem,5vw,3.5rem)] font-bold leading-[1] tracking-[-0.02em] text-white">
               Shop by <span className="text-gradient-blue">System</span>
             </h2>
-            <p className="text-sm leading-6 text-[#c9d0e8]">
+            <p className="text-sm leading-6 text-(--ink-dim)">
               Four engineered categories. Each piece designed to integrate —
               layer, carry, move, and protect.
             </p>

@@ -22,7 +22,7 @@ export const ProductCard = ({
       onClick={productDetails}
     >
       {isNew && (
-        <div className="flex justify-center items-center absolute top-4 right-4 z-10 rounded-full bg-[image:var(--pill-grad)] px-3 py-1 shadow-[0_0_20px_-4px_rgba(104,71,255,0.9)]">
+        <div className="flex justify-center items-center absolute top-4 right-4 z-10 rounded-full bg-[image:var(--pill-grad)] px-3 py-1 shadow-[0_0_20px_-4px_var(--violet)]">
           <p className="mt-[0.5px] ml-0.5 text-[10px] tracking-ultra font-sans text-white">
             NEW
           </p>
