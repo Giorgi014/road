@@ -1,5 +1,5 @@
+import { Button } from "@/components/ui/Button";
 import type { FooterFormProps } from "@/types";
-import { ArrowRight } from "lucide-react";
 
 export const Form = ({ submit, email, sent, setEmail }: FooterFormProps) => {
   return (
@@ -13,15 +13,7 @@ export const Form = ({ submit, email, sent, setEmail }: FooterFormProps) => {
           placeholder="your@email.com"
           className="flex-1 border-none bg-transparent px-5 py-3 text-sm text-white outline-none placeholder:text-white/30"
         />
-        <button
-          type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-[image:var(--pill-grad)] px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-shadow hover:shadow-[0_0_40px_-10px_var(--blue-glow)]"
-        >
-          Subscribe
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-1">
-            <ArrowRight size={12} />
-          </span>
-        </button>
+        <Button href="#subscribe" label="Subscribe" />
       </section>
       {sent && (
         <p className="mt-3 text-xs text-electric-300">

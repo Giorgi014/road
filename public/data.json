@@ -357,6 +357,60 @@
       "price": 55,
       "size": ["S", "M", "L", "XL"],
       "src": "/products/mask/front.png"
+    },
+    {
+      "category": "Backpack",
+      "color": ["Black", "Charcoal", "Olive"],
+      "description": "Weather-sealed carry pack with modular storage pockets and a balanced frame built for long urban and trail days.",
+      "id": 19,
+      "images": [
+        "/products/backpack1/back.png",
+        "/products/backpack1/bottom.png",
+        "/products/backpack1/front-left.png",
+        "/products/backpack1/front.png",
+        "/products/backpack1/left.png",
+        "/products/backpack1/top.png"
+      ],
+      "isNew": true,
+      "name": "Aero Pack",
+      "price": 140,
+      "size": ["S", "M", "L"],
+      "src": "/products/backpack1/front.png"
+    },
+    {
+      "category": "Backpack",
+      "color": ["Sand", "Charcoal", "Black"],
+      "description": "Low-profile travel backpack with quick-access compartments and a breathable, all-day carrying system.",
+      "id": 20,
+      "images": [
+        "/products/backpack2/back.png",
+        "/products/backpack2/bottom.png",
+        "/products/backpack2/front-left.png",
+        "/products/backpack2/front.png",
+        "/products/backpack2/left.png",
+        "/products/backpack2/top.png"
+      ],
+      "name": "Drift Pack",
+      "price": 160,
+      "size": ["S", "M", "L"],
+      "src": "/products/backpack2/front.png"
+    },
+    {
+      "category": "Goggles",
+      "color": ["Black", "Silver", "Smoke"],
+      "description": "Protective low-profile eyewear with anti-fog lens treatment and a secure wrap fit for fast-moving days.",
+      "id": 21,
+      "images": [
+        "/products/goggles/back.png",
+        "/products/goggles/front-left.png",
+        "/products/goggles/front.png",
+        "/products/goggles/left.png"
+      ],
+      "isNew": true,
+      "name": "Vector Goggles",
+      "price": 120,
+      "size": ["S", "M", "L"],
+      "src": "/products/goggles/front.png"
     }
   ]
 }
