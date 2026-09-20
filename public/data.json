@@ -226,17 +226,17 @@
       "description": "Technical all-weather boot with a reinforced toe and stable grip for long days on the move.",
       "id": 11,
       "images": [
-        "/products/boot1/back.png",
-        "/products/boot1/bottom.png",
-        "/products/boot1/front-left.png",
-        "/products/boot1/front.png",
-        "/products/boot1/left.png"
+        "/products/boot1/back.webp",
+        "/products/boot1/bottom.webp",
+        "/products/boot1/front-left.webp",
+        "/products/boot1/front.webp",
+        "/products/boot1/left.webp"
       ],
       "isNew": true,
       "name": "Vector Boot",
       "price": 190,
       "size": ["40", "41", "42", "43", "44", "45"],
-      "src": "/products/boot1/front.png"
+      "src": "/products/boot1/front.webp"
     },
     {
       "category": "Boot",
@@ -244,16 +244,16 @@
       "description": "Rugged field boot with a flexible sole and weather-ready finish for changing terrain.",
       "id": 12,
       "images": [
-        "/products/boot2/back.png",
-        "/products/boot2/bottom.png",
-        "/products/boot2/front-left.png",
-        "/products/boot2/front.png",
-        "/products/boot2/left.png"
+        "/products/boot2/back.webp",
+        "/products/boot2/bottom.webp",
+        "/products/boot2/front-left.webp",
+        "/products/boot2/front.webp",
+        "/products/boot2/left.webp"
       ],
       "name": "Terrain Boot",
       "price": 210,
       "size": ["40", "41", "42", "43", "44", "45"],
-      "src": "/products/boot2/front.png"
+      "src": "/products/boot2/front.webp"
     },
     {
       "category": "Pant",
@@ -261,16 +261,16 @@
       "description": "Streamlined utility pants with articulated movement and storage for daily carry.",
       "id": 13,
       "images": [
-        "/products/pant1/back.png",
-        "/products/pant1/front-left.png",
-        "/products/pant1/front.png",
-        "/products/pant1/left.png"
+        "/products/pant1/back.webp",
+        "/products/pant1/front-left.webp",
+        "/products/pant1/front.webp",
+        "/products/pant1/left.webp"
       ],
       "isNew": true,
       "name": "Motion Pant",
       "price": 125,
       "size": ["S", "M", "L", "XL"],
-      "src": "/products/pant1/front.png"
+      "src": "/products/pant1/front.webp"
     },
     {
       "category": "Pant",
@@ -278,15 +278,15 @@
       "description": "Hardwearing field trousers shaped for movement with a clean, low-profile finish.",
       "id": 14,
       "images": [
-        "/products/pant2/back.png",
-        "/products/pant2/front-left.png",
-        "/products/pant2/front.png",
-        "/products/pant2/left.png"
+        "/products/pant2/back.webp",
+        "/products/pant2/front-left.webp",
+        "/products/pant2/front.webp",
+        "/products/pant2/left.webp"
       ],
       "name": "Field Pant",
       "price": 135,
       "size": ["S", "M", "L", "XL"],
-      "src": "/products/pant2/front.png"
+      "src": "/products/pant2/front.webp"
     },
     {
       "category": "Pant",
@@ -294,15 +294,15 @@
       "description": "Lightweight travel pant with a relaxed technical cut built for all-day wear.",
       "id": 15,
       "images": [
-        "/products/pant3/back.png",
-        "/products/pant3/front-left.png",
-        "/products/pant3/front.png",
-        "/products/pant3/left.png"
+        "/products/pant3/back.webp",
+        "/products/pant3/front-left.webp",
+        "/products/pant3/front.webp",
+        "/products/pant3/left.webp"
       ],
       "name": "Nomad Pant",
       "price": 115,
       "size": ["S", "M", "L", "XL"],
-      "src": "/products/pant3/front.png"
+      "src": "/products/pant3/front.webp"
     },
     {
       "category": "Cap",
@@ -310,18 +310,18 @@
       "description": "Low-profile utility cap with a structured fit and weather-resistant finish for everyday movement.",
       "id": 16,
       "images": [
-        "/products/cap/back.png",
-        "/products/cap/bottom.png",
-        "/products/cap/front-left.png",
-        "/products/cap/front.png",
-        "/products/cap/left.png",
-        "/products/cap/top.png"
+        "/products/cap/back.webp",
+        "/products/cap/bottom.webp",
+        "/products/cap/front-left.webp",
+        "/products/cap/front.webp",
+        "/products/cap/left.webp",
+        "/products/cap/top.webp"
       ],
       "isNew": true,
       "name": "Vector Cap",
       "price": 65,
       "size": ["S", "M", "L"],
-      "src": "/products/cap/front.png"
+      "src": "/products/cap/front.webp"
     },
     {
       "category": "Helmet",
@@ -329,17 +329,17 @@
       "description": "Impact-ready urban helmet with a ventilated shell and adjustable fit for fast commutes.",
       "id": 17,
       "images": [
-        "/products/helmet/back.png",
-        "/products/helmet/bottom.png",
-        "/products/helmet/front-left.png",
-        "/products/helmet/front.png",
-        "/products/helmet/left.png",
-        "/products/helmet/top.png"
+        "/products/helmet/back.webp",
+        "/products/helmet/bottom.webp",
+        "/products/helmet/front-left.webp",
+        "/products/helmet/front.webp",
+        "/products/helmet/left.webp",
+        "/products/helmet/top.webp"
       ],
       "name": "Apex Helmet",
       "price": 145,
       "size": ["S", "M", "L"],
-      "src": "/products/helmet/front.png"
+      "src": "/products/helmet/front.webp"
     },
     {
       "category": "Mask",
@@ -347,16 +347,16 @@
       "description": "Breathable technical face covering with a close fit that keeps its shape through long rides.",
       "id": 18,
       "images": [
-        "/products/mask/back.png",
-        "/products/mask/bottom.png",
-        "/products/mask/front.png",
-        "/products/mask/left.png"
+        "/products/mask/back.webp",
+        "/products/mask/bottom.webp",
+        "/products/mask/front.webp",
+        "/products/mask/left.webp"
       ],
       "isNew": true,
       "name": "Signal Mask",
       "price": 55,
       "size": ["S", "M", "L", "XL"],
-      "src": "/products/mask/front.png"
+      "src": "/products/mask/front.webp"
     },
     {
       "category": "Backpack",
@@ -364,18 +364,18 @@
       "description": "Weather-sealed carry pack with modular storage pockets and a balanced frame built for long urban and trail days.",
       "id": 19,
       "images": [
-        "/products/backpack1/back.png",
-        "/products/backpack1/bottom.png",
-        "/products/backpack1/front-left.png",
-        "/products/backpack1/front.png",
-        "/products/backpack1/left.png",
-        "/products/backpack1/top.png"
+        "/products/backpack1/back.webp",
+        "/products/backpack1/bottom.webp",
+        "/products/backpack1/front-left.webp",
+        "/products/backpack1/front.webp",
+        "/products/backpack1/left.webp",
+        "/products/backpack1/top.webp"
       ],
       "isNew": true,
       "name": "Aero Pack",
       "price": 140,
       "size": ["S", "M", "L"],
-      "src": "/products/backpack1/front.png"
+      "src": "/products/backpack1/front.webp"
     },
     {
       "category": "Backpack",
@@ -383,17 +383,17 @@
       "description": "Low-profile travel backpack with quick-access compartments and a breathable, all-day carrying system.",
       "id": 20,
       "images": [
-        "/products/backpack2/back.png",
-        "/products/backpack2/bottom.png",
-        "/products/backpack2/front-left.png",
-        "/products/backpack2/front.png",
-        "/products/backpack2/left.png",
-        "/products/backpack2/top.png"
+        "/products/backpack2/back.webp",
+        "/products/backpack2/bottom.webp",
+        "/products/backpack2/front-left.webp",
+        "/products/backpack2/front.webp",
+        "/products/backpack2/left.webp",
+        "/products/backpack2/top.webp"
       ],
       "name": "Drift Pack",
       "price": 160,
       "size": ["S", "M", "L"],
-      "src": "/products/backpack2/front.png"
+      "src": "/products/backpack2/front.webp"
     },
     {
       "category": "Goggles",
@@ -401,16 +401,121 @@
       "description": "Protective low-profile eyewear with anti-fog lens treatment and a secure wrap fit for fast-moving days.",
       "id": 21,
       "images": [
-        "/products/goggles/back.png",
-        "/products/goggles/front-left.png",
-        "/products/goggles/front.png",
-        "/products/goggles/left.png"
+        "/products/goggles/back.webp",
+        "/products/goggles/front-left.webp",
+        "/products/goggles/front.webp",
+        "/products/goggles/left.webp"
       ],
       "isNew": true,
       "name": "Vector Goggles",
       "price": 120,
       "size": ["S", "M", "L"],
-      "src": "/products/goggles/front.png"
+      "src": "/products/goggles/front.webp"
+    },
+    {
+      "category": "Backpack",
+      "color": ["Black", "Olive", "Sand"],
+      "description": "Expandable day pack with a structured carry system and fast-access storage for changing routes.",
+      "id": 22,
+      "images": [
+        "/products/backpack3/back.webp",
+        "/products/backpack3/bottom.webp",
+        "/products/backpack3/front-left.webp",
+        "/products/backpack3/front.webp",
+        "/products/backpack3/left.webp",
+        "/products/backpack3/top.webp"
+      ],
+      "isNew": true,
+      "name": "Traverse Pack",
+      "price": 175,
+      "size": ["S", "M", "L"],
+      "src": "/products/backpack3/front.webp"
+    },
+    {
+      "category": "Bag",
+      "color": ["Black", "Charcoal", "Sand"],
+      "description": "Compact utility bag with flexible compartments for essentials on short missions and long commutes.",
+      "id": 23,
+      "images": [
+        "/products/bag/back.webp",
+        "/products/bag/bottom.webp",
+        "/products/bag/front-left.webp",
+        "/products/bag/front.webp",
+        "/products/bag/left.webp",
+        "/products/bag/top.webp"
+      ],
+      "name": "Axis Bag",
+      "price": 95,
+      "size": ["S", "M", "L"],
+      "src": "/products/bag/front.webp"
+    },
+    {
+      "category": "Vest",
+      "color": ["Black", "Olive", "Charcoal"],
+      "description": "Modular utility vest with a close fit and adaptable storage for movement through dense terrain.",
+      "id": 24,
+      "images": [
+        "/products/vest/back.webp",
+        "/products/vest/bottom.webp",
+        "/products/vest/front-left.webp",
+        "/products/vest/front.webp",
+        "/products/vest/left.webp",
+        "/products/vest/top.webp"
+      ],
+      "isNew": true,
+      "name": "Vector Vest",
+      "price": 130,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/vest/front.webp"
+    },
+    {
+      "category": "Glove",
+      "color": ["Black", "Charcoal", "Olive"],
+      "description": "Precision-fit grip glove with tactile palm controls and lightweight insulation for all-day handling in changing conditions.",
+      "id": 25,
+      "images": [
+        "/products/glove1/back.webp",
+        "/products/glove1/front-left.webp",
+        "/products/glove1/front.webp",
+        "/products/glove1/left.webp"
+      ],
+      "isNew": true,
+      "name": "Signal Glove",
+      "price": 85,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/glove1/front.webp"
+    },
+    {
+      "category": "Glove",
+      "color": ["Black", "Olive", "Sand"],
+      "description": "Weather-ready hand protection with reinforced grip surfaces built for fast movement and cold-weather handling.",
+      "id": 26,
+      "images": [
+        "/products/glove2/back.webp",
+        "/products/glove2/front.webp",
+        "/products/glove2/left.webp"
+      ],
+      "name": "Apex Grip Glove",
+      "price": 95,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/glove2/front.webp"
+    },
+    {
+      "category": "Vest",
+      "color": ["Black", "Charcoal", "Sand"],
+      "description": "Layered utility vest with modular carry points and a streamlined profile built for quick access on the move.",
+      "id": 27,
+      "images": [
+        "/products/vest2/back.webp",
+        "/products/vest2/front-left.webp",
+        "/products/vest2/front.webp",
+        "/products/vest2/left.webp"
+      ],
+      "isNew": true,
+      "name": "Flux Vest",
+      "price": 150,
+      "size": ["S", "M", "L", "XL"],
+      "src": "/products/vest2/front.webp"
     }
   ]
 }

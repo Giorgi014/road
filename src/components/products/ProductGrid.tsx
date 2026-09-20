@@ -1,14 +1,19 @@
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "../../lib/gsap";
-import { HERO_COPY, PRODUCTS } from "../../data/content";
-import ProductCard from "./ProductCard";
+import { HERO_COPY } from "../../data/content";
 import Eyebrow from "../ui/Eyebrow";
 import { Button } from "../ui/Button";
+import { ProductCard } from "../ui/ProductCard";
+import { useData } from "@/context/data/use-data";
+import { getCategoryCards } from "@/lib/getCategories";
 
 export const ProductGrid = () => {
   const gridRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const { data } = useData();
+
+  const categories = useMemo(() => getCategoryCards(data ?? []), [data]);
 
   useGSAP(
     () => {
@@ -57,8 +62,16 @@ export const ProductGrid = () => {
             ref={gridRef}
             className="grid flex-1 grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4"
           >
-            {PRODUCTS.map((product, i) => (
-              <ProductCard key={product.id} product={product} index={i} />
+            {categories.map((item) => (
+              <ProductCard
+                key={item.id}
+                id={item.id}
+                src={item.imageSrc}
+                alt={item.label}
+                name={item.label}
+                href={item.href}
+                variant="category"
+              />
             ))}
           </div>
 

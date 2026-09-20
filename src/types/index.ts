@@ -24,7 +24,9 @@ export interface ProductCardProps {
   src: string;
   alt: string;
   name: string;
-  price: number;
+  price?: number;
+  href?: string;
+  variant?: "product" | "category";
 }
 
 export interface SearchedProductProps {
