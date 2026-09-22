@@ -1,6 +1,7 @@
 import { Cpu, Hand, ShieldCheck, Bitcoin } from "lucide-react";
 import type {
   AllCategories,
+  ContactHero,
   FeatureItem,
   NavLink,
   OptionsType,
@@ -9,18 +10,23 @@ import type {
   Sizes,
 } from "../types";
 
+export const CONTACT_HERO: ContactHero = {
+  headlineTop: "we're here",
+  headlineBottom: "to connect",
+};
+
 export const NAV_LINKS: NavLink[] = [
   { label: "Marketplace", href: "/marketplace" },
-  { label: "Resources", href: "#resources" },
+  { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const SIDEBAR_LINKS: SidebarLink[] = [
   { label: "Marketplace", href: "/marketplace" },
   { label: "Resources", href: "#resources" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
   { label: "Authorization", href: "#", action: "auth" },
 ];
 

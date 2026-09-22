@@ -3,7 +3,7 @@ import type { FooterFormProps } from "@/types";
 
 export const Form = ({ submit, email, sent, setEmail }: FooterFormProps) => {
   return (
-    <form onSubmit={submit} className="mt-10 max-w-[448px]">
+    <form onSubmit={submit} className="w-full mt-10 max-w-md overflow-hidden">
       <section className="flex items-center gap-2 rounded-full border border-ink-400 bg-ink-800/70 p-1.5 backdrop-blur-xl focus-within:border-electric-400">
         <input
           type="email"

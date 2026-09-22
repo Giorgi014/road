@@ -27,7 +27,7 @@ export const Footer = () => {
       <BgCircle />
       <article className="relative mx-auto max-w-[1600px] px-6">
         <section className="grid grid-cols-1 gap-12 lg:grid-cols-[7fr_5fr]">
-          <div>
+          <div className="flex w-full flex-col items-center lg:items-start">
             <h2 className="font-display text-[clamp(3rem,6vw,5rem)] font-bold leading-[0.95] tracking-[-0.02em] text-white">
               <span className="block">{FOOTER.headlineTop}</span>
               <span className="text-gradient-blue block">
@@ -42,7 +42,7 @@ export const Footer = () => {
             />
           </div>
           <div className="lg:pl-8">
-            <p className="mb-5 text-[11px] uppercase tracking-[0.35em] text-white/40">
+            <p className="mb-5 text-[11px] uppercase tracking-ultra text-white/40">
               Contact
             </p>
             <ul className="m-0 flex list-none flex-col gap-4 p-0">
@@ -72,13 +72,13 @@ export const Footer = () => {
               <Link
                 to={"#"}
                 key={l}
-                className="text-[10px] uppercase tracking-[0.35em] text-white/30 transition-colors hover:text-white/70 no-underline"
+                className="text-[10px] uppercase tracking-ultra text-white/30 transition-colors hover:text-white/70 no-underline"
               >
                 {l}
               </Link>
             ))}
           </ul>
-          <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
+          <p className="text-[10px] uppercase tracking-ultra text-white/30">
             © 2026 Road Systems
           </p>
         </section>

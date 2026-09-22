@@ -516,6 +516,57 @@
       "price": 150,
       "size": ["S", "M", "L", "XL"],
       "src": "/products/vest2/front.webp"
+    },
+    {
+      "category": "Headphone",
+      "color": ["Black", "Silver", "Sand"],
+      "description": "Noise-isolating wireless audio with a lightweight build and all-day comfort for moving between routes and spaces.",
+      "id": 28,
+      "images": [
+        "/products/headphone/back.webp",
+        "/products/headphone/front.webp",
+        "/products/headphone/left.webp",
+        "/products/headphone/top.webp"
+      ],
+      "isNew": true,
+      "name": "Pulse Headphone",
+      "price": 110,
+      "size": ["S", "M", "L"],
+      "src": "/products/headphone/front.webp"
+    },
+    {
+      "category": "Necklace",
+      "color": ["Black", "Silver", "Olive"],
+      "description": "Lightweight utility necklace with a durable finish and clean silhouette designed for everyday carry.",
+      "id": 29,
+      "images": [
+        "/products/necklace/back.webp",
+        "/products/necklace/front.webp",
+        "/products/necklace/left.webp",
+        "/products/necklace/top.webp"
+      ],
+      "isNew": true,
+      "name": "Apex Necklace",
+      "price": 80,
+      "size": ["S", "M", "L"],
+      "src": "/products/necklace/front.webp"
+    },
+    {
+      "category": "Smartwatch",
+      "color": ["Black", "Charcoal", "Silver"],
+      "description": "Performance-focused wearable with responsive tracking, rugged styling, and all-day durability.",
+      "id": 30,
+      "images": [
+        "/products/smartwatch/back.webp",
+        "/products/smartwatch/front.webp",
+        "/products/smartwatch/left.webp",
+        "/products/smartwatch/top.webp"
+      ],
+      "isNew": true,
+      "name": "Trail Smartwatch",
+      "price": 220,
+      "size": ["M", "L"],
+      "src": "/products/smartwatch/front.webp"
     }
   ]
 }
