@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 
-export interface ContactHero {
+export interface ContactPage {
+  eyebrow: string;
   headlineTop: string;
   headlineBottom: string;
+  paragraph: string;
 }
 
 export interface NavLink {

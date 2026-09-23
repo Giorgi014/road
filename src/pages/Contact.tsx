@@ -2,7 +2,7 @@ import { ContactHero } from "@/components/contact/ContactHero";
 
 const Contact = () => {
   return (
-    <article>
+    <article className="p-5 mt-19">
       <ContactHero />
     </article>
   );

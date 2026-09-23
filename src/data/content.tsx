@@ -1,7 +1,7 @@
 import { Cpu, Hand, ShieldCheck, Bitcoin } from "lucide-react";
 import type {
   AllCategories,
-  ContactHero,
+  ContactPage,
   FeatureItem,
   NavLink,
   OptionsType,
@@ -10,9 +10,12 @@ import type {
   Sizes,
 } from "../types";
 
-export const CONTACT_HERO: ContactHero = {
+export const CONTACT_PAGE: ContactPage = {
+  eyebrow: "Lets Connect",
   headlineTop: "we're here",
   headlineBottom: "to connect",
+  paragraph:
+    "Have a question, collaboration idea or just want to say hi? Fill out the form and our team will get back to you as soon as possible. Let's build the future together.",
 };
 
 export const NAV_LINKS: NavLink[] = [

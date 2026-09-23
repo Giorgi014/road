@@ -12,7 +12,7 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
   const [isSearch, setIsSearch] = useState(false);
 
   return (
-    <nav className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-6">
+    <nav className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-5">
       <h1 className="shrink-0 font-display text-2xl font-bold tracking-[-0.02em] text-white no-underline">
         <Link to="/">ROAD</Link>
       </h1>
