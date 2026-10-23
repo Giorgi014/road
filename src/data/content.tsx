@@ -19,15 +19,15 @@ export const CONTACT_PAGE: ContactPage = {
 };
 
 export const NAV_LINKS: NavLink[] = [
+  { label: "Home", href: "/" },
   { label: "Marketplace", href: "/marketplace" },
-  { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const SIDEBAR_LINKS: SidebarLink[] = [
+  { label: "Home", href: "/" },
   { label: "Marketplace", href: "/marketplace" },
-  { label: "Resources", href: "#resources" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Authorization", href: "#", action: "auth" },

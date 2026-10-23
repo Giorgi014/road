@@ -2,7 +2,7 @@ import { SearchValue } from "@/components/ui/Search";
 import { NAV_LINKS } from "@/data/content";
 import { Search, ShoppingBag, Menu } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type NavigationProps = {
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,12 +19,12 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
       <ul className="hidden items-center gap-10 list-none m-0 p-0 lg:flex">
         {NAV_LINKS.map((link) => (
           <li key={link.label}>
-            <Link
+            <NavLink
               to={link.href}
-              className="text-[11px] font-medium uppercase tracking-[0.35em] text-white/60 no-underline transition-colors hover:text-white"
+              className="relative text-[11px] font-medium uppercase tracking-[0.35em] text-white/60 no-underline transition-colors duration-[400ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] after:pointer-events-none after:absolute after:-bottom-0.5 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:content-[''] after:transition-[width,left] after:duration-[400ms] after:ease-[cubic-bezier(0.25,0.8,0.25,1)] hover:text-white hover:after:left-0 hover:after:w-full focus-visible:text-white focus-visible:after:left-0 focus-visible:after:w-full aria-[current=page]:text-white aria-[current=page]:after:left-0 aria-[current=page]:after:w-full"
             >
               {link.label}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
