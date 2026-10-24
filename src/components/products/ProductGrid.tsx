@@ -1,12 +1,9 @@
 import { useMemo, useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "../../lib/gsap";
-import { HERO_COPY } from "../../data/content";
-import Eyebrow from "../ui/Eyebrow";
-import { Button } from "../ui/Button";
-import { ProductCard } from "../ui/ProductCard";
-import { useData } from "@/context/data/use-data";
-import { getCategoryCards } from "@/lib/getCategories";
+import { gsap, getCategoryCards } from "@/lib";
+import { HERO_COPY } from "@/data";
+import { Button, Eyebrow, ProductCard } from "@/components/ui";
+import { useData } from "@/context/data";
 
 export const ProductGrid = () => {
   const gridRef = useRef<HTMLDivElement>(null);

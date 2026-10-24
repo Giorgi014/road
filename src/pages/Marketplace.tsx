@@ -1,12 +1,14 @@
-import { ProductCard } from "@/components/ui/ProductCard";
-import { Categories } from "@/components/products/Categories";
-import { PriceRange } from "@/components/products/PriceRange";
-import { Size } from "@/components/products/Size";
-import { Sorting } from "@/components/products/Sorting";
+import { ProductCard } from "@/components/ui";
+import {
+  Categories,
+  PriceRange,
+  Size,
+  Sorting,
+} from "@/components/products";
 import { useMemo, useState } from "react";
 import { OPTIONS } from "@/data/content";
 import type { OptionsType } from "@/types";
-import { useData } from "@/context/data/use-data";
+import { useData } from "@/context/data";
 import { SlidersHorizontal, X } from "lucide-react";
 
 const PRICE_MIN = 50;

@@ -1,6 +1,6 @@
 import { useRef, useLayoutEffect } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "../lib/gsap";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 interface Options {
   sectionRef: React.RefObject<HTMLElement | null>;

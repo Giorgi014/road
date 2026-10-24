@@ -1,6 +1,5 @@
-import { Button } from "../ui/Button";
-import Eyebrow from "../ui/Eyebrow";
-import { HERO_COPY } from "../../data/content";
+import { Button, Eyebrow } from "@/components/ui";
+import { HERO_COPY } from "@/data";
 import { Link } from "react-router-dom";
 
 interface HeroCopyProps {

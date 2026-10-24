@@ -1,4 +1,4 @@
-import { FEATURE_ITEMS } from "../../data/content";
+import { FEATURE_ITEMS } from "@/data";
 
 export default function FeatureList() {
   return (

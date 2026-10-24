@@ -1,4 +1,4 @@
-import { useData } from "@/context/data/use-data";
+import { useData } from "@/context/data";
 import { Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";

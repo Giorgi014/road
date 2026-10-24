@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui";
 import type { FooterFormProps } from "@/types";
 
 export const Form = ({ submit, email, sent, setEmail }: FooterFormProps) => {

@@ -34,6 +34,47 @@
   --animate-spin-slow: spinSlow 24s linear infinite;
   --animate-scan: scan 6s linear infinite;
   --animate-fade-up: fadeUp 0.8s ease-out forwards;
+
+  --animate-warp-ring: warpRing 2.2s ease-out infinite;
+  --animate-core-pulse: corePulse 1.6s ease-in-out infinite;
+
+  --shadow-warp-ring:
+    0 0 12px color-mix(in srgb, var(--primary) 40%, transparent),
+    0 0 24px color-mix(in srgb, var(--primary) 20%, transparent);
+  --shadow-warp-core:
+    0 0 25px var(--primary),
+    0 0 60px color-mix(in srgb, var(--primary) 53%, transparent),
+    0 0 100px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+}
+
+@keyframes warpRing {
+  0% {
+    scale: 0.3;
+    opacity: 1;
+  }
+  70% {
+    scale: 1.1;
+    opacity: 0.15;
+  }
+  100% {
+    scale: 1.4;
+    opacity: 0;
+  }
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
 }
 
 :root {

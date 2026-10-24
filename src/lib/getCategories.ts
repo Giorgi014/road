@@ -1,5 +1,5 @@
 import type { AllProducts, Product } from "@/types";
-import { CATEGORY_GROUPS } from "./categoryGroups";
+import { CATEGORY_GROUPS } from "@/lib/categoryGroups";
 
 export const getCategoryCards = (products: AllProducts[]): Product[] => {
   return CATEGORY_GROUPS.map((group, index) => {

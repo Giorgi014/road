@@ -1,9 +1,8 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "../../lib/gsap";
-import { MISSION, STATS } from "../../data/content";
-import Eyebrow from "../ui/Eyebrow";
-import { Button } from "../ui/Button";
+import { gsap } from "@/lib";
+import { MISSION, STATS } from "@/data";
+import { Button, Eyebrow } from "@/components/ui";
 
 export const MissionBlurb = () => {
   const sectionRef = useRef<HTMLElement>(null);

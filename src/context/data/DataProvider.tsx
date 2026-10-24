@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import type { AllProducts } from "@/types";
-import { DataContext, type CartItem } from "./data-context";
+import { DataContext, type CartItem } from "@/context/data/data-context";
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
   const [data, setData] = useState<AllProducts[] | null>(null);

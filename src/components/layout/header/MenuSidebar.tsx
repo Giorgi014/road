@@ -1,5 +1,5 @@
-import { AuthModal } from "@/components/authorization/AuthModal";
-import { SIDEBAR_LINKS } from "@/data/content";
+import { AuthModal } from "@/components/authorization";
+import { SIDEBAR_LINKS } from "@/data";
 import { X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";

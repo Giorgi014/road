@@ -1,4 +1,4 @@
-import { PORTAL_IMAGE } from "../../data/content";
+import { PORTAL_IMAGE } from "@/data";
 
 const PARTICLES = [0, 1, 2, 3, 4, 5];
 

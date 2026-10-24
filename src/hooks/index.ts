@@ -1,0 +1,1 @@
+export { useCinematicScroll } from "./useCinematicScroll";

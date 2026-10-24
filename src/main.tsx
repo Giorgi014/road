@@ -1,13 +1,10 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.tsx";
-import { Home } from "./pages/Home.tsx";
-import Marketplace from "./pages/Marketplace.tsx";
-import About from "./pages/About.tsx";
-import Details from "./pages/Details.tsx";
-import { DataProvider } from "./context/data/DataProvider.tsx";
-import Contact from "./pages/Contact.tsx";
+import App from "@/App";
+import { DataProvider } from "@/context/data";
+import { Loader } from "./components/ui";
+import { About, Contact, Details, Home, Marketplace } from "./pages/lazy";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -27,7 +24,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <DataProvider>
-      <RouterProvider router={router} />
+      <Suspense fallback={<Loader />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </DataProvider>
   </StrictMode>,
 );

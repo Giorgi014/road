@@ -5,10 +5,9 @@ import type {
   FeatureItem,
   NavLink,
   OptionsType,
-  Product,
   SidebarLink,
   Sizes,
-} from "../types";
+} from "@/types";
 
 export const CONTACT_PAGE: ContactPage = {
   eyebrow: "Lets Connect",
@@ -58,37 +57,6 @@ export const STATS = [
   { k: "100%", v: "Blockchain verified" },
   { k: "2026", v: "Design horizon" },
 ] as const;
-
-export const PRODUCTS: Product[] = [
-  {
-    id: 0,
-    label: "Jackets",
-    href: "#",
-    imageSrc:
-      "https://images.pexels.com/photos/8108297/pexels-photo-8108297.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 1,
-    label: "Backpacks",
-    href: "#",
-    imageSrc:
-      "https://images.pexels.com/photos/16359250/pexels-photo-16359250.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 2,
-    label: "Boots",
-    href: "#",
-    imageSrc:
-      "https://images.pexels.com/photos/33937416/pexels-photo-33937416.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 3,
-    label: "Full Fit",
-    href: "#",
-    imageSrc:
-      "https://images.pexels.com/photos/8108387/pexels-photo-8108387.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-];
 
 export const FEATURE_ITEMS: FeatureItem[] = [
   {

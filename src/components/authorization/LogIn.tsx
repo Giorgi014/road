@@ -1,5 +1,4 @@
-import { AuthBtn } from "../ui/AuthBtn";
-import { Input } from "../ui/Input";
+import { AuthBtn, Input } from "@/components/ui";
 
 export const LogIn = () => {
   return (

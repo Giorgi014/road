@@ -1,4 +1,4 @@
-import { ContactHero } from "@/components/contact/ContactHero";
+import { ContactHero } from "@/components/contact";
 
 const Contact = () => {
   return (

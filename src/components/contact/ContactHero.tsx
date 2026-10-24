@@ -1,6 +1,6 @@
-import { CONTACT_PAGE } from "@/data/content";
-import { Form } from "../form/Form";
-import Eyebrow from "../ui/Eyebrow";
+import { CONTACT_PAGE } from "@/data";
+import { ContactForm } from "@/components/form";
+import { Eyebrow } from "@/components/ui";
 
 export const ContactHero = () => {
   return (
@@ -18,7 +18,7 @@ export const ContactHero = () => {
         </p>
       </div>
       <div className="w-full md:mt-0 mt-5 flex justify-center items-center">
-        <Form />
+        <ContactForm />
       </div>
     </section>
   );

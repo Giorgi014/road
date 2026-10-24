@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FOOTER } from "../../../data/content";
+import { FOOTER } from "@/data";
 import { Link } from "react-router-dom";
 import { Form } from "./Form";
-import { BgCircle } from "@/components/ui/BgCircle";
+import { BgCircle } from "@/components/ui";
 
 const CONTACT_ICONS = [Mail, Phone, MapPin];
 

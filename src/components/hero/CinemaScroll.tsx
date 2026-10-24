@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useCinematicScroll } from "../../hooks/useCinematicScroll";
+import { useCinematicScroll } from "@/hooks";
 import HeroVideo from "./HeroVideo";
 import HeroVignette from "./HeroVignette";
 import { HeroCopy } from "./HeroCopy";

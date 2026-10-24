@@ -1,4 +1,4 @@
-import { OPTIONS } from "@/data/content";
+import { OPTIONS } from "@/data";
 import type { SortingProps } from "@/types";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";

@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "../../lib/gsap";
+import { gsap } from "@/lib";
 import AiPortal from "./AiPortal";
 import FeatureList from "./FeatureList";
-import Eyebrow from "../ui/Eyebrow";
-import { MODEL_IMAGE } from "../../data/content";
+import { Eyebrow } from "@/components/ui";
+import { MODEL_IMAGE } from "@/data";
 
 const MODEL_PARTICLES = [0, 1, 2, 3, 4];
 

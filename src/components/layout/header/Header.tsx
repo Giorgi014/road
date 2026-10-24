@@ -18,17 +18,14 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
       return () => window.removeEventListener("scroll", onScroll);
     }, [variant]);
 
-    const headerClass = [
-      "fixed inset-x-0 top-0 z-50 px-0 py-5 transition-all duration-500",
-      variant === "overlay" ? "bg-transparent" : "border-b border-transparent",
-      scrolled ? "bg-ink-800/80 py-3 backdrop-blur-xl border-ink-400" : "",
-    ]
-      .filter(Boolean)
-      .join(" ");
-
     return (
       <>
-        <header ref={ref} className={headerClass}>
+        <header
+          ref={ref}
+          className={`fixed inset-x-0 top-0 z-50 px-0 py-5 transition-all duration-500
+          ${variant === "overlay" ? "bg-transparent" : "border-b border-transparent"}
+        ${scrolled ? "bg-ink-800/80 py-3 backdrop-blur-xl border-ink-400" : ""}}`}
+        >
           <Navigation setMenuOpen={setMenuOpen} />
         </header>
 

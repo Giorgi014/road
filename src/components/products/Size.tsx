@@ -1,4 +1,4 @@
-import { SIZES } from "@/data/content";
+import { SIZES } from "@/data";
 
 export const Size = () => {
   return (
