@@ -4,7 +4,7 @@ import { gsap } from "@/lib";
 import AiPortal from "./AiPortal";
 import FeatureList from "./FeatureList";
 import { Eyebrow } from "@/components/ui";
-import { MODEL_IMAGE } from "@/data";
+import MODEL_IMAGE from "@/assets/img/model2.webp";
 
 const MODEL_PARTICLES = [0, 1, 2, 3, 4];
 

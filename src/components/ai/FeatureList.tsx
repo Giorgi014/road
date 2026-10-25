@@ -2,7 +2,7 @@ import { FEATURE_ITEMS } from "@/data";
 
 export default function FeatureList() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 cursor-pointer">
       {FEATURE_ITEMS.map((f, i) => (
         <div
           key={f.id}

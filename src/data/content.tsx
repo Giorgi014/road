@@ -96,12 +96,6 @@ export const FOOTER = {
   legal: ["Privacy", "Terms", "Cookies", "Imprint"],
 };
 
-export const PORTAL_IMAGE =
-  "https://images.pexels.com/photos/20434858/pexels-photo-20434858.jpeg?auto=compress&cs=tinysrgb&w=900";
-
-export const MODEL_IMAGE =
-  "https://images.pexels.com/photos/9781909/pexels-photo-9781909.jpeg?auto=compress&cs=tinysrgb&w=900";
-
 export const ALL_CATEGORIES: AllCategories[] = [
   {
     id: 0,

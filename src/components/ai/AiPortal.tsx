@@ -1,4 +1,4 @@
-import { PORTAL_IMAGE } from "@/data";
+import PORTAL_IMAGE from "@/assets/img/model1.webp";
 
 const PARTICLES = [0, 1, 2, 3, 4, 5];
 
