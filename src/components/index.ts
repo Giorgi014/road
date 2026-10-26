@@ -1,4 +1,5 @@
 export * from "./ai";
+export * from "./about";
 export * from "./authorization";
 export * from "./contact";
 export * from "./form";

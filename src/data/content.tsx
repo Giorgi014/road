@@ -42,6 +42,15 @@ export const HERO_COPY = {
   learn: "Learn More",
 };
 
+export const ABOUT_HERO_COPY = {
+  eyebrow: "ABOUT US",
+  titleTop: "REDEFINING",
+  titleBottom: "THE FUTURE",
+  paragraph:
+    "ROAD is a next-generation techwear brand built at the intersection of cyber culture, functionality and futuristic aesthetics. We design apparel and gear for the digital generation — made to move, built to last, and created to stand out in any environment.",
+  cta: "Explore Collection",
+};
+
 export const MISSION = {
   eyebrow: "Our Mission",
   titleTop: "Built for explorers.",
