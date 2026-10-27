@@ -1,15 +1,7 @@
 import { useRef, useLayoutEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-
-interface Options {
-  sectionRef: React.RefObject<HTMLElement | null>;
-  videoRef: React.RefObject<HTMLVideoElement | null>;
-  titleRef: React.RefObject<HTMLHeadingElement | null>;
-  copyRef: React.RefObject<HTMLDivElement | null>;
-  headerRef: React.RefObject<HTMLElement | null>;
-  scrubEndPx?: number;
-}
+import type { UseCinematicScrollOptions } from "@/types";
 
 export function useCinematicScroll({
   sectionRef,
@@ -18,7 +10,7 @@ export function useCinematicScroll({
   copyRef,
   headerRef,
   scrubEndPx = 2500,
-}: Options) {
+}: UseCinematicScrollOptions) {
   const cleanupRef = useRef<(() => void) | null>(null);
 
   useGSAP(
@@ -86,7 +78,7 @@ export function useCinematicScroll({
 
       buildTimeline();
     },
-    { scope: sectionRef as React.RefObject<HTMLElement> },
+    { scope: sectionRef },
   );
 
   useLayoutEffect(() => {

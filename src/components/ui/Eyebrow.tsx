@@ -1,7 +1,4 @@
-interface EyebrowProps {
-  text: string;
-  center?: boolean;
-}
+import type { EyebrowProps } from "@/types";
 
 export default function Eyebrow({ text, center = false }: EyebrowProps) {
   return (

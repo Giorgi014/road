@@ -1,10 +1,7 @@
 import { forwardRef, useEffect, useState } from "react";
+import type { SiteHeaderProps } from "@/types";
 import { Navigation } from "./Navigation";
 import { MenuSidebar } from "./MenuSidebar";
-
-interface SiteHeaderProps {
-  variant?: "overlay" | "solid";
-}
 
 export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
   ({ variant = "solid" }, ref) => {

@@ -1,9 +1,6 @@
 import { X } from "lucide-react";
 import { Auth } from "./Auth";
-
-type AuthModalProps = {
-  onClose: () => void;
-};
+import type { AuthModalProps } from "@/types";
 
 export const AuthModal = ({ onClose }: AuthModalProps) => {
   return (

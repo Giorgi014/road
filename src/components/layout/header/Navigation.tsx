@@ -2,11 +2,8 @@ import { SearchValue } from "@/components/ui";
 import { NAV_LINKS } from "@/data";
 import { Search, ShoppingBag, Menu } from "lucide-react";
 import { useState } from "react";
+import type { NavigationProps } from "@/types";
 import { Link, NavLink } from "react-router-dom";
-
-type NavigationProps = {
-  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 export const Navigation = ({ setMenuOpen }: NavigationProps) => {
   const [isSearch, setIsSearch] = useState(false);

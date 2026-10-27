@@ -1,18 +1,6 @@
-import { forwardRef, useState, type InputHTMLAttributes } from "react";
+import { forwardRef, useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-
-type InputVariant = "name" | "lastname" | "email" | "password";
-
-type InputConfig = {
-  label: string;
-  type: InputHTMLAttributes<HTMLInputElement>["type"];
-  placeholder: string;
-  name: string;
-};
-
-type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & {
-  variant: InputVariant;
-};
+import type { InputConfig, InputProps, InputVariant } from "@/types";
 
 const VARIANT_CONFIG: Record<InputVariant, InputConfig> = {
   name: {

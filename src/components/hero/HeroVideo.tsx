@@ -1,9 +1,5 @@
 import { forwardRef } from "react";
-
-interface HeroVideoProps {
-  src?: string;
-  fallbackImage?: string;
-}
+import type { HeroVideoProps } from "@/types";
 
 const HeroVideo = forwardRef<HTMLVideoElement, HeroVideoProps>(
   ({ src }, ref) => {

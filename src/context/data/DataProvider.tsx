@@ -1,20 +1,25 @@
-import { useEffect, useState, type ReactNode } from "react";
-import type { AllProducts } from "@/types";
-import { DataContext, type CartItem } from "@/context/data/data-context";
+import { useEffect, useState } from "react";
+import type {
+  CartItem,
+  AllProducts,
+  DataProviderProps,
+  ProductDataResponse,
+} from "@/types";
+import { DataContext } from "@/context/data/data-context";
 
-export const DataProvider = ({ children }: { children: ReactNode }) => {
+export const DataProvider = ({ children }: DataProviderProps) => {
   const [data, setData] = useState<AllProducts[] | null>(null);
 
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const storedCard = localStorage.getItem("cartItems");
-    return storedCard ? JSON.parse(storedCard) : [];
+    return storedCard ? (JSON.parse(storedCard) as CartItem[]) : [];
   });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch("/data.json");
-        const dataResponse = await res.json();
+        const dataResponse: ProductDataResponse = await res.json();
         setData(dataResponse.allProducts ?? []);
       } catch (err) {
         console.error(err);

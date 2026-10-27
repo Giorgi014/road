@@ -1,4 +1,5 @@
 import type { PriceRangeProps } from "@/types";
+import type { ChangeEvent } from "react";
 import { useState } from "react";
 
 export const PriceRange = ({
@@ -12,13 +13,13 @@ export const PriceRange = ({
   const [minVal, setMinVal] = useState(defaultMin);
   const [maxVal, setMaxVal] = useState(defaultMax);
 
-  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMinChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = Math.min(Number(e.target.value), maxVal - step);
     setMinVal(value);
     onChange?.([value, maxVal]);
   };
 
-  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleMaxChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = Math.max(Number(e.target.value), minVal + step);
     setMaxVal(value);
     onChange?.([minVal, value]);

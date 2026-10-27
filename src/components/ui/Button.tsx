@@ -1,10 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import type { ButtonProps } from "@/types";
 import { Link } from "react-router-dom";
-
-interface ButtonProps {
-  href: string;
-  label: string;
-}
 
 export const Button = ({ href, label }: ButtonProps) => {
   return (

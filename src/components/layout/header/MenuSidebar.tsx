@@ -2,12 +2,8 @@ import { AuthModal } from "@/components/authorization";
 import { SIDEBAR_LINKS } from "@/data";
 import { X } from "lucide-react";
 import { useState } from "react";
+import type { MenuSidebarProps } from "@/types";
 import { Link } from "react-router-dom";
-
-type MenuSidebarProps = {
-  menuOpen: boolean;
-  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
 
 export const MenuSidebar = ({ menuOpen, setMenuOpen }: MenuSidebarProps) => {
   const [authOpen, setAuthOpen] = useState(false);

@@ -3,10 +3,14 @@ import type {
   AllCategories,
   ContactPage,
   FeatureItem,
+  HeroCopyContent,
+  HomeHeroCopyContent,
+  FooterContent,
   NavLink,
-  OptionsType,
   SidebarLink,
   Sizes,
+  Stat,
+  OptionsType,
 } from "@/types";
 
 export const CONTACT_PAGE: ContactPage = {
@@ -32,7 +36,7 @@ export const SIDEBAR_LINKS: SidebarLink[] = [
   { label: "Authorization", href: "#", action: "auth" },
 ];
 
-export const HERO_COPY = {
+export const HERO_COPY: HomeHeroCopyContent = {
   eyebrow: "Welcome to Road",
   titleTop: "FUTURE",
   titleBottom: "TECHWEAR",
@@ -42,7 +46,7 @@ export const HERO_COPY = {
   learn: "Learn More",
 };
 
-export const ABOUT_HERO_COPY = {
+export const ABOUT_HERO_COPY: HeroCopyContent = {
   eyebrow: "ABOUT US",
   titleTop: "REDEFINING",
   titleBottom: "THE FUTURE",
@@ -51,7 +55,7 @@ export const ABOUT_HERO_COPY = {
   cta: "Explore Collection",
 };
 
-export const MISSION = {
+export const MISSION: HeroCopyContent = {
   eyebrow: "Our Mission",
   titleTop: "Built for explorers.",
   titleBottom: "Made for the future.",
@@ -60,12 +64,12 @@ export const MISSION = {
   cta: "Join the Road",
 };
 
-export const STATS = [
+export const STATS: Stat[] = [
   { k: "12K+", v: "Explorers equipped" },
   { k: "48", v: "Lab-tested fabrics" },
   { k: "100%", v: "Blockchain verified" },
   { k: "2026", v: "Design horizon" },
-] as const;
+];
 
 export const FEATURE_ITEMS: FeatureItem[] = [
   {
@@ -94,7 +98,7 @@ export const FEATURE_ITEMS: FeatureItem[] = [
   },
 ];
 
-export const FOOTER = {
+export const FOOTER: FooterContent = {
   headlineTop: "Don't be shy.",
   headlineBottom: "Talk to us.",
   contacts: [

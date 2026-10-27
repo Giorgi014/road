@@ -1,8 +1,6 @@
-export interface CategoryGroup {
-  label: string;
-  slug: string;
-  categories: string[];
-}
+import type { CategoryGroup } from "@/types";
+
+export type { CategoryGroup };
 
 export const CATEGORY_GROUPS: CategoryGroup[] = [
   { label: "Jackets", slug: "jackets", categories: ["Jacket"] },

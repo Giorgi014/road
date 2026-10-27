@@ -1,12 +1,9 @@
 import { useData } from "@/context/data";
 import { Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import type { SearchProps } from "@/types";
 import { useNavigate } from "react-router-dom";
 import { SearchedProduct } from "./SearchedProduct";
-
-type SearchProps = {
-  onClose: () => void;
-};
 
 export const SearchValue = ({ onClose }: SearchProps) => {
   const { data } = useData();

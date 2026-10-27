@@ -1,10 +1,4 @@
-import type { ReactNode } from "react";
-
-interface AuthBtnProps {
-  children: ReactNode;
-  variant: "login" | "registration";
-  onClick?: () => void;
-}
+import type { AuthBtnProps } from "@/types";
 
 export const AuthBtn = ({ children, variant, onClick }: AuthBtnProps) => {
   return (
