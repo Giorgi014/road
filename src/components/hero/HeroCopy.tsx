@@ -10,13 +10,13 @@ export const HeroCopy = ({
 }: HeroCopyProps) => {
   return (
     <div
-      className="absolute bottom-[8%] left-[6%] z-20 w-[88%] max-w-[620px] pointer-events-auto"
+      className="pointer-events-auto absolute bottom-[8%] left-[6%] right-[6%] z-20 max-w-[620px] sm:right-auto sm:w-[88%]"
       ref={copyRef}
     >
       <Eyebrow text={copy.eyebrow} />
       <h2
         ref={titleRef}
-        className="font-display text-[clamp(2.8rem,7vw,6.5rem)] font-bold leading-[0.95] tracking-[-0.02em] text-white"
+        className="font-display text-[clamp(2.25rem,7vw,6.5rem)] font-bold leading-[0.95] tracking-[-0.02em] text-white"
       >
         <span className="block">{copy.titleTop}</span>
         <span className="text-gradient-blue">{copy.titleBottom}</span>
@@ -24,7 +24,7 @@ export const HeroCopy = ({
       <p className="mt-8 max-w-[420px] text-base leading-7 text-(--ink-dim)">
         {copy.paragraph}
       </p>
-      <div className="mt-10 flex items-center gap-5">
+      <div className="mt-10 flex flex-wrap items-center gap-5">
         <Button href="#explore" label={copy.cta} />
         {secondaryLink && (
           <Link

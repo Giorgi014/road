@@ -57,7 +57,7 @@ export const ProductGrid = () => {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
           <div
             ref={gridRef}
-            className="grid flex-1 grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-4"
+            className="grid flex-1 justify-center sm:justify-between grid-cols-[repeat(1,auto)] sm:grid-cols-[repeat(2,auto)] gap-3 md:grid-cols-[repeat(3,auto)] xl:grid-cols-[repeat(4,auto)]"
           >
             {categories.map((item) => (
               <ProductCard

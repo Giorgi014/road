@@ -24,7 +24,7 @@ export const ProductCard = ({
 
   return (
     <div
-      className="group relative lg:h-[clamp(13rem,24vw,31.25rem)] sm:h-[clamp(13rem,45vw,31.25rem)] h-[clamp(13rem,90vw,31.25rem)] lg:w-[clamp(8rem,17vw,22.125rem)] sm:w-[clamp(8rem,30vw,22.125rem)] w-[clamp(8rem,70vw,22.125rem)] overflow-hidden rounded-2xl border border-[var(--border)]/40 bg-[var(--bg-panel-alt)]/60 backdrop-blur-sm transition-all duration-300 hover:border-[var(--primary-light)]/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)] cursor-pointer"
+      className="group relative lg:h-[clamp(13rem,24vw,31.25rem)] md:h-[clamp(13rem,45vw,31.25rem)] sm:h-[clamp(13rem,60vw,31.25rem)] h-[clamp(13rem,100vw,31.25rem)] lg:w-[clamp(8rem,17vw,22.125rem)] md:w-[clamp(8rem,30vw,22.125rem)] sm:w-[clamp(8rem,45vw,22.125rem)] w-[clamp(8rem,90vw,22.125rem)] overflow-hidden rounded-2xl border border-[var(--border)]/40 bg-[var(--bg-panel-alt)]/60 backdrop-blur-sm transition-all duration-300 hover:border-[var(--primary-light)]/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)] cursor-pointer"
       onClick={productDetails}
     >
       {isNew && (

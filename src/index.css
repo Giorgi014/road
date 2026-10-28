@@ -115,7 +115,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: clip;
+  overflow-x: hidden;
   background: var(--bg-deep);
   color: var(--ink);
   font-family:
