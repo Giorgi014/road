@@ -23,12 +23,13 @@ export const ProductCard = ({
   };
 
   return (
-    <div
-      className="group relative lg:h-[clamp(13rem,24vw,31.25rem)] md:h-[clamp(13rem,45vw,31.25rem)] sm:h-[clamp(13rem,60vw,31.25rem)] h-[clamp(13rem,100vw,31.25rem)] lg:w-[clamp(8rem,17vw,22.125rem)] md:w-[clamp(8rem,30vw,22.125rem)] sm:w-[clamp(8rem,45vw,22.125rem)] w-[clamp(8rem,90vw,22.125rem)] overflow-hidden rounded-2xl border border-[var(--border)]/40 bg-[var(--bg-panel-alt)]/60 backdrop-blur-sm transition-all duration-300 hover:border-[var(--primary-light)]/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)] cursor-pointer"
+    <button
+      type="button"
+      className="group relative w-full aspect-3/4 overflow-hidden rounded-2xl border border-(--border)/40 bg-(--bg-panel-alt)/60 backdrop-blur-sm transition-all duration-300 hover:border-(--primary-light)/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)] cursor-pointer"
       onClick={productDetails}
     >
       {isNew && (
-        <div className="flex justify-center items-center absolute top-4 right-4 z-10 rounded-full bg-[image:var(--pill-grad)] px-3 py-1 shadow-[0_0_20px_-4px_var(--violet)]">
+        <div className="flex justify-center items-center absolute top-4 right-4 z-10 rounded-full bg-(image:--pill-grad) px-3 py-1 shadow-[0_0_20px_-4px_var(--violet)]">
           <p className="mt-[0.5px] ml-0.5 text-[10px] tracking-ultra font-sans text-white">
             NEW
           </p>
@@ -54,11 +55,11 @@ export const ProductCard = ({
             <ArrowUpRight size={16} />
           </span>
         ) : (
-          <div className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--primary-light)]/50 text-[var(--cyan)] transition-colors duration-300 hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white">
+          <div className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--primary-light)/50 text-(--cyan) transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white">
             <Plus />
           </div>
         )}
       </div>
-    </div>
+    </button>
   );
 };

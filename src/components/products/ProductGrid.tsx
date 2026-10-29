@@ -57,7 +57,7 @@ export const ProductGrid = () => {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
           <div
             ref={gridRef}
-            className="grid flex-1 justify-center sm:justify-between grid-cols-[repeat(1,auto)] sm:grid-cols-[repeat(2,auto)] gap-3 md:grid-cols-[repeat(3,auto)] xl:grid-cols-[repeat(4,auto)]"
+            className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
           >
             {categories.map((item) => (
               <ProductCard
@@ -74,9 +74,9 @@ export const ProductGrid = () => {
 
           <div
             ref={headerRef}
-            className="flex flex-col gap-8 lg:w-[250px] lg:shrink-0"
+            className="flex flex-col gap-8 lg:w-62.5 lg:shrink-0"
           >
-            <h2 className="font-display text-[clamp(1.5rem,5vw,3.5rem)] font-bold leading-[1] tracking-[-0.02em] text-white">
+            <h2 className="font-display text-[clamp(1.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.02em] text-white">
               Shop by <span className="text-gradient-blue">System</span>
             </h2>
             <p className="text-sm leading-6 text-(--ink-dim)">

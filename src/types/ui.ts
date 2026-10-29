@@ -10,6 +10,7 @@ export interface AuthBtnProps {
 export interface ButtonProps {
   href: string;
   label: string;
+  className?: string;
 }
 
 export interface EyebrowProps {
@@ -26,10 +27,9 @@ export interface InputConfig {
   name: string;
 }
 
-export type InputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "type"
-> & { variant: InputVariant };
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & {
+  variant: InputVariant;
+};
 
 export type ProductCardVariant = "product" | "category";
 
