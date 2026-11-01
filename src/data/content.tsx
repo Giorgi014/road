@@ -2,7 +2,7 @@ import { Cpu, Hand, ShieldCheck, Bitcoin } from "lucide-react";
 import type {
   AllCategories,
   ContactPage,
-  FeatureItem,
+  ContentFeatureItem,
   HeroCopyContent,
   HomeHeroCopyContent,
   FooterContent,
@@ -71,7 +71,7 @@ export const STATS: Stat[] = [
   { k: "2026", v: "Design horizon" },
 ];
 
-export const FEATURE_ITEMS: FeatureItem[] = [
+export const FEATURE_ITEMS: ContentFeatureItem[] = [
   {
     id: "fabrics",
     icon: <Cpu size={20} strokeWidth={1.8} />,

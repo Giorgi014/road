@@ -6,3 +6,4 @@ export * from "./layout";
 export * from "./navigation";
 export * from "./products";
 export * from "./ui";
+export * from "./features";

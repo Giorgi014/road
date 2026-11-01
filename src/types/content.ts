@@ -7,7 +7,7 @@ export interface ContactPage {
   paragraph: string;
 }
 
-export interface FeatureItem {
+export interface ContentFeatureItem {
   id: string;
   icon: ReactNode;
   title: string;
