@@ -65,7 +65,7 @@ export const AiFeatureSection = () => {
   );
 
   return (
-    <section
+    <article
       id="resources"
       ref={sectionRef}
       className="relative overflow-hidden bg-ink-800 py-15"
@@ -111,6 +111,6 @@ export const AiFeatureSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };

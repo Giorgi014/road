@@ -4,7 +4,7 @@ import { Eyebrow } from "@/components/ui";
 
 export const ContactHero = () => {
   return (
-    <section className="md:flex justify-between items-start gap-5">
+    <article className="md:flex justify-between items-start gap-5">
       <div className="w-full md:max-w-xl">
         <Eyebrow text={CONTACT_PAGE.eyebrow} />
         <h2 className="font-display text-[clamp(3rem,6vw,5rem)] font-bold leading-[0.95] tracking-[-0.02em] text-white uppercase">
@@ -20,6 +20,6 @@ export const ContactHero = () => {
       <div className="w-full md:mt-0 mt-5 flex justify-center items-center">
         <ContactForm />
       </div>
-    </section>
+    </article>
   );
 };

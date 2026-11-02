@@ -4,9 +4,11 @@ import type { CategoriesProps } from "@/types";
 import { Check } from "lucide-react";
 import { useMemo } from "react";
 
+const EMPTY_ITEMS: never[] = [];
+
 export const Categories = ({ selected, onToggle }: CategoriesProps) => {
   const { data } = useData();
-  const items = data ?? [];
+  const items = data ?? EMPTY_ITEMS;
 
   const categoryCount = useMemo(() => {
     const count: Record<string, number> = { all: items.length };
@@ -28,8 +30,8 @@ export const Categories = ({ selected, onToggle }: CategoriesProps) => {
             : selected.includes(item.category);
 
         return (
-          <ul className="w-full mt-1 mb-1" key={item.id}>
-            <section className="group flex justify-between items-center pt-1 pb-1 w-full text-(--ink-dim) hover:text-(--ink) duration-300 cursor-pointer">
+          <div className="w-full mt-1 mb-1" key={item.id}>
+            <div className="group flex justify-between items-center pt-1 pb-1 w-full text-(--ink-dim) hover:text-(--ink) duration-300 cursor-pointer">
               <div className="flex justify-start items-center gap-1.5">
                 <label className="relative flex items-center justify-center shrink-0 cursor-pointer">
                   <input
@@ -42,13 +44,13 @@ export const Categories = ({ selected, onToggle }: CategoriesProps) => {
                   />
                   <Check className="pointer-events-none absolute w-2.5 h-2.5 opacity-0 peer-checked:opacity-100 transition-opacity duration-150" />
                 </label>
-                <li className="text-sm font-sans uppercase">{item.category}</li>
+                <span className="text-sm font-sans uppercase">{item.category}</span>
               </div>
               <p className="text-sm font-sans uppercase">
                 {categoryCount[item.category] ?? 0}
               </p>
-            </section>
-          </ul>
+            </div>
+          </div>
         );
       })}
     </article>

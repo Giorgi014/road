@@ -1,8 +1,7 @@
 import { HeroSection } from "@/components/hero";
-import { FeatureCards } from "@/components/ui";
-import { BRAND_FEATURES } from "@/context/data";
 import { ABOUT_HERO_COPY } from "@/data";
 import About_Cover from "@/assets/img/road-img.webp";
+import { Timeline, FeatureCards } from "@/components";
 
 const About = () => {
   return (
@@ -13,7 +12,8 @@ const About = () => {
         className="min-h-[560px]"
       />
       <article className="mx-auto w-full max-w-[1600px] px-6 py-16 md:py-24">
-        <FeatureCards items={BRAND_FEATURES} />
+        <FeatureCards />
+        <Timeline />
       </article>
     </main>
   );

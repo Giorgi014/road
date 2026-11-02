@@ -32,9 +32,6 @@
   --animate-float: float 6s ease-in-out infinite;
   --animate-glow-pulse: glowPulse 4s ease-in-out infinite;
   --animate-spin-slow: spinSlow 24s linear infinite;
-  --animate-scan: scan 6s linear infinite;
-  --animate-fade-up: fadeUp 0.8s ease-out forwards;
-
   --animate-warp-ring: warpRing 2.2s ease-out infinite;
   --animate-core-pulse: corePulse 1.6s ease-in-out infinite;
 
@@ -159,36 +156,6 @@ ul {
   color: transparent;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glow-blue {
-  box-shadow: 0 0 40px -10px rgba(49, 85, 255, 0.6);
-}
-
-.glow-blue-strong {
-  box-shadow: 0 0 60px -8px rgba(49, 85, 255, 0.8);
-}
-
-.scanlines::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(49, 85, 255, 0.03) 2px,
-    rgba(49, 85, 255, 0.03) 3px
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
 @keyframes float {
   0%,
   100% {
@@ -220,35 +187,6 @@ ul {
   }
 }
 
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.float {
-  animation: float 6s ease-in-out infinite;
-}
-.glow-pulse {
-  animation: glowPulse 4s ease-in-out infinite;
-}
-.spin-slow {
-  animation: spinSlow 24s linear infinite;
-}
 
 /* Dual range slider */
 .range-thumb {

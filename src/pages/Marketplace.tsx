@@ -65,7 +65,7 @@ function Marketplace() {
   }, [sort, selectedCategories, priceRange, data]);
 
   return (
-    <article className="flex justify-between items-start gap-5 p-5 mt-19">
+    <main className="flex justify-between items-start gap-5 p-5 mt-19">
       <button
         type="button"
         onClick={() => setIsFilterOpen(true)}
@@ -137,7 +137,7 @@ function Marketplace() {
           ))}
         </div>
       </section>
-    </article>
+    </main>
   );
 }
 

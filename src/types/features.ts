@@ -8,6 +8,5 @@ export interface FeatureItem {
 }
 
 export interface FeatureCardsProps {
-  items: FeatureItem[];
   className?: string;
 }

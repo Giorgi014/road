@@ -2,9 +2,9 @@ import { ContactHero } from "@/components/contact";
 
 const Contact = () => {
   return (
-    <article className="p-5 mt-19">
+    <main className="p-5 mt-19">
       <ContactHero />
-    </article>
+    </main>
   );
 };
 

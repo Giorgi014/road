@@ -51,7 +51,7 @@ export const ProductGrid = () => {
   );
 
   return (
-    <section id="explore" className="relative bg-ink-800 py-15">
+    <article id="explore" className="relative bg-ink-800 py-15">
       <div className="mx-auto max-w-[1600px] px-6">
         <Eyebrow text="Categories" />
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
@@ -87,6 +87,6 @@ export const ProductGrid = () => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };

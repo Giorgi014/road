@@ -12,16 +12,16 @@ function Details() {
 
   if (!details) {
     return (
-      <article>
+      <main>
         <h1>Loading...</h1>
-      </article>
+      </main>
     );
   }
 
   const activeImage = selectedImage ?? details.src;
 
   return (
-    <article className="mt-19 p-5 w-full max-w-[1920px] md:flex md:flex-row justify-start md:items-start gap-5 flex-col items-center">
+    <main className="mt-19 p-5 w-full max-w-[1920px] md:flex md:flex-row justify-start md:items-start gap-5 flex-col items-center">
       <section className="flex md:w-[50%] w-full lg:flex-row flex-col-reverse gap-4">
         <div className="flex lg:flex-col flex-row gap-4 lg:pr-2.5 pb-2.5 lg:pb-0 lg:overflow-y-auto overflow-x-auto lg:max-h-125">
           {details.images.map((img, index) => (
@@ -45,7 +45,7 @@ function Details() {
         </div>
       </section>
       <ProductInfo details={details} addCart={addCart} />
-    </article>
+    </main>
   );
 }
 

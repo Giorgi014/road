@@ -48,7 +48,7 @@ export const MissionBlurb = () => {
   );
 
   return (
-    <section
+    <article
       id="about"
       ref={sectionRef}
       className="max-w-[1600px] mx-auto relative overflow-hidden bg-ink-700 py-15"
@@ -86,6 +86,6 @@ export const MissionBlurb = () => {
           ))}
         </div>
       </div>
-    </section>
+    </article>
   );
 };

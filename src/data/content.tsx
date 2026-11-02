@@ -1,8 +1,18 @@
-import { Cpu, Hand, ShieldCheck, Bitcoin } from "lucide-react";
+import {
+  Bitcoin,
+  Cpu,
+  Hand,
+  Hexagon,
+  Lightbulb,
+  ShieldCheck,
+  Users,
+  X,
+} from "lucide-react";
 import type {
   AllCategories,
   ContactPage,
   ContentFeatureItem,
+  FeatureItem,
   HeroCopyContent,
   HomeHeroCopyContent,
   FooterContent,
@@ -11,40 +21,8 @@ import type {
   Sizes,
   Stat,
   OptionsType,
+  TimelineItem,
 } from "@/types";
-
-export const CONTACT_PAGE: ContactPage = {
-  eyebrow: "Lets Connect",
-  headlineTop: "we're here",
-  headlineBottom: "to connect",
-  paragraph:
-    "Have a question, collaboration idea or just want to say hi? Fill out the form and our team will get back to you as soon as possible. Let's build the future together.",
-};
-
-export const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Marketplace", href: "/marketplace" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
-
-export const SIDEBAR_LINKS: SidebarLink[] = [
-  { label: "Home", href: "/" },
-  { label: "Marketplace", href: "/marketplace" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Authorization", href: "#", action: "auth" },
-];
-
-export const HERO_COPY: HomeHeroCopyContent = {
-  eyebrow: "Welcome to Road",
-  titleTop: "FUTURE",
-  titleBottom: "TECHWEAR",
-  paragraph:
-    "Garments engineered for the next century — intelligent fabrics, interactive weaves, and blockchain-verified authenticity.",
-  cta: "Explore Collection",
-  learn: "Learn More",
-};
 
 export const ABOUT_HERO_COPY: HeroCopyContent = {
   eyebrow: "ABOUT US",
@@ -53,60 +31,6 @@ export const ABOUT_HERO_COPY: HeroCopyContent = {
   paragraph:
     "ROAD is a next-generation techwear brand built at the intersection of cyber culture, functionality and futuristic aesthetics. We design apparel and gear for the digital generation — made to move, built to last, and created to stand out in any environment.",
   cta: "Explore Collection",
-};
-
-export const MISSION: HeroCopyContent = {
-  eyebrow: "Our Mission",
-  titleTop: "Built for explorers.",
-  titleBottom: "Made for the future.",
-  paragraph:
-    "We believe clothing should work as hard as the people wearing it. Every ROAD piece is field-tested, lab-verified, and built to outlast trends — and seasons. This is gear for the unknown.",
-  cta: "Join the Road",
-};
-
-export const STATS: Stat[] = [
-  { k: "12K+", v: "Explorers equipped" },
-  { k: "48", v: "Lab-tested fabrics" },
-  { k: "100%", v: "Blockchain verified" },
-  { k: "2026", v: "Design horizon" },
-];
-
-export const FEATURE_ITEMS: ContentFeatureItem[] = [
-  {
-    id: "fabrics",
-    icon: <Cpu size={20} strokeWidth={1.8} />,
-    title: "Intelligent Fabrics",
-    description: "Adaptive thermal regulation woven at the fiber level.",
-  },
-  {
-    id: "interactive",
-    icon: <Hand size={20} strokeWidth={1.8} />,
-    title: "Interactive Wear",
-    description: "Gesture-reactive surfaces that respond to touch and motion.",
-  },
-  {
-    id: "blockchain",
-    icon: <ShieldCheck size={20} strokeWidth={1.8} />,
-    title: "Blockchain Verified",
-    description: "Every piece cryptographically authenticated on-chain.",
-  },
-  {
-    id: "crypto",
-    icon: <Bitcoin size={20} strokeWidth={1.8} />,
-    title: "Crypto Payments",
-    description: "Pay with BTC, ETH, or stablecoins at checkout.",
-  },
-];
-
-export const FOOTER: FooterContent = {
-  headlineTop: "Don't be shy.",
-  headlineBottom: "Talk to us.",
-  contacts: [
-    { label: "hello@road.tech" },
-    { label: "+1 (415) 555-0192" },
-    { label: "Neo District, Tokyo / SF" },
-  ],
-  legal: ["Privacy", "Terms", "Cookies", "Imprint"],
 };
 
 export const ALL_CATEGORIES: AllCategories[] = [
@@ -180,23 +104,137 @@ export const ALL_CATEGORIES: AllCategories[] = [
   },
 ];
 
-export const SIZES: Sizes[] = [
+export const BRAND_FEATURES: FeatureItem[] = [
   {
-    id: 0,
-    size: "S",
+    id: "innovation",
+    title: "Innovation",
+    description:
+      "Pushing the boundaries of materials, design and technology to build the next generation.",
+    icon: Lightbulb,
   },
   {
-    id: 1,
-    size: "M",
+    id: "functionality",
+    title: "Functionality",
+    description:
+      "Engineered for movement and adaptability in every environment.",
+    icon: X,
   },
   {
-    id: 2,
-    size: "L",
+    id: "aesthetics",
+    title: "Aesthetics",
+    description:
+      "Clean lines, bold details and cyber inspired visuals that stand out.",
+    icon: Hexagon,
   },
   {
-    id: 3,
-    size: "XL",
+    id: "community",
+    title: "Community",
+    description:
+      "More than a brand — we're a global community united by style and vision.",
+    icon: Users,
   },
+];
+
+export const CONTACT_PAGE: ContactPage = {
+  eyebrow: "Lets Connect",
+  headlineTop: "we're here",
+  headlineBottom: "to connect",
+  paragraph:
+    "Have a question, collaboration idea or just want to say hi? Fill out the form and our team will get back to you as soon as possible. Let's build the future together.",
+};
+
+export const FEATURE_ITEMS: ContentFeatureItem[] = [
+  {
+    id: "fabrics",
+    icon: <Cpu size={20} strokeWidth={1.8} />,
+    title: "Intelligent Fabrics",
+    description: "Adaptive thermal regulation woven at the fiber level.",
+  },
+  {
+    id: "interactive",
+    icon: <Hand size={20} strokeWidth={1.8} />,
+    title: "Interactive Wear",
+    description: "Gesture-reactive surfaces that respond to touch and motion.",
+  },
+  {
+    id: "blockchain",
+    icon: <ShieldCheck size={20} strokeWidth={1.8} />,
+    title: "Blockchain Verified",
+    description: "Every piece cryptographically authenticated on-chain.",
+  },
+  {
+    id: "crypto",
+    icon: <Bitcoin size={20} strokeWidth={1.8} />,
+    title: "Crypto Payments",
+    description: "Pay with BTC, ETH, or stablecoins at checkout.",
+  },
+];
+
+export const FOOTER: FooterContent = {
+  headlineTop: "Don't be shy.",
+  headlineBottom: "Talk to us.",
+  contacts: [
+    { label: "hello@road.tech" },
+    { label: "+1 (415) 555-0192" },
+    { label: "Neo District, Tokyo / SF" },
+  ],
+  legal: ["Privacy", "Terms", "Cookies", "Imprint"],
+};
+
+export const HERO_COPY: HomeHeroCopyContent = {
+  eyebrow: "Welcome to Road",
+  titleTop: "FUTURE",
+  titleBottom: "TECHWEAR",
+  paragraph:
+    "Garments engineered for the next century — intelligent fabrics, interactive weaves, and blockchain-verified authenticity.",
+  cta: "Explore Collection",
+  learn: "Learn More",
+};
+
+export const JOURNEY_TIMELINE: TimelineItem[] = [
+  {
+    id: "2022",
+    year: "2022",
+    title: "The Beginning",
+    description:
+      "ROAD was founded with a vision to merge cyber aesthetics with everyday functionality.",
+  },
+  {
+    id: "2023",
+    year: "2023",
+    title: "First Drop",
+    description:
+      "Launched our first collection. The response from the community was overwhelming.",
+  },
+  {
+    id: "2024",
+    year: "2024",
+    title: "Expanding",
+    description:
+      "New categories, new technologies and a growing global community.",
+  },
+  {
+    id: "2025",
+    year: "2025+",
+    title: "The Future",
+    description: "We're just getting started. The road ahead is limitless.",
+  },
+];
+
+export const MISSION: HeroCopyContent = {
+  eyebrow: "Our Mission",
+  titleTop: "Built for explorers.",
+  titleBottom: "Made for the future.",
+  paragraph:
+    "We believe clothing should work as hard as the people wearing it. Every ROAD piece is field-tested, lab-verified, and built to outlast trends — and seasons. This is gear for the unknown.",
+  cta: "Join the Road",
+};
+
+export const NAV_LINKS: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Marketplace", href: "/marketplace" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const OPTIONS: OptionsType[] = [
@@ -220,4 +258,38 @@ export const OPTIONS: OptionsType[] = [
     value: "name-desc",
     label: "Name: Z-A",
   },
+];
+
+export const SIDEBAR_LINKS: SidebarLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Marketplace", href: "/marketplace" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Authorization", href: "#", action: "auth" },
+];
+
+export const SIZES: Sizes[] = [
+  {
+    id: 0,
+    size: "S",
+  },
+  {
+    id: 1,
+    size: "M",
+  },
+  {
+    id: 2,
+    size: "L",
+  },
+  {
+    id: 3,
+    size: "XL",
+  },
+];
+
+export const STATS: Stat[] = [
+  { k: "12K+", v: "Explorers equipped" },
+  { k: "48", v: "Lab-tested fabrics" },
+  { k: "100%", v: "Blockchain verified" },
+  { k: "2026", v: "Design horizon" },
 ];

@@ -23,7 +23,7 @@ export const HeroSection = ({
   useCinematicScroll({ sectionRef, videoRef, titleRef, copyRef, headerRef });
 
   return (
-    <section
+    <article
       ref={sectionRef}
       id={id}
       aria-label={ariaLabel}
@@ -54,6 +54,6 @@ export const HeroSection = ({
           <span className="h-10 w-px bg-linear-to-b from-electric-400 to-transparent" />
         </div>
       )}
-    </section>
+    </article>
   );
 };
