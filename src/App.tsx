@@ -1,6 +1,5 @@
-import { Header } from "@/components/layout/header";
 import { Outlet } from "react-router-dom";
-import { Footer } from "@/components/layout/footer";
+import { Footer, Header, ScrollToTop } from "./components";
 
 export default function App() {
   return (
@@ -8,6 +7,7 @@ export default function App() {
       <Header />
       <Outlet />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

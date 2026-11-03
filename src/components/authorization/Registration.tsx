@@ -1,39 +1,60 @@
 import { AuthBtn, Input } from "@/components/ui";
-import { useAuth } from "@/hooks/useAuth";
-import { useState, type FormEvent } from "react";
+import { useAuth } from "@/context/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { signUpSchema, type SignUpValues } from "@/schema/auth";
 
 export const Registration = () => {
   const { register } = useAuth();
-  const [error, setError] = useState("");
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const result = register(
-      String(formData.get("first-name") ?? ""),
-      String(formData.get("last-name") ?? ""),
-      String(formData.get("email") ?? ""),
-      String(formData.get("password") ?? ""),
-    );
-    setError(Object.values(result.errors ?? {})[0] ?? "");
-  };
+  const {
+    register: registerField,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignUpValues>({
+    resolver: zodResolver(signUpSchema),
+    mode: "onBlur",
+  });
 
   return (
     <form
       action="signup"
       className="w-full space-y-6 text-(--ink-dim)"
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(register)}
     >
       <section className="flex w-full items-center gap-3">
-        <Input variant="name" />
-        <Input variant="lastname" />
+        <div>
+          <Input variant="name" {...registerField("name")} />
+          {errors.name && (
+            <p role="alert" className="mt-2 text-sm text-red-400">
+              {errors.name.message}
+            </p>
+          )}
+        </div>
+        <div>
+          <Input variant="lastname" {...registerField("lastname")} />
+          {errors.lastname && (
+            <p role="alert" className="mt-2 text-sm text-red-400">
+              {errors.lastname.message}
+            </p>
+          )}
+        </div>
       </section>
 
-      <Input variant="email" />
-      <Input variant="password" />
-      {error && (
+      <Input variant="email" {...registerField("email")} />
+      {errors.email && (
+        <p role="alert" className="mt-2 text-sm text-red-400">
+          {errors.email.message}
+        </p>
+      )}
+      <Input variant="password" {...registerField("password")} />
+      {errors.password && (
+        <p role="alert" className="mt-2 text-sm text-red-400">
+          {errors.password.message}
+        </p>
+      )}
+      {errors.root && (
         <p role="alert" className="text-sm text-red-400">
-          {error}
+          {errors.root.message}
         </p>
       )}
 

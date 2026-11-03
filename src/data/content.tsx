@@ -266,6 +266,7 @@ export const SIDEBAR_LINKS: SidebarLink[] = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Authorization", href: "#", action: "auth" },
+  { label: "Log Out", href: "/", action: "log-out" },
 ];
 
 export const SIZES: Sizes[] = [

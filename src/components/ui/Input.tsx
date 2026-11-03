@@ -7,13 +7,13 @@ const VARIANT_CONFIG: Record<InputVariant, InputConfig> = {
     label: "First Name",
     type: "text",
     placeholder: "Enter your first name...",
-    name: "first-name",
+    name: "name",
   },
   lastname: {
     label: "Last Name",
     type: "text",
     placeholder: "Enter your last name...",
-    name: "last-name",
+    name: "lastname",
   },
   email: {
     label: "Email",

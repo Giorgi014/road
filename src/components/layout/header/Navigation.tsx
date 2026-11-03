@@ -1,11 +1,13 @@
 import { SearchValue } from "@/components/ui";
 import { NAV_LINKS } from "@/data";
-import { Search, ShoppingBag, Menu } from "lucide-react";
+import { Search, ShoppingBag, Menu, UserRound } from "lucide-react";
 import { useState } from "react";
 import type { NavigationProps } from "@/types";
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "@/context";
 
 export const Navigation = ({ setMenuOpen }: NavigationProps) => {
+  const { user } = useAuth();
   const [isSearch, setIsSearch] = useState(false);
 
   return (
@@ -44,6 +46,15 @@ export const Navigation = ({ setMenuOpen }: NavigationProps) => {
             0
           </span>
         </button>
+        {user && (
+          <button
+            type="button"
+            aria-label="User"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full border border-transparent bg-transparent text-white/70 transition-colors hover:bg-white/5 hover:text-white cursor-pointer"
+          >
+            <UserRound />
+          </button>
+        )}
         <button
           type="button"
           aria-label="Menu"

@@ -6,5 +6,5 @@ export interface NavLink {
 export interface SidebarLink {
   label: string;
   href: string;
-  action?: "auth";
+  action?: "auth" | "log-out";
 }

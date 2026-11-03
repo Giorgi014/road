@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type {
   CartItem,
   AllProducts,
@@ -11,8 +11,16 @@ export const DataProvider = ({ children }: DataProviderProps) => {
   const [data, setData] = useState<AllProducts[] | null>(null);
 
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
-    const storedCard = localStorage.getItem("cartItems");
-    return storedCard ? (JSON.parse(storedCard) as CartItem[]) : [];
+    const storedCart = localStorage.getItem("cartItems");
+    if (!storedCart) return [];
+
+    try {
+      const parsedCart = JSON.parse(storedCart);
+      return Array.isArray(parsedCart) ? (parsedCart as CartItem[]) : [];
+    } catch {
+      localStorage.removeItem("cartItems");
+      return [];
+    }
   });
 
   useEffect(() => {
@@ -33,7 +41,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addCart = (product: AllProducts) => {
+  const addCart = useCallback((product: AllProducts) => {
     setCartItems((item) => {
       const existing = item.find((i) => i.id === product.id);
       if (existing) {
@@ -41,15 +49,18 @@ export const DataProvider = ({ children }: DataProviderProps) => {
       }
       return [...item, { ...product, quantity: 1 }];
     });
-  };
+  }, []);
 
-  const removeCart = (id: number) => {
+  const removeCart = useCallback((id: number) => {
     setCartItems((item) => item.filter((i) => i.id !== id));
-  };
+  }, []);
+
+  const value = useMemo(
+    () => ({ data, cartItems, addCart, removeCart }),
+    [data, cartItems, addCart, removeCart],
+  );
 
   return (
-    <DataContext.Provider value={{ data, cartItems, addCart, removeCart }}>
-      {children}
-    </DataContext.Provider>
+    <DataContext.Provider value={value}>{children}</DataContext.Provider>
   );
 };

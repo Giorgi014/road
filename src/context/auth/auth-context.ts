@@ -1,3 +1,4 @@
+import type { SignInValues, SignUpValues } from "@/schema/auth";
 import { createContext } from "react";
 
 export type User = {
@@ -17,13 +18,8 @@ export type AuthResult = {
 
 export type AuthContextValue = {
   user: User | null;
-  register: (
-    name: string,
-    lastname: string,
-    email: string,
-    password: string,
-  ) => AuthResult;
-  login: (email: string, password: string) => AuthResult;
+  register: (values: SignUpValues) => void;
+  login: (values: SignInValues) => string | null;
   logout: () => void;
 };
 

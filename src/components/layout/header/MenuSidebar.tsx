@@ -4,9 +4,18 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import type { MenuSidebarProps } from "@/types";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/context";
 
 export const MenuSidebar = ({ menuOpen, setMenuOpen }: MenuSidebarProps) => {
+  const { user, logout } = useAuth();
   const [authOpen, setAuthOpen] = useState(false);
+
+  const links = SIDEBAR_LINKS.filter((link) => {
+    if (link.action === "auth") return !user;
+    if (link.action === "log-out") return !!user;
+    return true;
+  });
+
   return (
     <>
       <aside
@@ -26,20 +35,19 @@ export const MenuSidebar = ({ menuOpen, setMenuOpen }: MenuSidebarProps) => {
           </button>
         </div>
         <ul className="m-0 list-none p-0">
-          {SIDEBAR_LINKS.map((link, i) => {
-            const isAuth = link.action === "auth";
-
+          {links.map((link, i) => {
             return (
               <li key={link.label}>
                 <Link
                   to={link.href}
                   className="flex items-center gap-4 border-b border-white/5 py-4 text-white/80 no-underline transition-all hover:translate-x-2 hover:text-white"
                   onClick={(e) => {
-                    if (isAuth) {
+                    if (link.action === "auth") {
                       e.preventDefault();
                       setAuthOpen(true);
                       return;
                     }
+                    if (link.action === "log-out") logout();
                     setMenuOpen(false);
                   }}
                 >
