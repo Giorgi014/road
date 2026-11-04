@@ -1,116 +1,116 @@
-import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import MODEL_IMAGE from "@/assets/img/model2.webp";
+import { Eyebrow } from "@/components/ui";
 import { gsap } from "@/lib";
 import AiPortal from "./AiPortal";
 import FeatureList from "./FeatureList";
-import { Eyebrow } from "@/components/ui";
-import MODEL_IMAGE from "@/assets/img/model2.webp";
 
 const MODEL_PARTICLES = [0, 1, 2, 3, 4];
 
 export const AiFeatureSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
+	const sectionRef = useRef<HTMLElement>(null);
 
-  useGSAP(
-    () => {
-      const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      );
-      if (reduceMotion.matches) return;
+	useGSAP(
+		() => {
+			const reduceMotion = window.matchMedia(
+				"(prefers-reduced-motion: reduce)",
+			);
+			if (reduceMotion.matches) return;
 
-      const items = sectionRef.current?.querySelectorAll(".feature-item");
-      if (items) {
-        gsap.from(items, {
-          x: 30,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 0.7,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-          },
-        });
-      }
+			const items = sectionRef.current?.querySelectorAll(".feature-item");
+			if (items) {
+				gsap.from(items, {
+					x: 30,
+					opacity: 0,
+					stagger: 0.1,
+					duration: 0.7,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: sectionRef.current,
+						start: "top 70%",
+					},
+				});
+			}
 
-      const portal = sectionRef.current?.querySelector(".ai-portal");
-      if (portal) {
-        gsap.from(portal, {
-          scale: 0.9,
-          opacity: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-          },
-        });
-      }
+			const portal = sectionRef.current?.querySelector(".ai-portal");
+			if (portal) {
+				gsap.from(portal, {
+					scale: 0.9,
+					opacity: 0,
+					duration: 1,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: sectionRef.current,
+						start: "top 75%",
+					},
+				});
+			}
 
-      const model = sectionRef.current?.querySelector(".ai-model");
-      if (model) {
-        gsap.from(model, {
-          x: -30,
-          opacity: 0,
-          duration: 0.9,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-          },
-        });
-      }
-    },
-    { scope: sectionRef as React.RefObject<HTMLElement> },
-  );
+			const model = sectionRef.current?.querySelector(".ai-model");
+			if (model) {
+				gsap.from(model, {
+					x: -30,
+					opacity: 0,
+					duration: 0.9,
+					ease: "power2.out",
+					scrollTrigger: {
+						trigger: sectionRef.current,
+						start: "top 70%",
+					},
+				});
+			}
+		},
+		{ scope: sectionRef as React.RefObject<HTMLElement> },
+	);
 
-  return (
-    <article
-      id="resources"
-      ref={sectionRef}
-      className="relative overflow-hidden bg-ink-800 py-15"
-    >
-      <div className="pointer-events-none absolute left-[25%] top-[25%] h-[500px] w-[500px] rounded-full bg-electric-500/15 blur-[130px]" />
-      <div className="relative mx-auto max-w-[1600px] px-6">
-        <div className="mb-16 text-center">
-          <Eyebrow text="AI / Technology" center />
-          <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1] tracking-[-0.02em] text-white">
-            Engineered <span className="text-gradient-blue">Intelligence</span>
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.2fr_1fr_0.8fr]">
-          <AiPortal />
-          <FeatureList />
-          <div className="ai-model relative min-h-[440px] overflow-hidden rounded-3xl border border-ink-400 bg-ink-900">
-            <img
-              src={MODEL_IMAGE}
-              alt="Model with tech goggles and cybernetic details"
-              loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--bg-deep),transparent,color-mix(in_srgb,var(--primary-light)_10%,transparent))] shadow-[inset_0_0_100px_var(--bg-deep)]" />
-            {MODEL_PARTICLES.map((i) => (
-              <span
-                key={i}
-                className="absolute h-1 w-1 rounded-full bg-electric-300 shadow-[0_0_8px_var(--cyan)] animate-[float_6s_ease-in-out_infinite]"
-                style={{
-                  top: `${30 + ((i * 11) % 50)}%`,
-                  left: `${20 + ((i * 19) % 60)}%`,
-                  animationDelay: `${i * 0.5}s`,
-                }}
-              />
-            ))}
-            <div className="absolute inset-x-5 bottom-5">
-              <p className="mb-1 text-[10px] uppercase tracking-ultra text-(--ink-dim)">
-                Cybernetic Series
-              </p>
-              <p className="font-display text-[18px] font-semibold text-white">
-                Vision Unit 02
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
+	return (
+		<article
+			id="resources"
+			ref={sectionRef}
+			className="relative overflow-hidden bg-ink-800 py-15"
+		>
+			<div className="pointer-events-none absolute left-[25%] top-[25%] h-[500px] w-[500px] rounded-full bg-electric-500/15 blur-[130px]" />
+			<div className="relative mx-auto max-w-[1600px] px-6">
+				<div className="mb-16 text-center">
+					<Eyebrow text="AI / Technology" center />
+					<h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1] tracking-[-0.02em] text-white">
+						Engineered <span className="text-gradient-blue">Intelligence</span>
+					</h2>
+				</div>
+				<div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.2fr_1fr_0.8fr]">
+					<AiPortal />
+					<FeatureList />
+					<div className="ai-model relative min-h-[440px] overflow-hidden rounded-3xl border border-ink-400 bg-ink-900">
+						<img
+							src={MODEL_IMAGE}
+							alt="Model with tech goggles and cybernetic details"
+							loading="lazy"
+							className="absolute inset-0 h-full w-full object-cover"
+						/>
+						<div className="absolute inset-0 bg-[linear-gradient(to_top,var(--bg-deep),transparent,color-mix(in_srgb,var(--primary-light)_10%,transparent))] shadow-[inset_0_0_100px_var(--bg-deep)]" />
+						{MODEL_PARTICLES.map((i) => (
+							<span
+								key={i}
+								className="absolute h-1 w-1 rounded-full bg-electric-300 shadow-[0_0_8px_var(--cyan)] animate-[float_6s_ease-in-out_infinite]"
+								style={{
+									top: `${30 + ((i * 11) % 50)}%`,
+									left: `${20 + ((i * 19) % 60)}%`,
+									animationDelay: `${i * 0.5}s`,
+								}}
+							/>
+						))}
+						<div className="absolute inset-x-5 bottom-5">
+							<p className="mb-1 text-[10px] uppercase tracking-ultra text-(--ink-dim)">
+								Cybernetic Series
+							</p>
+							<p className="font-display text-[18px] font-semibold text-white">
+								Vision Unit 02
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	);
 };

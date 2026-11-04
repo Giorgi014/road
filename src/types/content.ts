@@ -1,31 +1,31 @@
 import type { ReactNode } from "react";
 
 export interface ContactPage {
-  eyebrow: string;
-  headlineTop: string;
-  headlineBottom: string;
-  paragraph: string;
+	eyebrow: string;
+	headlineTop: string;
+	headlineBottom: string;
+	paragraph: string;
 }
 
 export interface ContentFeatureItem {
-  id: string;
-  icon: ReactNode;
-  title: string;
-  description: string;
+	id: string;
+	icon: ReactNode;
+	title: string;
+	description: string;
 }
 
 export interface Stat {
-  k: string;
-  v: string;
+	k: string;
+	v: string;
 }
 
 export interface FooterContact {
-  label: string;
+	label: string;
 }
 
 export interface FooterContent {
-  headlineTop: string;
-  headlineBottom: string;
-  contacts: FooterContact[];
-  legal: string[];
+	headlineTop: string;
+	headlineBottom: string;
+	contacts: FooterContact[];
+	legal: string[];
 }

@@ -20,17 +20,17 @@ The experience uses a futuristic visual system with dark surfaces, electric blue
 
 ## Technology Stack
 
-| Area | Technology |
-| --- | --- |
-| UI | React 19, React DOM |
-| Language | TypeScript |
-| Build tool | Vite 8 |
-| Routing | React Router 7 |
-| Styling | Tailwind CSS 4 |
-| Animation | GSAP and `@gsap/react` |
-| Icons | Lucide React |
+| Area         | Technology                        |
+| ------------ | --------------------------------- |
+| UI           | React 19, React DOM               |
+| Language     | TypeScript                        |
+| Build tool   | Vite 8                            |
+| Routing      | React Router 7                    |
+| Styling      | Tailwind CSS 4                    |
+| Animation    | GSAP and `@gsap/react`            |
+| Icons        | Lucide React                      |
 | Catalog data | Static JSON in `public/data.json` |
-| Deployment | Vercel-compatible static output |
+| Deployment   | Vercel-compatible static output   |
 
 ## Project Structure
 
@@ -105,13 +105,13 @@ npm run lint
 
 ## Routes
 
-| Path | Page | Description |
-| --- | --- | --- |
-| `/` | Home | Brand hero, category cards, mission, and future-tech features |
-| `/marketplace` | Marketplace | Filterable and sortable product catalog |
-| `/about` | About | Brand story and positioning |
-| `/contact` | Contact | Contact page content and inquiry form |
-| `/product/:id/:name` | Product details | Product gallery, options, description, and cart action |
+| Path                 | Page            | Description                                                   |
+| -------------------- | --------------- | ------------------------------------------------------------- |
+| `/`                  | Home            | Brand hero, category cards, mission, and future-tech features |
+| `/marketplace`       | Marketplace     | Filterable and sortable product catalog                       |
+| `/about`             | About           | Brand story and positioning                                   |
+| `/contact`           | Contact         | Contact page content and inquiry form                         |
+| `/product/:id/:name` | Product details | Product gallery, options, description, and cart action        |
 
 `vercel.json` rewrites every application route to `index.html` so React Router can handle direct URLs in production.
 
@@ -123,19 +123,16 @@ Each product should follow the `AllProducts` interface:
 
 ```json
 {
-  "id": 0,
-  "category": "Jacket",
-  "name": "Example Jacket",
-  "description": "A brief product description.",
-  "price": 180,
-  "size": ["S", "M", "L", "XL"],
-  "color": ["Black", "Navy"],
-  "src": "/products/example/front.webp",
-  "images": [
-    "/products/example/front.webp",
-    "/products/example/back.webp"
-  ],
-  "isNew": true
+	"id": 0,
+	"category": "Jacket",
+	"name": "Example Jacket",
+	"description": "A brief product description.",
+	"price": 180,
+	"size": ["S", "M", "L", "XL"],
+	"color": ["Black", "Navy"],
+	"src": "/products/example/front.webp",
+	"images": ["/products/example/front.webp", "/products/example/back.webp"],
+	"isNew": true
 }
 ```
 
