@@ -1,36 +1,40 @@
 # ROAD
 
-ROAD is a responsive techwear storefront and brand website built with React, TypeScript, and Vite. It combines a cinematic landing page, animated category navigation, a searchable product catalog, marketplace filters, product detail views, and a browser-persistent cart prototype.
+ROAD is a techwear storefront and brand website built with React and TypeScript. The application combines a cinematic home page, product catalog, filtering and search, product detail galleries, a browser-persistent cart prototype, local authentication, and a profile interface.
 
-The experience uses a futuristic visual system with dark surfaces, electric blue accents, custom typography, GSAP motion, and a collection of locally hosted product images.
+The visual system uses Tailwind CSS, dark surfaces, custom typography, GSAP animations, and locally hosted media.
 
 ## Features
 
-- Cinematic home page with an imported hero video
-- Responsive desktop navigation and full-screen mobile sidebar
-- Marketplace category, price, and sorting controls
-- Name-based product search
-- Product detail galleries with color and size selection
-- Client-side cart state persisted in `localStorage`
-- About, contact, and brand-feature sections
-- Login and sign-up modal interface
-- Lazy-loaded route components
-- Vercel SPA rewrite configuration for direct route navigation
-- Reduced-motion handling for GSAP animations
+- Cinematic home page with a local hero video, animated sections, and brand content
+- Responsive desktop navigation and a full-screen mobile sidebar
+- Static product catalog loaded from `public/data.json`
+- Product search in an overlay interface
+- Multiple category filters and a price range
+- Ascending and descending sorting by price or product name
+- Product galleries with color and size selection
+- Cart prototype persisted in `localStorage`
+- Registration and sign-in forms using React Hook Form, Zod, and `js-cookie`
+- Profile page with static order, loyalty, and wishlist data
+- Lazy-loaded About, Contact, Marketplace, and profile routes
+- GSAP scroll and entrance animations with reduced-motion support
+- Vercel SPA rewrites for direct application URLs
 
 ## Technology Stack
 
-| Area         | Technology                        |
-| ------------ | --------------------------------- |
-| UI           | React 19, React DOM               |
-| Language     | TypeScript                        |
-| Build tool   | Vite 8                            |
-| Routing      | React Router 7                    |
-| Styling      | Tailwind CSS 4                    |
-| Animation    | GSAP and `@gsap/react`            |
-| Icons        | Lucide React                      |
-| Catalog data | Static JSON in `public/data.json` |
-| Deployment   | Vercel-compatible static output   |
+| Area | Technology |
+| --- | --- |
+| UI | React 19, React DOM |
+| Language | TypeScript 6 |
+| Routing | React Router 7 |
+| Build tool | Vite 8 |
+| Styling | Tailwind CSS 4 |
+| Animation | GSAP, `@gsap/react` |
+| Forms and validation | React Hook Form, Zod |
+| Cookie handling | `js-cookie`, `react-cookie` |
+| Icons | Lucide React |
+| Code quality | ESLint, Biome |
+| Hosting output | Static, Vercel-compatible build |
 
 ## Project Structure
 
@@ -38,162 +42,179 @@ The experience uses a futuristic visual system with dark surfaces, electric blue
 road/
 ├── public/
 │   ├── data.json             # Product catalog
-│   └── products/             # Product and gallery images
+│   ├── products/             # Product images and galleries
+│   ├── robots.txt
+│   └── logo.png
 ├── src/
-│   ├── assets/               # Video, imagery, and fonts
+│   ├── assets/               # Video, fonts, and static resources
 │   ├── components/
-│   │   ├── ai/               # AI feature presentation
-│   │   ├── authorization/    # Sign-in and sign-up interface
-│   │   ├── contact/          # Contact page components
-│   │   ├── hero/             # Hero copy, video, image, and vignette
-│   │   ├── layout/           # Header, navigation, sidebar, and footer
-│   │   ├── products/         # Marketplace and product-detail components
-│   │   └── ui/               # Shared cards, buttons, search, and inputs
-│   ├── context/data/         # Product and cart context provider
-│   ├── data/                 # Navigation, copy, categories, and options
-│   ├── lib/                  # Category helpers and GSAP setup
-│   ├── pages/                # Application page components
-│   ├── types/                # Shared TypeScript interfaces
-│   ├── App.tsx               # Shared layout shell
+│   │   ├── ai/               # AI feature blocks
+│   │   ├── authorization/    # Sign-in and registration interface
+│   │   ├── contact/          # Contact-page components
+│   │   ├── hero/             # Home hero blocks
+│   │   ├── layout/           # Header, footer, sidebar, and shared layout
+│   │   ├── products/         # Marketplace and product details
+│   │   ├── profile/          # Profile sections
+│   │   └── ui/               # Reusable UI elements
+│   ├── context/
+│   │   ├── auth/             # Authentication React Context
+│   │   └── data/             # Catalog and cart React Context
+│   ├── data/                 # Content, navigation, categories, and mock data
+│   ├── hooks/                # Cinematic-scroll helpers
+│   ├── lib/                  # GSAP and category helpers
+│   ├── pages/                # Page components and lazy exports
+│   ├── schema/               # Zod authentication schemas
+│   ├── types/                # TypeScript types
+│   ├── App.tsx               # Shared application layout
 │   └── main.tsx              # Router and application bootstrap
 ├── index.html
 ├── package.json
 ├── vite.config.ts
-└── vercel.json
+├── vercel.json
+└── README.md
 ```
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
-
-- Node.js 20 or newer
+- Node.js 20.19 or newer
 - npm
 
-### Installation
+## Installation
 
 ```bash
 npm install
 ```
 
-### Development
+To install dependencies exactly as recorded in the lockfile, use:
+
+```bash
+npm ci
+```
+
+## Development
 
 ```bash
 npm run dev
 ```
 
-Vite prints the local development URL in the terminal, normally `http://localhost:5173`.
+Vite normally serves the application at `http://localhost:5173`.
 
-### Production Build
+## Commands
 
-```bash
-npm run build
-```
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server with hot reload |
+| `npm run build` | Run the TypeScript project build and create the production bundle |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint across the project |
 
-The optimized application is written to `dist/`.
+The production build is written to `dist/`.
 
-### Preview
+## Application Routes
 
-```bash
-npm run preview
-```
+| Path | Page | Description |
+| --- | --- | --- |
+| `/` | Home | Brand hero, categories, mission, and feature sections |
+| `/marketplace` | Marketplace | Catalog filters, sorting, and product grid |
+| `/about` | About | Brand history, positioning, and timeline |
+| `/contact` | Contact | Contact information and inquiry interface |
+| `/product/:id/:name` | Details | Product gallery, color, size, and cart actions |
+| `/profile` | Profile | User profile and mock dashboard |
 
-### Lint
-
-```bash
-npm run lint
-```
-
-## Routes
-
-| Path                 | Page            | Description                                                   |
-| -------------------- | --------------- | ------------------------------------------------------------- |
-| `/`                  | Home            | Brand hero, category cards, mission, and future-tech features |
-| `/marketplace`       | Marketplace     | Filterable and sortable product catalog                       |
-| `/about`             | About           | Brand story and positioning                                   |
-| `/contact`           | Contact         | Contact page content and inquiry form                         |
-| `/product/:id/:name` | Product details | Product gallery, options, description, and cart action        |
-
-`vercel.json` rewrites every application route to `index.html` so React Router can handle direct URLs in production.
+No catch-all route is currently configured. `vercel.json` rewrites application requests to `index.html` so direct URLs can be handled by the SPA.
 
 ## Catalog Data
 
-The application fetches `/data.json` when `DataProvider` mounts. `public/data.json` contains an `allProducts` array, which is exposed through React context.
+The `DataProvider` requests `/data.json` when the application mounts and exposes the `allProducts` array through React Context. The current catalog contains 31 products across multiple techwear categories.
 
-Each product should follow the `AllProducts` interface:
+Each product follows this data shape:
 
 ```json
 {
-	"id": 0,
-	"category": "Jacket",
-	"name": "Example Jacket",
-	"description": "A brief product description.",
-	"price": 180,
-	"size": ["S", "M", "L", "XL"],
-	"color": ["Black", "Navy"],
-	"src": "/products/example/front.webp",
-	"images": ["/products/example/front.webp", "/products/example/back.webp"],
-	"isNew": true
+  "category": "Jacket",
+  "color": ["Black", "Charcoal"],
+  "description": "Stripped-down utility shell built for daily wear in any conditions.",
+  "id": 0,
+  "images": [
+    "/products/jacket1/front.webp",
+    "/products/jacket1/behind.webp"
+  ],
+  "isNew": true,
+  "name": "Jacket",
+  "price": 100,
+  "size": ["S", "M", "L", "XL"],
+  "src": "/products/jacket1/front.webp"
 }
 ```
 
-Place referenced assets under `public/products/<product-directory>/` and use root-relative paths such as `/products/example/front.webp`.
+To add a product:
+
+1. Place the image files in `public/products/<product-folder>/`.
+2. Add the product object to the `allProducts` array in `public/data.json`.
+3. Use a unique numeric `id`.
+4. Use root-relative public paths in `src` and `images`.
+5. Update the category configuration if the new category is not already available.
 
 ## Marketplace Behavior
 
-The marketplace supports:
-
-- Multiple category selections
-- A minimum and maximum price range
-- Price and name sorting
-- A responsive filter panel that becomes a bottom sheet on small screens
-- Product cards that open product-detail routes
-
-Category filtering combines configured plural category names with product category values. When adding a new category, update both the catalog data and the category configuration in `src/data/content.tsx`.
+- Categories are selected with OR-style matching.
+- The price control spans from 50 to 1000, with a default maximum of 500.
+- Sorting supports price and product name in ascending or descending order.
+- The size selector is present in the filter panel, but does not currently filter products.
+- Filters become a bottom sheet on mobile screens.
 
 ## State Management
 
-ROAD uses React Context for application data and cart state:
+The application uses two React Context providers:
 
-- `DataProvider` loads the static catalog and stores it in memory.
-- `cartItems` is initialized from the `cartItems` local-storage key.
-- Cart changes are written back to `localStorage`.
-- Duplicate products cannot be added through the current `addCart` implementation.
-- `removeCart` is available for cart management UI.
+- `DataContext` loads the product catalog and manages cart state.
+- `AuthContext` reads and writes a browser cookie named `user`.
+- Cart entries are stored under the `cartItems` key in `localStorage`.
+- A product is represented only once in the current cart implementation.
+- `addCart` ignores an existing product ID, while `removeCart` removes an entry by ID.
 
-Authentication is currently a client-side presentation prototype. The sign-in and sign-up forms prevent browser navigation but are not connected to an authentication service or backend.
+## Authentication and Profile
+
+Authentication is a browser-side prototype:
+
+- Registration stores JSON in a cookie that expires after seven days.
+- Sign-in compares credentials against the user cookie.
+- Passwords are not sent to a backend and are not securely verified.
+- Passwords are stored in the same browser data used for the prototype and are not suitable as production credentials.
+- The user icon is displayed only when a user cookie exists.
+- Profile orders, loyalty statistics, and wishlist entries use static mock data.
+
+This authentication flow must be replaced with server-side authentication and secure credential handling before production use.
 
 ## Styling and Animation
 
-Global styles, design tokens, Tailwind theme configuration, and custom range controls are defined in `src/index.css`. The page layout is composed from reusable components under `src/components`.
+- Shared colors and global styles are defined in `src/index.css`.
+- Tailwind CSS 4 is loaded through the Vite plugin.
+- GSAP initialization is located in `src/lib/gsap.ts`.
+- Scroll-triggered animations respect the user's reduced-motion preference.
 
-GSAP is initialized through `src/lib/gsap.ts`. The home category grid uses scroll-triggered entrance animations and returns early when the user has enabled reduced motion.
+## Build and Deployment
 
-## Adding a Product
-
-1. Add gallery assets to `public/products/<product-folder>/`.
-2. Add a product object to the `allProducts` array in `public/data.json`.
-3. Ensure `id` is unique and every entry in `images` has a valid public path.
-4. Add matching colors and sizes in `color` and `size`.
-5. Add the category to `ALL_CATEGORIES` in `src/data/content.tsx` if it does not already exist.
-
-## Deployment
-
-Build the project and publish the generated `dist/` directory to any SPA-capable static host:
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-Keep the existing Vercel SPA rewrite for direct-route support. Hosts without SPA rewrite support need an equivalent rule that serves `index.html` for unknown application routes while preserving static asset requests.
+Deploy the generated `dist/` directory to an SPA-compatible static host. For client-side routing, the host must serve `index.html` for application routes while continuing to serve CSS, JavaScript, and public assets normally.
 
-## Known Prototype Limitations
+The existing `vercel.json` provides the required SPA fallback for Vercel.
 
-- Authentication forms are not connected to a backend.
-- The header cart badge does not yet reflect the live cart item count.
-- There is no cart drawer or checkout page yet.
-- Buy Now, contact submission, and other commerce actions require backend integration.
-- Product prices and catalog data are stored in a static JSON file.
+## Current Limitations
+
+- Authentication is not connected to a backend API.
+- The cart badge always displays 0 and is not connected to live cart state.
+- There is no cart drawer or checkout page.
+- `Buy Now` does not submit a checkout action.
+- The contact form does not submit to a backend.
+- Products, profile orders, and wishlist items come from static JSON or source data.
+- Profile sidebar links for orders, wishlist, addresses, payments, settings, security, and notifications are currently not registered as application routes.
 
 ## License
 
-No license file is currently included in this repository. Add a license before distributing the project publicly or publishing it as an open-source package.
+No license file is included. Choose and add a license before distributing the project publicly.
