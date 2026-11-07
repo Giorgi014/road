@@ -47,3 +47,19 @@ export interface UserInfo {
   wishlist: number;
   points: number;
 }
+
+export type OrderStatus = "Delivered" | "Processing" | "Shipped";
+
+export type MockOrder = {
+  productId: number;
+  size?: string;
+  qty: number;
+  status: OrderStatus;
+};
+
+export type RanksType = {
+  name: string;
+  minXP: number;
+  maxXP: number | null;
+  color: string;
+};

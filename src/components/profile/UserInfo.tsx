@@ -3,7 +3,7 @@ import { Mail, MapPin, PenLine, Phone, UserRound } from "lucide-react";
 
 export const UserInfo = () => {
   return (
-    <section className="relative flex w-full flex-col gap-6 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6">
+    <section className="relative flex w-full h-full max-h-103.75 flex-col gap-6 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6">
       <div className="w-full flex justify-between items-center">
         <ol className="list-disc pl-5 marker:text-electric-300">
           <li>Personal Information</li>
@@ -16,7 +16,7 @@ export const UserInfo = () => {
           Edit
         </button>
       </div>
-      <div className="w-full flex justify-start items-center gap-3 border-b-[1px] border-b-white/40 pb-5">
+      <div className="w-full flex justify-start items-center gap-3 border-b border-b-white/40 pb-5">
         <UserRound />
         <div>
           <p className="text-[9px] uppercase tracking-ultra text-white/40 sm:text-[10px]">
@@ -27,7 +27,7 @@ export const UserInfo = () => {
           </p>
         </div>
       </div>
-      <div className="w-full flex justify-start items-center gap-3 border-b-[1px] border-b-white/40 pb-5">
+      <div className="w-full flex justify-start items-center gap-3 border-b border-b-white/40 pb-5">
         <Mail />
         <div>
           <p className="text-[9px] uppercase tracking-ultra text-white/40 sm:text-[10px]">
@@ -36,7 +36,7 @@ export const UserInfo = () => {
           <p>{USER_INFO.email}</p>
         </div>
       </div>
-      <div className="w-full flex justify-start items-center gap-3 border-b-[1px] border-b-white/40 pb-5">
+      <div className="w-full flex justify-start items-center gap-3 border-b border-b-white/40 pb-5">
         <Phone />
         <div>
           <p className="text-[9px] uppercase tracking-ultra text-white/40 sm:text-[10px]">
@@ -45,11 +45,11 @@ export const UserInfo = () => {
           <p>{USER_INFO.number}</p>
         </div>
       </div>
-      <div className="w-full flex justify-start items-center gap-3 border-b-[1px] border-b-white/40 pb-5">
+      <div className="w-full flex justify-start items-center gap-3 border-b border-b-white/40 pb-5">
         <MapPin />
         <div>
           <p className="text-[9px] uppercase tracking-ultra text-white/40 sm:text-[10px]">
-            Full Name
+            Location
           </p>
           <p>
             {USER_INFO.location.city}, {USER_INFO.location.country}

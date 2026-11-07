@@ -1,6 +1,8 @@
 import {
   Bell,
   Bitcoin,
+  Circle,
+  CircleCheck,
   ClipboardList,
   Cpu,
   CreditCard,
@@ -25,8 +27,11 @@ import type {
   FooterContent,
   HeroCopyContent,
   HomeHeroCopyContent,
+  MockOrder,
   NavLink,
   OptionsType,
+  OrderStatus,
+  RanksType,
   SidebarLink,
   Sizes,
   Stat,
@@ -364,3 +369,52 @@ export const USER_INFO: UserInfo = {
   wishlist: 18,
   points: 2450,
 };
+
+export const MOCK_ORDERS: MockOrder[] = [
+  { productId: 1, size: "M", qty: 1, status: "Delivered" },
+  { productId: 13, size: "M", qty: 1, status: "Delivered" },
+  { productId: 24, size: "M", qty: 1, status: "Processing" },
+  { productId: 18, qty: 1, status: "Shipped" },
+];
+
+export const STATUS_STYLES: Record<
+  OrderStatus,
+  { color: string; Icon: typeof Circle }
+> = {
+  Delivered: { color: "text-emerald-400", Icon: CircleCheck },
+  Processing: { color: "text-electric-300", Icon: Circle },
+  Shipped: { color: "text-sky-400", Icon: CircleCheck },
+};
+
+export const RANKS: RanksType[] = [
+  {
+    name: "Rookie",
+    minXP: 0,
+    maxXP: 499,
+    color: "#A1A1AA",
+  },
+  {
+    name: "Explorer",
+    minXP: 500,
+    maxXP: 2499,
+    color: "#00A8FF",
+  },
+  {
+    name: "Hunter",
+    minXP: 2500,
+    maxXP: 9999,
+    color: "#6847FF",
+  },
+  {
+    name: "Champion",
+    minXP: 10000,
+    maxXP: 49999,
+    color: "#FFB52E",
+  },
+  {
+    name: "Legend",
+    minXP: 50000,
+    maxXP: null,
+    color: "#B44CFF",
+  },
+];
