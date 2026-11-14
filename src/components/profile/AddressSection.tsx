@@ -1,10 +1,9 @@
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import { AddressCard, AddressForm } from "@/components/ui";
 import { useSavedAddresses } from "@/hooks/useSavedAddresses";
 import type { SavedAddress } from "@/types";
 import type { AddressFormValues } from "@/schema/address";
-import { AddressCard } from "./AddressCard";
-import { AddressForm } from "./AddressForm";
 
 const EMPTY_FORM: AddressFormValues = {
   label: "",

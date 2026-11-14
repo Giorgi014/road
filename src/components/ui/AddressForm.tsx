@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Input } from "@/components/ui";
+import { Input } from "./Input";
 import { ADDRESS_FIELDS } from "@/data";
 import { addressFormSchema } from "@/schema/address";
 import type { AddressFormValues } from "@/schema/address";

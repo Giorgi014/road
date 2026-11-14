@@ -2,6 +2,7 @@ import {
   AddressSection,
   LoyaltySection,
   OrdersSection,
+  PaymentSection,
   ProfileNavigation,
   UserCard,
   UserInfo,
@@ -21,6 +22,7 @@ const Profile = () => {
           <WishlistSection />
         </div>
         <AddressSection />
+        <PaymentSection />
       </article>
     </main>
   );
