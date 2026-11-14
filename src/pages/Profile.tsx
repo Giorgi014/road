@@ -1,4 +1,5 @@
 import {
+  AddressSection,
   LoyaltySection,
   OrdersSection,
   ProfileNavigation,
@@ -19,6 +20,7 @@ const Profile = () => {
           <LoyaltySection />
           <WishlistSection />
         </div>
+        <AddressSection />
       </article>
     </main>
   );

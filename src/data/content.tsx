@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import type {
   AccountSidebarLink,
+  AddressFieldConfig,
   AllCategories,
   ContactPage,
   ContentFeatureItem,
@@ -32,6 +33,7 @@ import type {
   OptionsType,
   OrderStatus,
   RanksType,
+  SavedAddress,
   SidebarLink,
   Sizes,
   Stat,
@@ -369,6 +371,47 @@ export const USER_INFO: UserInfo = {
   wishlist: 18,
   points: 2450,
 };
+
+export const SAVED_ADDRESSES: SavedAddress[] = [
+  {
+    id: "home",
+    label: "Home",
+    street: "941 Honey Creek Dr.",
+    city: "Kobuleti",
+    region: "Georgia",
+    postalCode: "6200",
+    country: "Georgia",
+    phone: "+995 555 12 34 56",
+    isDefault: true,
+  },
+  {
+    id: "work",
+    label: "Work",
+    street: "Rustaveli Ave. 12",
+    city: "Batumi",
+    region: "Georgia",
+    postalCode: "6000",
+    country: "Georgia",
+    phone: "+995 555 98 76 54",
+    isDefault: false,
+  },
+];
+
+export const ADDRESS_FIELDS: AddressFieldConfig[] = [
+  { id: "label", label: "Address Name" },
+  { id: "street", label: "Street Address", autoComplete: "street-address" },
+  { id: "city", label: "City", autoComplete: "address-level2" },
+  { id: "region", label: "Region", autoComplete: "address-level1" },
+  { id: "postalCode", label: "Postal Code", autoComplete: "postal-code" },
+  { id: "country", label: "Country", autoComplete: "country-name" },
+  {
+    id: "phone",
+    label: "Phone Number",
+    autoComplete: "tel",
+    type: "tel",
+    fullWidth: true,
+  },
+];
 
 export const MOCK_ORDERS: MockOrder[] = [
   { productId: 1, size: "M", qty: 1, status: "Delivered" },

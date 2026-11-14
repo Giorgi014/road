@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { InputHTMLAttributes } from "react";
 
 export interface ContactPage {
   eyebrow: string;
@@ -46,6 +47,26 @@ export interface UserInfo {
   orders: number;
   wishlist: number;
   points: number;
+}
+
+export interface SavedAddress {
+  id: string;
+  label: string;
+  street: string;
+  city: string;
+  region: string;
+  postalCode: string;
+  country: string;
+  phone: string;
+  isDefault: boolean;
+}
+
+export interface AddressFieldConfig {
+  id: keyof Omit<SavedAddress, "id" | "isDefault">;
+  label: string;
+  autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  type?: InputHTMLAttributes<HTMLInputElement>["type"];
+  fullWidth?: boolean;
 }
 
 export type OrderStatus = "Delivered" | "Processing" | "Shipped";

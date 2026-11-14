@@ -27,8 +27,13 @@ export interface InputConfig {
 	name: string;
 }
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & {
+export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 	variant: InputVariant;
+	label?: string;
+	containerClassName?: string;
+	fieldClassName?: string;
+	inputClassName?: string;
+	labelClassName?: string;
 };
 
 export type ProductCardVariant = "product" | "category";
