@@ -6,38 +6,40 @@ import { AuthProvider } from "@/context/auth";
 import { DataProvider } from "@/context/data";
 import { Loader } from "./components/ui";
 import {
-	About,
-	Contact,
-	Details,
-	Home,
-	Marketplace,
-	Profile,
+  About,
+  Contact,
+  Details,
+  ErrorPage,
+  Home,
+  Marketplace,
+  Profile,
 } from "./pages/lazy";
 import "./index.css";
 
 const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <App />,
-		children: [
-			{ index: true, element: <Home /> },
-			{ path: "marketplace", element: <Marketplace /> },
-			{ path: "about", element: <About /> },
-			{ path: "contact", element: <Contact /> },
-			{ path: "product/:id/:name", element: <Details /> },
-			{ path: "profile", element: <Profile /> },
-		],
-	},
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "marketplace", element: <Marketplace /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "product/:id/:name", element: <Details /> },
+      { path: "profile", element: <Profile /> },
+      { path: "*", element: <ErrorPage /> },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById("root")!).render(
-	<StrictMode>
-		<DataProvider>
-			<AuthProvider>
-				<Suspense fallback={<Loader />}>
-					<RouterProvider router={router} />
-				</Suspense>
-			</AuthProvider>
-		</DataProvider>
-	</StrictMode>,
+  <StrictMode>
+    <DataProvider>
+      <AuthProvider>
+        <Suspense fallback={<Loader />}>
+          <RouterProvider router={router} />
+        </Suspense>
+      </AuthProvider>
+    </DataProvider>
+  </StrictMode>,
 );
