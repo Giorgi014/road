@@ -11,6 +11,7 @@ import {
   Details,
   ErrorPage,
   Home,
+  MaintenancePage,
   Marketplace,
   Profile,
 } from "./pages/lazy";
@@ -27,7 +28,12 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "product/:id/:name", element: <Details /> },
       { path: "profile", element: <Profile /> },
+      { path: "profile/*", element: <MaintenancePage /> },
+      { path: "ranks", element: <MaintenancePage /> },
+      { path: "category/:slug", element: <MaintenancePage /> },
+      { path: "products/:id", element: <MaintenancePage /> },
       { path: "*", element: <ErrorPage /> },
+      { path: "maintenance", element: <MaintenancePage /> },
     ],
   },
 ]);

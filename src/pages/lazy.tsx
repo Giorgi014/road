@@ -7,3 +7,4 @@ export const Details = lazy(() => import("./Details"));
 export const Marketplace = lazy(() => import("./Marketplace"));
 export const Profile = lazy(() => import("./Profile"));
 export const ErrorPage = lazy(() => import("./ErrorPage"));
+export const MaintenancePage = lazy(() => import("./MaintenancePage"));
