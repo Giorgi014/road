@@ -72,7 +72,16 @@ export interface ProductImageProps {
 
 export interface ProductInfoProps {
 	details: AllProducts;
-	addCart: (product: AllProducts) => void;
+	addCart: (
+		product: AllProducts,
+		selectedSize: string,
+		selectedColor: string,
+	) => void;
+}
+
+export interface SizeFilterProps {
+	selected: string[];
+	onToggle: (size: string) => void;
 }
 
 export interface CategoriesProps {

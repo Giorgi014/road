@@ -4,7 +4,13 @@ import { AuthBtn, Input } from "@/components/ui";
 import { useAuth } from "@/context/auth";
 import { type SignUpValues, signUpSchema } from "@/schema/auth";
 
-export const Registration = () => {
+export const Registration = ({
+	onClose,
+	onSuccess,
+}: {
+	onClose: () => void;
+	onSuccess?: () => void;
+}) => {
 	const { register } = useAuth();
 	const {
 		register: registerField,
@@ -15,11 +21,17 @@ export const Registration = () => {
 		mode: "onBlur",
 	});
 
+	const onSubmit = (values: SignUpValues) => {
+		register(values);
+		onSuccess?.();
+		onClose();
+	};
+
 	return (
 		<form
 			action="signup"
 			className="w-full space-y-6 text-(--ink-dim)"
-			onSubmit={handleSubmit(register)}
+			onSubmit={handleSubmit(onSubmit)}
 		>
 			<section className="flex w-full items-center gap-3">
 				<div>

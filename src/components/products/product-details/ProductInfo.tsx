@@ -1,5 +1,7 @@
 import { ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import { AuthModal } from "@/components/authorization";
+import { useAuth } from "@/context/auth";
 import type { ProductInfoProps } from "@/types";
 
 const COLOR_HEX: Record<string, string> = {
@@ -12,10 +14,25 @@ const COLOR_HEX: Record<string, string> = {
 };
 
 export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
-	const [selectedColor, setSelectedColor] = useState<string | null>(null);
-	const [selectedSize, setSelectedSize] = useState<string | null>(null);
+	const { user } = useAuth();
+	const [selectedColor, setSelectedColor] = useState(details.color[0] ?? "");
+	const [selectedSize, setSelectedSize] = useState(details.size[0] ?? "");
+	const [authOpen, setAuthOpen] = useState(false);
 
-	const activeColor = selectedColor ?? details.color[0];
+	const activeColor = selectedColor;
+	const addSelectedItem = () => {
+		if (!selectedSize || !activeColor) return;
+		addCart(details, selectedSize, activeColor);
+	};
+
+	const handleAddToCart = () => {
+		if (!selectedSize || !activeColor) return;
+		if (!user) {
+			setAuthOpen(true);
+			return;
+		}
+		addSelectedItem();
+	};
 
 	return (
 		<article className="flex-1 w-full md:max-w-[clamp(20rem,40vw,32rem)] mt-5 md:mt-0 flex flex-col gap-5">
@@ -67,7 +84,7 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
 
 			<section className="flex flex-col gap-3">
 				<p className="text-xs font-sans tracking-ultra uppercase text-(--ink-dim)">
-					Size:
+					Size: {selectedSize}
 				</p>
 				<div className="flex flex-wrap gap-2">
 					{details.size.map((size) => (
@@ -75,6 +92,7 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
 							key={size}
 							type="button"
 							onClick={() => setSelectedSize(size)}
+							aria-pressed={selectedSize === size}
 							className={`h-10 min-w-10 px-3 rounded-lg border font-sans text-sm transition-all duration-300 cursor-pointer ${
 								selectedSize === size
 									? "border-(--primary-light) text-(--ink) shadow-[0_0_20px_-4px_var(--blue-glow)]"
@@ -89,7 +107,7 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
 
 			<button
 				type="button"
-				onClick={() => addCart(details)}
+				onClick={handleAddToCart}
 				className="flex items-center justify-center gap-2 rounded-xl bg-(image:--pill-grad) py-3.5 font-display text-sm uppercase tracking-wide text-white transition-transform duration-300 hover:scale-[1.02] cursor-pointer"
 			>
 				Add to Cart
@@ -102,6 +120,12 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
 			>
 				Buy Now
 			</button>
+			{authOpen && (
+				<AuthModal
+					onClose={() => setAuthOpen(false)}
+					onSuccess={addSelectedItem}
+				/>
+			)}
 		</article>
 	);
 };

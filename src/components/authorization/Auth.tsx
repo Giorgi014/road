@@ -2,13 +2,19 @@ import { useState } from "react";
 import { LogIn } from "./LogIn";
 import { Registration } from "./Registration";
 
-export const Auth = () => {
+export const Auth = ({
+	onClose,
+	onSuccess,
+}: {
+	onClose: () => void;
+	onSuccess?: () => void;
+}) => {
 	const [isLogin, setIsLogin] = useState(true);
 	return (
 		<article className="my-5 flex w-full flex-col items-center justify-center">
 			{isLogin ? (
 				<>
-					<LogIn />
+					<LogIn onClose={onClose} onSuccess={onSuccess} />
 					<p className="mt-6 text-sm text-white/40">
 						You don&apos;t have an account?{" "}
 						<button
@@ -22,7 +28,7 @@ export const Auth = () => {
 				</>
 			) : (
 				<>
-					<Registration />
+					<Registration onClose={onClose} onSuccess={onSuccess} />
 					<p className="mt-6 text-sm text-white/40">
 						Already have an account?{" "}
 						<button

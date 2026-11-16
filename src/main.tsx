@@ -2,6 +2,7 @@ import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "@/App";
+import { ProtectedRoute } from "@/components/authorization";
 import { AuthProvider } from "@/context/auth";
 import { DataProvider } from "@/context/data";
 import { Loader } from "./components/ui";
@@ -27,7 +28,14 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "product/:id/:name", element: <Details /> },
-      { path: "profile", element: <Profile /> },
+      {
+        path: "profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
+      },
       { path: "profile/*", element: <MaintenancePage /> },
       { path: "ranks", element: <MaintenancePage /> },
       { path: "category/:slug", element: <MaintenancePage /> },

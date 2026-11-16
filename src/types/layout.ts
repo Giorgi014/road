@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import type { Dispatch, FormEvent, ReactNode, SetStateAction } from "react";
+import type { FormEvent, ReactNode } from "react";
 
 export type AccountSidebarLink = {
 	id: number;
@@ -15,6 +15,7 @@ export interface DataProviderProps {
 
 export interface AuthModalProps {
 	onClose: () => void;
+	onSuccess?: () => void;
 }
 
 export interface SiteHeaderProps {
@@ -22,12 +23,20 @@ export interface SiteHeaderProps {
 }
 
 export interface NavigationProps {
-	setMenuOpen: Dispatch<SetStateAction<boolean>>;
+	openSidebar: (view: "menu" | "cart") => void;
 }
 
 export interface MenuSidebarProps {
-	menuOpen: boolean;
-	setMenuOpen: Dispatch<SetStateAction<boolean>>;
+	view: "menu" | "cart";
+	isOpen: boolean;
+	onClose: () => void;
+}
+
+export interface SidebarProps {
+	children: ReactNode;
+	isOpen: boolean;
+	onClose: () => void;
+	title: string;
 }
 
 export interface FooterFormProps {

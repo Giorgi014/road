@@ -2,7 +2,7 @@ import { X } from "lucide-react";
 import type { AuthModalProps } from "@/types";
 import { Auth } from "./Auth";
 
-export const AuthModal = ({ onClose }: AuthModalProps) => {
+export const AuthModal = ({ onClose, onSuccess }: AuthModalProps) => {
 	return (
 		<article className="fixed inset-0 z-99999 flex items-center justify-center bg-ink-900/85 backdrop-blur-sm">
 			<div className="flex justify-center items-center relative w-full rounded-4xl max-w-130 bg-ink-700 p-10">
@@ -14,7 +14,7 @@ export const AuthModal = ({ onClose }: AuthModalProps) => {
 				>
 					<X size={18} />
 				</button>
-				<Auth />
+				<Auth onClose={onClose} onSuccess={onSuccess} />
 			</div>
 		</article>
 	);

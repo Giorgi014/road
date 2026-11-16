@@ -30,7 +30,7 @@ export const WishlistSection = () => {
         {wishlistProducts.map((product) => (
           <Link
             key={product.id}
-            to={`/products/${product.id}`}
+            to={`/product/${product.id}`}
             className="group min-w-0"
           >
             <div className="relative h-33 w-full overflow-hidden rounded-xl border border-white/6 bg-ink-900/35 sm:h-36 lg:h-37.5">

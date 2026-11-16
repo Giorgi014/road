@@ -1,15 +1,18 @@
 import { USER_INFO } from "@/data";
+import { useAuth } from "@/context/auth";
 import { Calendar1, ShieldCheck } from "lucide-react";
 
 export const UserCard = () => {
+  const { user } = useAuth();
+
   return (
     <section className="relative flex w-full flex-col gap-6 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6 lg:flex-row lg:items-stretch">
       <div className="relative flex min-h-52 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-electric-500/20 bg-[linear-gradient(135deg,var(--color-electric-600)/30%,rgba(255,255,255,.03)_55%,rgba(255,255,255,.01))] lg:w-[clamp(220px,28vw,340px)]">
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:24px_24px]" />
         <div className="absolute -right-16 -top-16 size-48 rounded-full bg-electric-500/20 blur-3xl" />
-        <div className="relative flex size-28 items-center justify-center rounded-full border border-white/15 bg-ink-900/80 font-display text-4xl font-bold text-gradient-blue shadow-[0_0_40px_-12px_var(--color-electric-500)] sm:size-32 sm:text-5xl">
-          {USER_INFO.firstName[0]}
-          {USER_INFO.lastName[0]}
+        <div className="relative uppercase flex size-28 items-center justify-center rounded-full border border-white/15 bg-ink-900/80 font-display text-4xl font-bold text-gradient-blue shadow-[0_0_40px_-12px_var(--color-electric-500)] sm:size-32 sm:text-5xl">
+          {user?.name[0]}
+          {user?.lastname[0]}
         </div>
         <span className="absolute bottom-4 left-5 text-[10px] uppercase tracking-ultra text-white/35">
           Explorer ID / {USER_INFO.level}
@@ -21,7 +24,7 @@ export const UserCard = () => {
             Profile
           </p>
           <h3 className="font-display text-[clamp(28px,4vw,36px)] font-bold uppercase tracking-wide text-white">
-            {USER_INFO.firstName} {USER_INFO.lastName}
+            {user?.name} {user?.lastname}
           </h3>
           <p className="mt-2 text-xs uppercase tracking-ultra text-electric-300">
             {USER_INFO.rank}

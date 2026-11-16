@@ -4,7 +4,13 @@ import { AuthBtn, Input } from "@/components/ui";
 import { useAuth } from "@/context/auth";
 import { type SignInValues, signInSchema } from "@/schema/auth";
 
-export const LogIn = () => {
+export const LogIn = ({
+	onClose,
+	onSuccess,
+}: {
+	onClose: () => void;
+	onSuccess?: () => void;
+}) => {
 	const { login } = useAuth();
 	const {
 		register,
@@ -19,6 +25,10 @@ export const LogIn = () => {
 	const onSubmit = (values: SignInValues) => {
 		const error = login(values);
 		if (error) setError("root", { message: error });
+		else {
+			onSuccess?.();
+			onClose();
+		}
 	};
 
 	return (
