@@ -16,8 +16,9 @@ export interface ContentFeatureItem {
 }
 
 export interface Stat {
-  k: string;
-  v: string;
+  value: number;
+  suffix?: string;
+  label: string;
 }
 
 export interface FooterContact {

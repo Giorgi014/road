@@ -348,10 +348,10 @@ export const SIZES: Sizes[] = [
 ];
 
 export const STATS: Stat[] = [
-  { k: "12K+", v: "Explorers equipped" },
-  { k: "48", v: "Lab-tested fabrics" },
-  { k: "100%", v: "Blockchain verified" },
-  { k: "2026", v: "Design horizon" },
+  { value: 12, suffix: "K+", label: "Explorers equipped" },
+  { value: 48, suffix: "", label: "Lab-tested fabrics" },
+  { value: 100, suffix: "%", label: "Blockchain verified" },
+  { value: 2026, suffix: "", label: "Design horizon" },
 ];
 
 export const USER_INFO: UserInfo = {

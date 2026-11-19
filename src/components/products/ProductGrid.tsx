@@ -13,41 +13,68 @@ export const ProductGrid = () => {
   const categories = useMemo(() => getCategoryCards(data ?? []), [data]);
 
   useGSAP(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduceMotion.matches) return;
+    if (!gridRef.current || !headerRef.current) return;
 
-    gsap.from(gridRef.current, {
-      y: 40,
-      opacity: 0,
-      stagger: 0.08,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: gridRef.current,
-        start: "top 80%",
-      },
+    const grid = gridRef.current;
+    const header = headerRef.current;
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 640px)", () => {
+      gsap.from(grid.children, {
+        yPercent: 40,
+        opacity: 0,
+        duration: 1.3,
+        stagger: 0.1,
+        ease: "power3.inOut",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: grid,
+          start: "top 80%",
+          once: true,
+        },
+      });
     });
 
-    gsap.from(headerRef.current, {
-      y: 30,
+    mm.add("(max-width: 639px)", () => {
+      gsap.utils.toArray<HTMLElement>(grid.children).forEach((card) => {
+        gsap.from(card, {
+          yPercent: 30,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power3.out",
+          clearProps: "transform,opacity",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            once: true,
+          },
+        });
+      });
+    });
+
+    gsap.from(header.children, {
+      x: 80,
       opacity: 0,
-      duration: 0.8,
-      ease: "power2.out",
+      duration: 1.3,
+      stagger: 0.3,
+      ease: "power3.inOut",
+      clearProps: "transform,opacity",
       scrollTrigger: {
-        trigger: headerRef.current,
+        trigger: header,
         start: "top 85%",
+        once: true,
       },
     });
   });
 
   return (
-    <article id="explore" className="relative bg-ink-800 py-15">
+    <article className="relative overflow-x-clip bg-ink-800 py-15">
       <div className="mx-auto max-w-[1600px] px-6">
         <Eyebrow text="Categories" />
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
           <div
             ref={gridRef}
-            className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
+            className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4"
           >
             {categories.map((item) => (
               <ProductCard
@@ -64,7 +91,7 @@ export const ProductGrid = () => {
 
           <div
             ref={headerRef}
-            className="flex flex-col gap-8 lg:w-62.5 lg:shrink-0"
+            className="flex flex-col items-center gap-8 text-center lg:w-62.5 lg:shrink-0 lg:items-stretch lg:text-left"
           >
             <h2 className="font-display text-[clamp(1.5rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.02em] text-white">
               Shop by <span className="text-gradient-blue">System</span>
@@ -73,7 +100,7 @@ export const ProductGrid = () => {
               Four engineered categories. Each piece designed to integrate —
               layer, carry, move, and protect.
             </p>
-            <Button href="#explore" label={HERO_COPY.learn} />
+            <Button href="/marketplace" label={HERO_COPY.learn} />
           </div>
         </div>
       </div>
