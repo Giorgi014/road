@@ -10,6 +10,32 @@ import type {
 export const DataProvider = ({ children }: DataProviderProps) => {
 	const [data, setData] = useState<AllProducts[] | null>(null);
 
+	const [wishlistIds, setWishlistIds] = useState<number[]>(() => {
+		const storedWishlist = localStorage.getItem("wishlistProductIds");
+		if (!storedWishlist) return [];
+
+		try {
+			const parsedWishlist: unknown = JSON.parse(storedWishlist);
+			if (!Array.isArray(parsedWishlist)) {
+				localStorage.removeItem("wishlistProductIds");
+				return [];
+			}
+			return [
+				...new Set(
+					parsedWishlist.filter(
+						(id): id is number =>
+							typeof id === "number" &&
+							Number.isSafeInteger(id) &&
+							id >= 0,
+					),
+				),
+			];
+		} catch {
+			localStorage.removeItem("wishlistProductIds");
+			return [];
+		}
+	});
+
 	const [cartItems, setCartItems] = useState<CartItem[]>(() => {
 		const storedCart = localStorage.getItem("cartItems");
 		if (!storedCart) return [];
@@ -47,6 +73,16 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 		localStorage.setItem("cartItems", JSON.stringify(cartItems));
 	}, [cartItems]);
 
+	useEffect(() => {
+		localStorage.setItem("wishlistProductIds", JSON.stringify(wishlistIds));
+	}, [wishlistIds]);
+
+	const toggleWishlist = useCallback((id: number) => {
+		setWishlistIds((items) =>
+			items.includes(id) ? items.filter((itemId) => itemId !== id) : [...items, id],
+		);
+	}, []);
+
 	const addCart = useCallback(
 		(product: AllProducts, selectedSize: string, selectedColor: string) => {
 			setCartItems((item) => {
@@ -56,16 +92,27 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 						i.selectedSize === selectedSize &&
 						i.selectedColor === selectedColor,
 				);
-				if (existing) {
-					return item.map((i) =>
-						i === existing ? { ...i, quantity: i.quantity + 1 } : i,
-					);
-				}
+				if (existing) return item;
 				return [
 					...item,
 					{ ...product, selectedSize, selectedColor, quantity: 1 },
 				];
 			});
+		},
+		[],
+	);
+
+	const increaseCart = useCallback(
+		(id: number, selectedSize: string, selectedColor: string) => {
+			setCartItems((items) =>
+				items.map((item) =>
+					item.id === id &&
+					item.selectedSize === selectedSize &&
+					item.selectedColor === selectedColor
+						? { ...item, quantity: item.quantity + 1 }
+						: item,
+				),
+			);
 		},
 		[],
 	);
@@ -101,8 +148,26 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 	);
 
 	const value = useMemo(
-		() => ({ data, cartItems, addCart, decreaseCart, removeCart }),
-		[data, cartItems, addCart, decreaseCart, removeCart],
+		() => ({
+			data,
+			cartItems,
+			wishlistIds,
+			addCart,
+			toggleWishlist,
+			increaseCart,
+			decreaseCart,
+			removeCart,
+		}),
+		[
+			data,
+			cartItems,
+			wishlistIds,
+			addCart,
+			toggleWishlist,
+			increaseCart,
+			decreaseCart,
+			removeCart,
+		],
 	);
 
 	return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

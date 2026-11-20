@@ -1,4 +1,4 @@
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowUpRight, Heart, Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { type MouseEvent, useState } from "react";
 import { AuthModal } from "@/components/authorization";
@@ -18,9 +18,11 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { data, addCart } = useData();
+  const { data, cartItems, addCart, wishlistIds, toggleWishlist } = useData();
   const [authOpen, setAuthOpen] = useState(false);
   const product = data?.find((item) => item.id === id);
+  const isWishlisted = wishlistIds.includes(id);
+  const isInCart = cartItems.some((item) => item.id === id);
 
   const productDetails = () => {
     if (variant === "category" && href) {
@@ -46,6 +48,11 @@ export const ProductCard = ({
     addProduct(product);
   };
 
+  const handleToggleWishlist = (event: MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    toggleWishlist(id);
+  };
+
   return (
     <>
       <article className="group relative w-full aspect-3/4 overflow-hidden rounded-2xl border border-(--border)/40 bg-(--bg-panel-alt)/60 backdrop-blur-sm transition-all duration-300 hover:border-(--primary-light)/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)]">
@@ -56,7 +63,7 @@ export const ProductCard = ({
           onClick={productDetails}
         />
         {isNew && (
-          <div className="pointer-events-none absolute right-4 top-4 z-10 flex items-center justify-center rounded-full bg-(image:--pill-grad) px-3 py-1 shadow-[0_0_20px_-4px_var(--violet)]">
+          <div className="pointer-events-none absolute left-4 top-4 z-10 flex items-center justify-center rounded-full bg-(image:--pill-grad) px-3 py-1 shadow-[0_0_20px_-4px_var(--violet)]">
             <p className="mt-[0.5px] ml-0.5 text-[10px] tracking-ultra font-sans text-white">
               NEW
             </p>
@@ -82,14 +89,42 @@ export const ProductCard = ({
               <ArrowUpRight size={16} />
             </span>
           ) : (
-            <button
-              type="button"
-              aria-label={`Add ${name} to cart`}
-              onClick={handleAddToCart}
-              className="pointer-events-auto flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--primary-light)/50 text-(--cyan) transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-white"
-            >
-              <Plus />
-            </button>
+            <div className="pointer-events-auto flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                aria-label={`${isWishlisted ? "Remove" : "Add"} ${name} ${
+                  isWishlisted ? "from" : "to"
+                } wishlist`}
+                aria-pressed={isWishlisted}
+                onClick={handleToggleWishlist}
+                className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border transition-colors duration-300 ${
+                  isWishlisted
+                    ? "border-red-500/60 bg-red-500/10 text-red-500 hover:border-red-500 hover:bg-red-500/20"
+                    : "border-(--primary-light)/50 text-(--cyan) hover:border-primary hover:bg-primary hover:text-white"
+                }`}
+              >
+                <Heart
+                  size={18}
+                  fill={isWishlisted ? "currentColor" : "none"}
+                />
+              </button>
+              <button
+                type="button"
+                aria-label={
+                  isInCart
+                    ? `Add another ${name} to cart`
+                    : `Add ${name} to cart`
+                }
+                onClick={handleAddToCart}
+                className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border transition-colors duration-300 ${
+                  isInCart
+                    ? "border-emerald-500/60 bg-emerald-500/10 text-emerald-500 hover:border-emerald-600 hover:bg-emerald-600/20"
+                    : "border-(--primary-light)/50 text-(--cyan) hover:border-primary hover:bg-primary hover:text-white"
+                }`}
+              >
+                <Plus />
+              </button>
+            </div>
           )}
         </div>
       </article>

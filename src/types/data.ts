@@ -9,8 +9,15 @@ export type CartItem = AllProducts & {
 export interface DataContextType {
 	data: AllProducts[] | null;
 	cartItems: CartItem[];
+	wishlistIds: number[];
 	addCart: (
 		product: AllProducts,
+		selectedSize: string,
+		selectedColor: string,
+	) => void;
+	toggleWishlist: (id: number) => void;
+	increaseCart: (
+		id: number,
 		selectedSize: string,
 		selectedColor: string,
 	) => void;

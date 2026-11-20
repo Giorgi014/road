@@ -46,7 +46,6 @@ export interface UserInfo {
   month: string;
   year: number;
   orders: number;
-  wishlist: number;
   points: number;
 }
 

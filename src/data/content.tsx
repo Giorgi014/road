@@ -368,7 +368,6 @@ export const USER_INFO: UserInfo = {
   month: "May",
   year: 2024,
   orders: 12,
-  wishlist: 18,
   points: 2450,
 };
 

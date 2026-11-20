@@ -1,9 +1,11 @@
 import { USER_INFO } from "@/data";
 import { useAuth } from "@/context/auth";
+import { useData } from "@/context/data";
 import { Calendar1, ShieldCheck } from "lucide-react";
 
 export const UserCard = () => {
   const { user } = useAuth();
+  const { wishlistIds } = useData();
 
   return (
     <section className="relative flex w-full flex-col gap-6 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6 lg:flex-row lg:items-stretch">
@@ -55,7 +57,7 @@ export const UserCard = () => {
               Wishlist
             </p>
             <p className="mt-2 font-display text-[clamp(18px,2vw,24px)] font-bold text-white">
-              {USER_INFO.wishlist}
+              {wishlistIds.length}
             </p>
           </div>
           <div className="px-3 py-4 sm:px-5">

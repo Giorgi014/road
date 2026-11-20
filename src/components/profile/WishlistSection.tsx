@@ -2,13 +2,13 @@ import { ArrowRight, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useData } from "@/context/data/use-data";
 
-const WISHLIST_IDS = [0, 11, 17];
-
 export const WishlistSection = () => {
-  const { data } = useData();
-  const wishlistProducts = WISHLIST_IDS.flatMap(
+  const { data, wishlistIds } = useData();
+  const wishlistProducts = wishlistIds.flatMap(
     (id) => data?.find((product) => product.id === id) ?? [],
   );
+  const displayedCount =
+    wishlistIds.length > 3 ? "3+" : wishlistIds.length.toString();
 
   return (
     <section className="relative flex h-full min-h-95 w-full flex-col gap-5 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6">
@@ -27,10 +27,10 @@ export const WishlistSection = () => {
       </div>
 
       <div className="grid min-h-0 flex-1 grid-cols-[repeat(3,minmax(0,1fr))_minmax(82px,0.7fr)] items-stretch gap-3">
-        {wishlistProducts.map((product) => (
+        {wishlistProducts.slice(0, 3).map((product) => (
           <Link
             key={product.id}
-            to={`/product/${product.id}`}
+            to={`/product/${product.id}/${product.name}`}
             className="group min-w-0"
           >
             <div className="relative h-33 w-full overflow-hidden rounded-xl border border-white/6 bg-ink-900/35 sm:h-36 lg:h-37.5">
@@ -51,6 +51,12 @@ export const WishlistSection = () => {
           </Link>
         ))}
 
+        {wishlistProducts.length === 0 && (
+          <p className="col-span-3 flex items-center justify-center text-sm text-white/45">
+            Your wishlist is empty.
+          </p>
+        )}
+
         <Link
           to="/profile/wishlist"
           className="flex min-h-full flex-col items-center justify-center rounded-xl border border-electric-400/20 bg-[linear-gradient(180deg,rgba(49,85,255,.16),rgba(49,85,255,.03))] text-center text-electric-300 transition-colors hover:border-electric-300/50 hover:bg-electric-500/10"
@@ -62,7 +68,7 @@ export const WishlistSection = () => {
             fill="rgba(49,85,255,.12)"
           />
           <span className="font-display text-xl leading-none text-white">
-            15+
+            {displayedCount}
           </span>
           <span className="mt-2 text-xs uppercase tracking-[0.12em] text-white/45">
             Items

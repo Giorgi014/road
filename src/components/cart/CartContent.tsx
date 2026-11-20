@@ -2,7 +2,7 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { useData } from "@/context/data";
 
 export const CartContent = () => {
-  const { cartItems, addCart, decreaseCart, removeCart } = useData();
+  const { cartItems, increaseCart, decreaseCart, removeCart } = useData();
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -61,7 +61,11 @@ export const CartContent = () => {
                     type="button"
                     aria-label={`Increase quantity of ${item.name}`}
                     onClick={() =>
-                      addCart(item, item.selectedSize, item.selectedColor)
+                      increaseCart(
+                        item.id,
+                        item.selectedSize,
+                        item.selectedColor,
+                      )
                     }
                     className="flex size-7 items-center justify-center rounded-md border border-white/15 text-white/70 hover:border-electric-300 hover:text-white cursor-pointer"
                   >
