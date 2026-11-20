@@ -1,25 +1,49 @@
+import { useRef } from "react";
 import { ContactForm } from "@/components/form";
 import { Eyebrow } from "@/components/ui";
 import { CONTACT_PAGE } from "@/data";
+import { useScrollReveal } from "@/hooks";
 
 export const ContactHero = () => {
-	return (
-		<article className="md:flex justify-between items-start gap-5">
-			<div className="w-full md:max-w-xl">
-				<Eyebrow text={CONTACT_PAGE.eyebrow} />
-				<h2 className="font-display text-[clamp(3rem,6vw,5rem)] font-bold leading-[0.95] tracking-[-0.02em] text-white uppercase">
-					<span className="block">{CONTACT_PAGE.headlineTop}</span>
-					<span className="text-gradient-blue block">
-						{CONTACT_PAGE.headlineBottom}
-					</span>
-				</h2>
-				<p className="mt-8 w-full md:max-w-105 text-base leading-7 text-(--ink-dim)">
-					{CONTACT_PAGE.paragraph}
-				</p>
-			</div>
-			<div className="w-full md:mt-0 mt-5 flex justify-center items-center">
-				<ContactForm />
-			</div>
-		</article>
-	);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const paragraphRef = useRef<HTMLParagraphElement>(null);
+
+  useScrollReveal(headlineRef, {
+    target: (headline) => Array.from(headline.children),
+    from: { y: 50, opacity: 0 },
+    duration: 1.1,
+    stagger: 0.2,
+  });
+  useScrollReveal(paragraphRef, {
+    from: { y: 30, opacity: 0 },
+    duration: 1,
+    delay: 0.3,
+    start: "top 90%",
+  });
+
+  return (
+    <article className="md:flex justify-between items-start gap-5">
+      <div className="w-full md:max-w-xl">
+        <Eyebrow text={CONTACT_PAGE.eyebrow} />
+        <h2
+          ref={headlineRef}
+          className="font-display text-[clamp(3rem,6vw,5rem)] font-bold leading-[0.95] tracking-[-0.02em] text-white uppercase"
+        >
+          <span className="block">{CONTACT_PAGE.headlineTop}</span>
+          <span className="text-gradient-blue block">
+            {CONTACT_PAGE.headlineBottom}
+          </span>
+        </h2>
+        <p
+          ref={paragraphRef}
+          className="mt-8 w-full md:max-w-105 text-base leading-7 text-(--ink-dim)"
+        >
+          {CONTACT_PAGE.paragraph}
+        </p>
+      </div>
+      <div className="w-full md:mt-0 mt-5 flex justify-center items-center">
+        <ContactForm />
+      </div>
+    </article>
+  );
 };

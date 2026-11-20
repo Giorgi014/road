@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { Button, Eyebrow } from "@/components/ui";
 import { MISSION, STATS } from "@/data";
+import { useScrollReveal } from "@/hooks";
 import { gsap } from "@/lib";
 
 export const MissionBlurb = () => {
@@ -11,54 +12,28 @@ export const MissionBlurb = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const countRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
+  useScrollReveal(headlineRef, {
+    target: (headline) => Array.from(headline.children),
+    from: { xPercent: -40, opacity: 0 },
+    stagger: 0.2,
+  });
+  useScrollReveal(sideRef, {
+    target: (side) => Array.from(side.children),
+    from: { x: 80, opacity: 0 },
+    stagger: 0.25,
+  });
+  useScrollReveal(statsRef, {
+    target: () =>
+      cardRefs.current.filter(
+        (card): card is HTMLDivElement => card !== null,
+      ),
+    from: { y: 30, opacity: 0 },
+    stagger: 0.1,
+    duration: 0.7,
+    ease: "power2.out",
+  });
+
   useGSAP(() => {
-    const statsEl = statsRef.current;
-    const headline = headlineRef.current;
-    const side = sideRef.current;
-    if (!statsEl || !headline || !side) return;
-
-    gsap.from(headline.children, {
-      xPercent: -40,
-      opacity: 0,
-      duration: 1.1,
-      stagger: 0.2,
-      ease: "power4.out",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: headline,
-        start: "top 85%",
-        once: true,
-      },
-    });
-
-    gsap.from(side.children, {
-      x: 80,
-      opacity: 0,
-      duration: 1.1,
-      stagger: 0.25,
-      ease: "power4.out",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: side,
-        start: "top 85%",
-        once: true,
-      },
-    });
-
-    gsap.from(cardRefs.current.filter(Boolean), {
-      y: 30,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.7,
-      ease: "power2.out",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: statsEl,
-        start: "top 85%",
-        once: true,
-      },
-    });
-
     STATS.forEach((stat, i) => {
       const el = countRefs.current[i];
       if (!el || stat.value > 1000) return;

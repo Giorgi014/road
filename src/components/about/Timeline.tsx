@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { JOURNEY_TIMELINE } from "@/data";
+import { useScrollReveal } from "@/hooks";
 import { gsap } from "@/lib";
 import type { TimelineProps } from "@/types";
 
@@ -12,6 +13,10 @@ export const Timeline = ({ className = "" }: TimelineProps) => {
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
   const dotRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
+  useScrollReveal(titleRef, {
+    from: { y: 50, opacity: 0 },
+  });
+
   useGSAP(
     () => {
       const list = listRef.current;
@@ -22,23 +27,6 @@ export const Timeline = ({ className = "" }: TimelineProps) => {
       const items = itemRefs.current;
       const dots = dotRefs.current;
       const mm = gsap.matchMedia();
-
-      gsap.fromTo(
-        titleRef.current,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.1,
-          ease: "power4.out",
-          clearProps: "transform,opacity",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 85%",
-            once: true,
-          },
-        },
-      );
 
       mm.add("(min-width: 768px)", () => {
         const total = items.length;

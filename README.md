@@ -191,6 +191,7 @@ This authentication flow must be replaced with server-side authentication and se
 - Shared colors and global styles are defined in `src/index.css`.
 - Tailwind CSS 4 is loaded through the Vite plugin.
 - GSAP initialization is located in `src/lib/gsap.ts`.
+- Shared one-time scroll reveals use `src/hooks/useScrollReveal.ts`; bespoke timelines remain with their components or dedicated hooks.
 - Scroll-triggered animations respect the user's reduced-motion preference.
 
 ## Build and Deployment

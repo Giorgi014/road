@@ -3,6 +3,7 @@ import { useMemo, useRef } from "react";
 import { Button, Eyebrow, ProductCard } from "@/components/ui";
 import { useData } from "@/context/data";
 import { HERO_COPY } from "@/data";
+import { useScrollReveal } from "@/hooks";
 import { getCategoryCards, gsap } from "@/lib";
 
 export const ProductGrid = () => {
@@ -12,11 +13,18 @@ export const ProductGrid = () => {
 
   const categories = useMemo(() => getCategoryCards(data ?? []), [data]);
 
+  useScrollReveal(headerRef, {
+    target: (header) => Array.from(header.children),
+    from: { x: 80, opacity: 0 },
+    duration: 1.3,
+    stagger: 0.3,
+    ease: "power3.inOut",
+  });
+
   useGSAP(() => {
-    if (!gridRef.current || !headerRef.current) return;
+    if (!gridRef.current) return;
 
     const grid = gridRef.current;
-    const header = headerRef.current;
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 640px)", () => {
@@ -50,20 +58,6 @@ export const ProductGrid = () => {
           },
         });
       });
-    });
-
-    gsap.from(header.children, {
-      x: 80,
-      opacity: 0,
-      duration: 1.3,
-      stagger: 0.3,
-      ease: "power3.inOut",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: header,
-        start: "top 85%",
-        once: true,
-      },
     });
   });
 

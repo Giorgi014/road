@@ -1,8 +1,7 @@
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import MODEL_IMAGE from "@/assets/img/model2.webp";
 import { Eyebrow } from "@/components/ui";
-import { gsap } from "@/lib";
+import { useScrollReveal } from "@/hooks";
 import AiPortal from "./AiPortal";
 import FeatureList from "./FeatureList";
 
@@ -13,51 +12,22 @@ export const AiFeatureSection = () => {
   const portalRef = useRef<HTMLDivElement>(null);
   const modelRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    const title = titleRef.current;
-    const portal = portalRef.current;
-    const model = modelRef.current;
-    if (!title || !portal || !model) return;
-
-    gsap.from(title, {
-      x: 80,
-      opacity: 0,
-      delay: 0.3,
-      duration: 1.3,
-      ease: "power4.out",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: title,
-        start: "top 85%",
-        once: true,
-      },
-    });
-
-    gsap.from(portal, {
-      x: 50,
-      opacity: 0,
-      duration: 1.3,
-      ease: "power2.out",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: portal,
-        start: "top 90%",
-        once: true,
-      },
-    });
-
-    gsap.from(model, {
-      x: -50,
-      opacity: 0,
-      duration: 1.3,
-      ease: "power2.out",
-      clearProps: "transform,opacity",
-      scrollTrigger: {
-        trigger: model,
-        start: "top 90%",
-        once: true,
-      },
-    });
+  useScrollReveal(titleRef, {
+    from: { x: 80, opacity: 0 },
+    delay: 0.3,
+    duration: 1.3,
+  });
+  useScrollReveal(portalRef, {
+    from: { x: 50, opacity: 0 },
+    duration: 1.3,
+    ease: "power2.out",
+    start: "top 90%",
+  });
+  useScrollReveal(modelRef, {
+    from: { x: -50, opacity: 0 },
+    duration: 1.3,
+    ease: "power2.out",
+    start: "top 90%",
   });
 
   return (
