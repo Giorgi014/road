@@ -247,7 +247,7 @@ export const HERO_COPY: HomeHeroCopyContent = {
   paragraph:
     "Garments engineered for the next century — intelligent fabrics, interactive weaves, and blockchain-verified authenticity.",
   cta: "Explore Collection",
-  learn: "Learn More",
+  learn: "Browse Marketplace",
 };
 
 export const JOURNEY_TIMELINE: TimelineItem[] = [

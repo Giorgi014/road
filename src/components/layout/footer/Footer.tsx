@@ -21,7 +21,6 @@ export const Footer = () => {
 
 	return (
 		<footer
-			id="marketplace"
 			className="relative overflow-hidden border-t border-ink-400 bg-ink-900 pt-15 pb-5"
 		>
 			<BgCircle />
@@ -69,13 +68,14 @@ export const Footer = () => {
 					</Link>
 					<ul className="m-0 flex list-none flex-wrap items-center gap-6 p-0">
 						{FOOTER.legal.map((l) => (
-							<Link
-								to={"#"}
-								key={l}
-								className="text-[10px] uppercase tracking-ultra text-white/30 transition-colors hover:text-white/70 no-underline"
-							>
-								{l}
-							</Link>
+							<li key={l}>
+								<Link
+									to={"/"}
+									className="text-[10px] uppercase tracking-ultra text-white/30 transition-colors hover:text-white/70 no-underline"
+								>
+									{l}
+								</Link>
+							</li>
 						))}
 					</ul>
 					<p className="text-[10px] uppercase tracking-ultra text-white/30">

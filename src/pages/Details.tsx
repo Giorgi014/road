@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import {
   ProductImage,
   ProductInfo,
@@ -15,11 +15,14 @@ function Details() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   if (!details) {
-    return (
-      <main>
-        <Loader />
-      </main>
-    );
+    if (data === null) {
+      return (
+        <main>
+          <Loader />
+        </main>
+      );
+    }
+    return <Navigate to="/404" replace />;
   }
 
   const activeImage = selectedImage ?? details.src;

@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "@/context";
 import { ACCOUNT_SIDEBAR_LINKS } from "@/data";
 

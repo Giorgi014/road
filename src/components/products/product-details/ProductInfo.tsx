@@ -1,8 +1,8 @@
 import { ShoppingBag } from "lucide-react";
 import { useState } from "react";
-import { AuthModal } from "@/components/authorization";
 import { useAuth } from "@/context/auth";
 import { useData } from "@/context/data";
+import { useModal } from "@/context/modal";
 import type { ProductInfoProps } from "@/types";
 
 const COLOR_HEX: Record<string, string> = {
@@ -19,7 +19,8 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
   const { cartItems } = useData();
   const [selectedColor, setSelectedColor] = useState(details.color[0] ?? "");
   const [selectedSize, setSelectedSize] = useState(details.size[0] ?? "");
-  const [authOpen, setAuthOpen] = useState(false);
+  const { openAuth } = useModal();
+  const [buyStatus, setBuyStatus] = useState("");
   const isInCart = cartItems.some((item) => item.id === details.id);
 
   const activeColor = selectedColor;
@@ -31,10 +32,23 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
   const handleAddToCart = () => {
     if (!selectedSize || !activeColor) return;
     if (!user) {
-      setAuthOpen(true);
+      openAuth(addSelectedItem);
       return;
     }
     addSelectedItem();
+  };
+
+  const handleBuyNow = () => {
+    if (!selectedSize || !activeColor) return;
+    if (!user) {
+      openAuth(() => {
+        addSelectedItem();
+        setBuyStatus("Added to cart");
+      });
+      return;
+    }
+    addSelectedItem();
+    setBuyStatus("Added to cart");
   };
 
   return (
@@ -123,15 +137,15 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
 
       <button
         type="button"
+        onClick={handleBuyNow}
         className="flex items-center justify-center gap-2 rounded-xl border border-(--border) py-3.5 font-display text-sm uppercase tracking-wide text-(--ink) transition-colors duration-300 hover:border-(--primary-light) cursor-pointer"
       >
         Buy Now
       </button>
-      {authOpen && (
-        <AuthModal
-          onClose={() => setAuthOpen(false)}
-          onSuccess={addSelectedItem}
-        />
+      {buyStatus && (
+        <p role="status" className="text-sm text-emerald-500">
+          {buyStatus}
+        </p>
       )}
     </article>
   );

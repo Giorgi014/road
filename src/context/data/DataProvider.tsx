@@ -63,6 +63,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 				setData(dataResponse.allProducts ?? []);
 			} catch (err) {
 				console.error(err);
+				setData([]);
 			}
 		};
 

@@ -5,6 +5,7 @@ import App from "@/App";
 import { ProtectedRoute } from "@/components/authorization";
 import { AuthProvider } from "@/context/auth";
 import { DataProvider } from "@/context/data";
+import { ModalProvider } from "@/context/modal";
 import { Loader } from "./components/ui";
 import {
   About,
@@ -18,6 +19,7 @@ import {
   Wishlist,
 } from "./pages/lazy";
 import "./index.css";
+import CategoryRedirect from "./pages/CategoryRedirect";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +49,7 @@ const router = createBrowserRouter([
       },
       { path: "profile/*", element: <MaintenancePage /> },
       { path: "ranks", element: <MaintenancePage /> },
-      { path: "category/:slug", element: <MaintenancePage /> },
+      { path: "category/:slug", element: <CategoryRedirect /> },
       { path: "products/:id", element: <MaintenancePage /> },
       { path: "*", element: <ErrorPage /> },
       { path: "maintenance", element: <MaintenancePage /> },
@@ -59,9 +61,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <DataProvider>
       <AuthProvider>
-        <Suspense fallback={<Loader />}>
-          <RouterProvider router={router} />
-        </Suspense>
+        <ModalProvider>
+          <Suspense fallback={<Loader />}>
+            <RouterProvider router={router} />
+          </Suspense>
+        </ModalProvider>
       </AuthProvider>
     </DataProvider>
   </StrictMode>,

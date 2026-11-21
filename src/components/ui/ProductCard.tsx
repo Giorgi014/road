@@ -1,9 +1,9 @@
 import { ArrowUpRight, Heart, Plus } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { type MouseEvent, useState } from "react";
-import { AuthModal } from "@/components/authorization";
+import { Link } from "react-router-dom";
+import type { MouseEvent } from "react";
 import { useAuth } from "@/context/auth";
 import { useData } from "@/context/data";
+import { useModal } from "@/context/modal";
 import type { AllProducts, ProductCardProps } from "@/types";
 
 export const ProductCard = ({
@@ -16,21 +16,15 @@ export const ProductCard = ({
   href,
   variant = "product",
 }: ProductCardProps) => {
-  const navigate = useNavigate();
   const { user } = useAuth();
   const { data, cartItems, addCart, wishlistIds, toggleWishlist } = useData();
-  const [authOpen, setAuthOpen] = useState(false);
+  const { openAuth } = useModal();
   const product = data?.find((item) => item.id === id);
   const isWishlisted = wishlistIds.includes(id);
   const isInCart = cartItems.some((item) => item.id === id);
 
-  const productDetails = () => {
-    if (variant === "category" && href) {
-      navigate(href);
-      return;
-    }
-    navigate(`/product/${id}/${name}`);
-  };
+  const detailsHref =
+    variant === "category" && href ? href : `/product/${id}/${name}`;
 
   const addProduct = (product: AllProducts) => {
     const size = product.size[0];
@@ -42,7 +36,7 @@ export const ProductCard = ({
     event.stopPropagation();
     if (!product) return;
     if (!user) {
-      setAuthOpen(true);
+      openAuth(() => addProduct(product));
       return;
     }
     addProduct(product);
@@ -56,11 +50,10 @@ export const ProductCard = ({
   return (
     <>
       <article className="group relative w-full aspect-3/4 overflow-hidden rounded-2xl border border-(--border)/40 bg-(--bg-panel-alt)/60 backdrop-blur-sm transition-all duration-300 hover:border-(--primary-light)/60 hover:shadow-[0_0_45px_-12px_var(--blue-glow)]">
-        <button
-          type="button"
+        <Link
+          to={detailsHref}
           aria-label={`View ${name}`}
-          className="absolute inset-0 z-0 cursor-pointer rounded-2xl bg-transparent"
-          onClick={productDetails}
+          className="absolute inset-0 z-0 cursor-pointer rounded-2xl"
         />
         {isNew && (
           <div className="pointer-events-none absolute left-4 top-4 z-10 flex items-center justify-center rounded-full bg-(image:--pill-grad) px-3 py-1 shadow-[0_0_20px_-4px_var(--violet)]">
@@ -128,14 +121,6 @@ export const ProductCard = ({
           )}
         </div>
       </article>
-      {authOpen && (
-        <AuthModal
-          onClose={() => setAuthOpen(false)}
-          onSuccess={() => {
-            if (product) addProduct(product);
-          }}
-        />
-      )}
     </>
   );
 };

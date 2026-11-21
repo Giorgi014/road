@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { AuthModal } from "@/components/authorization";
 import { CartContent } from "@/components/cart/CartContent";
 import { Sidebar } from "@/components/layout/Sidebar";
+import { useModal } from "@/context/modal";
 import type { MenuSidebarProps } from "@/types";
 import { MenuContent } from "./MenuContent";
 
 export const MenuSidebar = ({ view, isOpen, onClose }: MenuSidebarProps) => {
-  const [authOpen, setAuthOpen] = useState(false);
+  const { openAuth } = useModal();
 
   return (
     <>
@@ -20,11 +19,10 @@ export const MenuSidebar = ({ view, isOpen, onClose }: MenuSidebarProps) => {
         ) : (
           <MenuContent
             onClose={onClose}
-            onRequestAuth={() => setAuthOpen(true)}
+            onRequestAuth={() => openAuth()}
           />
         )}
       </Sidebar>
-      {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
     </>
   );
 };

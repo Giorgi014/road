@@ -1,10 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import { Mail, Pencil, Tag, UserRound } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "@/lib";
 
 export const Form = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const fieldRefs = useRef<(HTMLDivElement | null)[]>([]);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -86,7 +91,14 @@ export const Form = () => {
     <form
       ref={formRef}
       className="w-full max-w-xl space-y-6 rounded-4xl border border-white/10 bg-[rgba(7,16,43,0.72)] p-5 shadow-(--shadow-soft) backdrop-blur-xl sm:p-7"
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={(event) => {
+        event.preventDefault();
+        setSent(true);
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }}
     >
       <h2
         ref={titleRef}
@@ -113,6 +125,10 @@ export const Form = () => {
             <input
               id="your-name"
               type="text"
+              name="name"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
               placeholder="Enter your name"
               className="w-full border-none bg-transparent text-sm text-white outline-none placeholder:text-white/30"
             />
@@ -136,6 +152,10 @@ export const Form = () => {
             <input
               id="email-address"
               type="email"
+              name="email"
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
               placeholder="Enter your email"
               className="w-full border-none bg-transparent text-sm text-white outline-none placeholder:text-white/30"
             />
@@ -160,6 +180,10 @@ export const Form = () => {
           <input
             id="subject"
             type="text"
+            name="subject"
+            required
+            value={subject}
+            onChange={(event) => setSubject(event.target.value)}
             placeholder="What is this about?"
             className="w-full border-none bg-transparent text-sm text-white outline-none placeholder:text-white/30"
           />
@@ -183,6 +207,10 @@ export const Form = () => {
           <textarea
             id="message"
             rows={5}
+            name="message"
+            required
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
             placeholder="Write your message here."
             className="w-full resize-none border-none bg-transparent text-sm text-white outline-none placeholder:text-white/30"
           />
@@ -196,6 +224,11 @@ export const Form = () => {
       >
         Send message
       </button>
+      {sent && (
+        <p role="status" className="text-center text-sm text-electric-300">
+          Message prepared successfully.
+        </p>
+      )}
     </form>
   );
 };

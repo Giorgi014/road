@@ -32,9 +32,9 @@ export const Categories = ({ selected, onToggle }: CategoriesProps) => {
 
         return (
           <div className="w-full mt-1 mb-1" key={item.id}>
-            <div className="group flex justify-between items-center pt-1 pb-1 w-full text-(--ink-dim) hover:text-(--ink) duration-300 cursor-pointer">
-              <div className="flex justify-start items-center gap-1.5">
-                <label className="relative flex items-center justify-center shrink-0 cursor-pointer">
+            <label className="group flex justify-between items-center pt-1 pb-1 w-full text-(--ink-dim) hover:text-(--ink) duration-300 cursor-pointer">
+              <span className="flex justify-start items-center gap-1.5">
+                <span className="relative flex items-center justify-center shrink-0">
                   <input
                     type="checkbox"
                     name="choose"
@@ -44,15 +44,15 @@ export const Categories = ({ selected, onToggle }: CategoriesProps) => {
                     className="peer appearance-none w-4 h-4 rounded-[3px] border border-(--border) bg-(--surface) checked:bg-(--primary) checked:border-(--primary) checked:shadow-[0_0_10px_var(--blue-glow)] transition-all duration-200 cursor-pointer"
                   />
                   <Check className="pointer-events-none absolute w-2.5 h-2.5 opacity-0 peer-checked:opacity-100 transition-opacity duration-150" />
-                </label>
+                </span>
                 <span className="text-sm font-sans uppercase">
                   {item.category}
                 </span>
-              </div>
+              </span>
               <p className="text-sm font-sans uppercase">
                 {categoryCount[item.category] ?? 0}
               </p>
-            </div>
+            </label>
           </div>
         );
       })}

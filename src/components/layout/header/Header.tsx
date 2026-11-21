@@ -1,10 +1,12 @@
 import { forwardRef, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import type { SiteHeaderProps } from "@/types";
 import { MenuSidebar } from "./MenuSidebar";
 import { Navigation } from "./Navigation";
 
 export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
   ({ variant = "solid" }, ref) => {
+    const location = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [sidebarView, setSidebarView] = useState<"menu" | "cart">("menu");
@@ -16,10 +18,12 @@ export const Header = forwardRef<HTMLElement, SiteHeaderProps>(
 
     useEffect(() => {
       if (variant !== "solid") return;
-      const onScroll = () => setScrolled(window.scrollY > 3200);
+      const threshold = location.pathname === "/" ? 3200 : 50;
+      const onScroll = () => setScrolled(window.scrollY > threshold);
+      onScroll();
       window.addEventListener("scroll", onScroll);
       return () => window.removeEventListener("scroll", onScroll);
-    }, [variant]);
+    }, [location.pathname, variant]);
 
     return (
       <>
