@@ -7,11 +7,18 @@ export interface AuthBtnProps {
   onClick?: () => void;
 }
 
-export interface ButtonProps {
-  href: string;
+export type ButtonProps = {
   label: string;
   className?: string;
-}
+} & (
+  | { href: string; variant?: "link" }
+  | {
+      onClick: () => void;
+      variant: "action";
+      disabled?: boolean;
+      icon?: ReactNode;
+    }
+);
 
 export interface EyebrowProps {
   text: string;
@@ -48,6 +55,13 @@ export interface ProductCardProps {
   price?: number;
   href?: string;
   variant?: ProductCardVariant;
+}
+
+export interface WishlistProductCardProps {
+  product: AllProducts;
+  isInCart: boolean;
+  onRemove: () => void;
+  onAddToCart: () => void;
 }
 
 export interface SearchProps {
@@ -93,6 +107,7 @@ export interface CategoriesProps {
 export interface SortingProps {
   value: OptionsType;
   onChange: (option: OptionsType) => void;
+  options?: OptionsType[];
 }
 
 export interface PriceRangeProps {

@@ -10,7 +10,7 @@ export const getCategoryCards = (products: AllProducts[]): Product[] => {
 		return {
 			id: index,
 			label: group.label,
-			href: `/category/${group.slug}`,
+			href: `/marketplace?category=${group.slug}`,
 			imageSrc: representative?.src ?? "",
 		};
 	});

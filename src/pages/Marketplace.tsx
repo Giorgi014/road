@@ -1,17 +1,44 @@
 import { SlidersHorizontal, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Categories, PriceRange, Size, Sorting } from "@/components/products";
 import { ProductCard } from "@/components/ui";
 import { useData } from "@/context/data";
 import { OPTIONS } from "@/data/content";
+import {
+  CATEGORY_GROUPS,
+  getCategoryFilterValue,
+} from "@/lib/categoryGroups";
 import type { OptionsType } from "@/types";
 
 const PRICE_MIN = 50;
 const PRICE_MAX = 1000;
 
+type CategorySelection = {
+  slug: string | null;
+  categories: string[];
+};
+
+const getSelectedCategories = (slug: string | null) => {
+  const group = CATEGORY_GROUPS.find((category) => category.slug === slug);
+  return (
+    group?.categories.map(getCategoryFilterValue) ?? []
+  );
+};
+
 function Marketplace() {
   const [sort, setSort] = useState<OptionsType>(OPTIONS[0]);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [searchParams] = useSearchParams();
+  const categorySlug = searchParams.get("category");
+  const [categorySelection, setCategorySelection] =
+    useState<CategorySelection | null>(null);
+  const selectedCategories = useMemo(
+    () =>
+      categorySelection?.slug === categorySlug
+        ? categorySelection.categories
+        : getSelectedCategories(categorySlug),
+    [categorySelection, categorySlug],
+  );
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const { data } = useData();
@@ -22,20 +49,30 @@ function Marketplace() {
 
   const toggleCategory = (category: string) => {
     if (category === "all") {
-      setSelectedCategories([]);
+      setCategorySelection({ slug: categorySlug, categories: [] });
       return;
     }
 
-    setSelectedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category],
-    );
+    setCategorySelection((current) => {
+      const previousCategories =
+        current?.slug === categorySlug
+          ? current.categories
+          : getSelectedCategories(categorySlug);
+
+      return {
+        slug: categorySlug,
+        categories: previousCategories.includes(category)
+          ? previousCategories.filter((item) => item !== category)
+          : [...previousCategories, category],
+      };
+    });
   };
 
   const toggleSize = (size: string) => {
     setSelectedSizes((prev) =>
-      prev.includes(size) ? prev.filter((value) => value !== size) : [...prev, size],
+      prev.includes(size)
+        ? prev.filter((value) => value !== size)
+        : [...prev, size],
     );
   };
 
@@ -48,7 +85,7 @@ function Marketplace() {
 
     if (selectedCategories.length > 0) {
       products = products.filter((prod) =>
-        selectedCategories.includes(prod.category.toLocaleLowerCase()),
+        selectedCategories.includes(getCategoryFilterValue(prod.category)),
       );
     }
 

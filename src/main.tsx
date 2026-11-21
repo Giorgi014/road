@@ -15,6 +15,7 @@ import {
   MaintenancePage,
   Marketplace,
   Profile,
+  Wishlist,
 } from "./pages/lazy";
 import "./index.css";
 
@@ -28,6 +29,14 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "product/:id/:name", element: <Details /> },
+      {
+        path: "profile/wishlist",
+        element: (
+          <ProtectedRoute>
+            <Wishlist />
+          </ProtectedRoute>
+        ),
+      },
       {
         path: "profile",
         element: (

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { OPTIONS } from "@/data";
 import type { SortingProps } from "@/types";
 
-export const Sorting = ({ value, onChange }: SortingProps) => {
+export const Sorting = ({ value, onChange, options = OPTIONS }: SortingProps) => {
 	const [open, setOpen] = useState(false);
 
 	const openSorting = () => {
@@ -22,7 +22,7 @@ export const Sorting = ({ value, onChange }: SortingProps) => {
 			</button>
 			{open ? (
 				<ul className="absolute z-20 mt-2 w-full overflow-hidden rounded-md border border-ink-400/40 bg-ink-800/95 backdrop-blur-md shadow-(--shadow-soft)">
-					{OPTIONS.map((option) => (
+					{options.map((option) => (
 						<li key={option.value}>
 							<button
 								type="button"

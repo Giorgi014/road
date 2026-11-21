@@ -12,3 +12,4 @@ export { PaymentForm } from "./PaymentForm";
 export { ProductCard } from "./ProductCard";
 export { SearchValue } from "./Search";
 export { SearchedProduct } from "./SearchedProduct";
+export { WishlistProductCard } from "./WishlistProductCard";

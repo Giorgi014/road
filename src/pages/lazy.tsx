@@ -6,5 +6,6 @@ export const Contact = lazy(() => import("./Contact"));
 export const Details = lazy(() => import("./Details"));
 export const Marketplace = lazy(() => import("./Marketplace"));
 export const Profile = lazy(() => import("./Profile"));
+export const Wishlist = lazy(() => import("./Wishlist"));
 export const ErrorPage = lazy(() => import("./ErrorPage"));
 export const MaintenancePage = lazy(() => import("./MaintenancePage"));

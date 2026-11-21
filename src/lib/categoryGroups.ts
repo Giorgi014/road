@@ -2,6 +2,11 @@ import type { CategoryGroup } from "@/types";
 
 export type { CategoryGroup };
 
+export const getCategoryFilterValue = (category: string) => {
+	const value = category.toLocaleLowerCase();
+	return value.endsWith("s") ? value : `${value}s`;
+};
+
 export const CATEGORY_GROUPS: CategoryGroup[] = [
 	{ label: "Jackets", slug: "jackets", categories: ["Jacket"] },
 	{ label: "Backpacks", slug: "backpacks", categories: ["Backpack"] },

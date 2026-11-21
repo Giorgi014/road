@@ -5,3 +5,5 @@ export { PaymentSection } from "./PaymentSection";
 export { UserCard } from "./UserCard";
 export { UserInfo } from "./UserInfo";
 export { WishlistSection } from "./WishlistSection";
+export { WishlistFilters } from "./wishlist/WishlistFilters";
+export { WishlistHeader } from "./wishlist/WishlistHeader";

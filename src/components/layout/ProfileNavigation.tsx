@@ -4,7 +4,7 @@ import { useAuth } from "@/context";
 import { ACCOUNT_SIDEBAR_LINKS } from "@/data";
 
 const linkBase =
-  "relative flex shrink-0 items-center gap-4 whitespace-nowrap px-7 py-4 text-sm uppercase tracking-wider transition-colors duration-200 max-lg:gap-2 max-lg:px-4 max-lg:py-3";
+  "relative flex shrink-0 cursor-pointer items-center gap-4 whitespace-nowrap px-7 py-4 text-sm uppercase tracking-wider transition-colors duration-200 max-lg:gap-2 max-lg:px-4 max-lg:py-3";
 
 export const ProfileNavigation = () => {
   const { logout } = useAuth();
