@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SAVED_ADDRESSES } from "@/data";
-import { savedAddressListSchema } from "@/schema/address";
 import type { AddressFormValues } from "@/schema/address";
+import { savedAddressListSchema } from "@/schema/address";
 import type { SavedAddress } from "@/types";
 
 const STORAGE_KEY = "savedAddresses";
@@ -24,7 +24,8 @@ const readSavedAddresses = (): SavedAddress[] => {
 };
 
 export const useSavedAddresses = () => {
-  const [addresses, setAddresses] = useState<SavedAddress[]>(readSavedAddresses);
+  const [addresses, setAddresses] =
+    useState<SavedAddress[]>(readSavedAddresses);
   const [storageError, setStorageError] = useState<string | null>(null);
 
   const persistAddresses = (nextAddresses: SavedAddress[]) => {

@@ -1,6 +1,9 @@
 import { z } from "zod";
 
-const requiredAddressField = z.string().trim().min(1, "This field is required.");
+const requiredAddressField = z
+  .string()
+  .trim()
+  .min(1, "This field is required.");
 
 export const addressFormSchema = z.object({
   label: requiredAddressField,

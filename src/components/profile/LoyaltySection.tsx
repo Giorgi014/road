@@ -1,17 +1,17 @@
-import { RANKS } from "@/data";
+import { ArrowRight } from "lucide-react";
+import type { CSSProperties } from "react";
+import { Link } from "react-router-dom";
 import championRank from "@/assets/img/ranks/champion.webp";
 import explorerRank from "@/assets/img/ranks/explorer.webp";
-import hunterRank from "@/assets/img/ranks/hunter.webp";
-import legendRank from "@/assets/img/ranks/legeng.webp";
-import rookieRank from "@/assets/img/ranks/rookie.webp";
 import grayChampionRank from "@/assets/img/ranks/gray-champion.webp";
 import grayExplorerRank from "@/assets/img/ranks/gray-explorer.webp";
 import grayHunterRank from "@/assets/img/ranks/gray-hunter.webp";
 import grayLegendRank from "@/assets/img/ranks/gray-legeng.webp";
 import grayRookieRank from "@/assets/img/ranks/gray-rookie.webp";
-import { ArrowRight } from "lucide-react";
-import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import hunterRank from "@/assets/img/ranks/hunter.webp";
+import legendRank from "@/assets/img/ranks/legeng.webp";
+import rookieRank from "@/assets/img/ranks/rookie.webp";
+import { RANKS } from "@/data";
 
 interface LoyaltySectionProps {
   currentXP?: number;

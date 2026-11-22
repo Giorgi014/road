@@ -5,10 +5,7 @@ import { Categories, PriceRange, Size, Sorting } from "@/components/products";
 import { ProductCard } from "@/components/ui";
 import { useData } from "@/context/data";
 import { OPTIONS } from "@/data/content";
-import {
-  CATEGORY_GROUPS,
-  getCategoryFilterValue,
-} from "@/lib/categoryGroups";
+import { CATEGORY_GROUPS, getCategoryFilterValue } from "@/lib/categoryGroups";
 import type { OptionsType } from "@/types";
 
 const PRICE_MIN = 50;
@@ -21,9 +18,7 @@ type CategorySelection = {
 
 const getSelectedCategories = (slug: string | null) => {
   const group = CATEGORY_GROUPS.find((category) => category.slug === slug);
-  return (
-    group?.categories.map(getCategoryFilterValue) ?? []
-  );
+  return group?.categories.map(getCategoryFilterValue) ?? [];
 };
 
 function Marketplace() {

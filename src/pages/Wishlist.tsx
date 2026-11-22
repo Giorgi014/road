@@ -6,14 +6,14 @@ import {
   WishlistFilters,
   WishlistHeader,
 } from "@/components";
-import { WishlistProductCard } from "@/components/ui";
-import { useData } from "@/context/data";
-import { OPTIONS } from "@/data";
-import type { OptionsType } from "@/types";
 import {
   getWishlistCategory,
   type WishlistCategory,
 } from "@/components/profile/wishlist/constants";
+import { WishlistProductCard } from "@/components/ui";
+import { useData } from "@/context/data";
+import { OPTIONS } from "@/data";
+import type { OptionsType } from "@/types";
 
 const Wishlist = () => {
   const { data, cartItems, wishlistIds, addCart, toggleWishlist } = useData();

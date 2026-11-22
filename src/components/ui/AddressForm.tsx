@@ -1,11 +1,13 @@
-import { X } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { Input } from "./Input";
-import { ADDRESS_FIELDS } from "@/data";
-import { addressFormSchema } from "@/schema/address";
-import type { AddressFormValues } from "@/schema/address";
+import { X } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import type { SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { ADDRESS_FIELDS } from "@/data";
+import type { AddressFormValues } from "@/schema/address";
+import { addressFormSchema } from "@/schema/address";
+import { Input } from "./Input";
 
 interface AddressFormProps {
   values: AddressFormValues;
@@ -29,6 +31,7 @@ export const AddressForm = ({
   onClose,
   onSubmit,
 }: AddressFormProps) => {
+  const dialogRef = useRef<HTMLElement>(null);
   const {
     register,
     handleSubmit,
@@ -39,13 +42,36 @@ export const AddressForm = ({
     mode: "onBlur",
   });
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-ink-900/80 p-4 backdrop-blur-sm">
+  useEffect(() => {
+    const previousActiveElement = document.activeElement as HTMLElement | null;
+    dialogRef.current?.querySelector<HTMLElement>("button, input")?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      previousActiveElement?.focus();
+    };
+  }, [onClose]);
+
+  return createPortal(
+    <div className="address-modal fixed inset-0 z-[99999] flex items-center justify-center overflow-y-auto p-4 max-md:h-dvh max-md:w-screen max-md:p-0">
+      <button
+        type="button"
+        tabIndex={-1}
+        aria-label="Close address form"
+        className="absolute inset-0 cursor-default bg-ink-900/85 backdrop-blur-sm"
+        onClick={onClose}
+      />
       <section
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="address-form-title"
-        className="my-auto w-full max-w-xl rounded-2xl border border-ink-400/50 bg-ink-800 p-5 shadow-2xl sm:p-7"
+        className="relative z-10 my-auto h-auto w-full max-w-xl rounded-2xl border border-ink-400/50 bg-ink-800 p-5 shadow-2xl sm:p-7 max-md:h-dvh max-md:max-w-none max-md:overflow-y-auto max-md:rounded-none max-md:border-0 max-md:p-5"
       >
         <div className="mb-6 flex items-center justify-between">
           <h2
@@ -124,6 +150,7 @@ export const AddressForm = ({
           </div>
         </form>
       </section>
-    </div>
+    </div>,
+    document.body,
   );
 };

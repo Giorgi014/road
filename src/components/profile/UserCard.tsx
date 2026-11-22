@@ -1,7 +1,7 @@
-import { USER_INFO } from "@/data";
+import { Calendar1, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/context/auth";
 import { useData } from "@/context/data";
-import { Calendar1, ShieldCheck } from "lucide-react";
+import { USER_INFO } from "@/data";
 
 export const UserCard = () => {
   const { user } = useAuth();

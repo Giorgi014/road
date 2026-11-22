@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
+import { Loader } from "@/components";
 import {
   ProductImage,
   ProductInfo,
 } from "@/components/products/product-details";
 import { useData } from "@/context/data";
-import { Loader } from "@/components";
 
 function Details() {
   const { data, addCart } = useData();

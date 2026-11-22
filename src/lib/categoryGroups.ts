@@ -3,26 +3,26 @@ import type { CategoryGroup } from "@/types";
 export type { CategoryGroup };
 
 export const getCategoryFilterValue = (category: string) => {
-	const value = category.toLocaleLowerCase();
-	return value.endsWith("s") ? value : `${value}s`;
+  const value = category.toLocaleLowerCase();
+  return value.endsWith("s") ? value : `${value}s`;
 };
 
 export const CATEGORY_GROUPS: CategoryGroup[] = [
-	{ label: "Jackets", slug: "jackets", categories: ["Jacket"] },
-	{ label: "Backpacks", slug: "backpacks", categories: ["Backpack"] },
-	{ label: "Boots", slug: "boots", categories: ["Boot"] },
-	{
-		label: "Accessories",
-		slug: "accessories",
-		categories: [
-			"Pant",
-			"Cap",
-			"Helmet",
-			"Mask",
-			"Goggles",
-			"Bag",
-			"Vest",
-			"Glove",
-		],
-	},
+  { label: "Jackets", slug: "jackets", categories: ["Jacket"] },
+  { label: "Backpacks", slug: "backpacks", categories: ["Backpack"] },
+  { label: "Boots", slug: "boots", categories: ["Boot"] },
+  {
+    label: "Accessories",
+    slug: "accessories",
+    categories: [
+      "Pant",
+      "Cap",
+      "Helmet",
+      "Mask",
+      "Goggles",
+      "Bag",
+      "Vest",
+      "Glove",
+    ],
+  },
 ];

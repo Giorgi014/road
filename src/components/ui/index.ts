@@ -1,6 +1,6 @@
-export { AuthBtn } from "./AuthBtn";
 export { AddressCard } from "./AddressCard";
 export { AddressForm } from "./AddressForm";
+export { AuthBtn } from "./AuthBtn";
 export { BgCircle } from "./BgCircle";
 export { Button } from "./Button";
 export { default as Eyebrow } from "./Eyebrow";

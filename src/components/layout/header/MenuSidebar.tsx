@@ -19,7 +19,7 @@ export const MenuSidebar = ({ view, isOpen, onClose }: MenuSidebarProps) => {
         ) : (
           <MenuContent
             onClose={onClose}
-            onRequestAuth={() => openAuth()}
+            onRequestAuth={() => openAuth(onClose)}
           />
         )}
       </Sidebar>

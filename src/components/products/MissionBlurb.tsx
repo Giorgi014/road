@@ -24,9 +24,7 @@ export const MissionBlurb = () => {
   });
   useScrollReveal(statsRef, {
     target: () =>
-      cardRefs.current.filter(
-        (card): card is HTMLDivElement => card !== null,
-      ),
+      cardRefs.current.filter((card): card is HTMLDivElement => card !== null),
     from: { y: 30, opacity: 0 },
     stagger: 0.1,
     duration: 0.7,

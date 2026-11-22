@@ -22,19 +22,19 @@ The visual system uses Tailwind CSS, dark surfaces, custom typography, GSAP anim
 
 ## Technology Stack
 
-| Area | Technology |
-| --- | --- |
-| UI | React 19, React DOM |
-| Language | TypeScript 6 |
-| Routing | React Router 7 |
-| Build tool | Vite 8 |
-| Styling | Tailwind CSS 4 |
-| Animation | GSAP, `@gsap/react` |
-| Forms and validation | React Hook Form, Zod |
-| Cookie handling | `js-cookie`, `react-cookie` |
-| Icons | Lucide React |
-| Code quality | ESLint, Biome |
-| Hosting output | Static, Vercel-compatible build |
+| Area                 | Technology                      |
+| -------------------- | ------------------------------- |
+| UI                   | React 19, React DOM             |
+| Language             | TypeScript 6                    |
+| Routing              | React Router 7                  |
+| Build tool           | Vite 8                          |
+| Styling              | Tailwind CSS 4                  |
+| Animation            | GSAP, `@gsap/react`             |
+| Forms and validation | React Hook Form, Zod            |
+| Cookie handling      | `js-cookie`, `react-cookie`     |
+| Icons                | Lucide React                    |
+| Code quality         | ESLint, Biome                   |
+| Hosting output       | Static, Vercel-compatible build |
 
 ## Project Structure
 
@@ -101,25 +101,25 @@ Vite normally serves the application at `http://localhost:5173`.
 
 ## Commands
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the Vite development server with hot reload |
-| `npm run build` | Run the TypeScript project build and create the production bundle |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint across the project |
+| Command           | Purpose                                                           |
+| ----------------- | ----------------------------------------------------------------- |
+| `npm run dev`     | Start the Vite development server with hot reload                 |
+| `npm run build`   | Run the TypeScript project build and create the production bundle |
+| `npm run preview` | Preview the production build locally                              |
+| `npm run lint`    | Run ESLint across the project                                     |
 
 The production build is written to `dist/`.
 
 ## Application Routes
 
-| Path | Page | Description |
-| --- | --- | --- |
-| `/` | Home | Brand hero, categories, mission, and feature sections |
-| `/marketplace` | Marketplace | Catalog filters, sorting, and product grid |
-| `/about` | About | Brand history, positioning, and timeline |
-| `/contact` | Contact | Contact information and inquiry interface |
-| `/product/:id/:name` | Details | Product gallery, color, size, and cart actions |
-| `/profile` | Profile | User profile and mock dashboard |
+| Path                 | Page        | Description                                           |
+| -------------------- | ----------- | ----------------------------------------------------- |
+| `/`                  | Home        | Brand hero, categories, mission, and feature sections |
+| `/marketplace`       | Marketplace | Catalog filters, sorting, and product grid            |
+| `/about`             | About       | Brand history, positioning, and timeline              |
+| `/contact`           | Contact     | Contact information and inquiry interface             |
+| `/product/:id/:name` | Details     | Product gallery, color, size, and cart actions        |
+| `/profile`           | Profile     | User profile and mock dashboard                       |
 
 No catch-all route is currently configured. `vercel.json` rewrites application requests to `index.html` so direct URLs can be handled by the SPA.
 
@@ -135,10 +135,7 @@ Each product follows this data shape:
   "color": ["Black", "Charcoal"],
   "description": "Stripped-down utility shell built for daily wear in any conditions.",
   "id": 0,
-  "images": [
-    "/products/jacket1/front.webp",
-    "/products/jacket1/behind.webp"
-  ],
+  "images": ["/products/jacket1/front.webp", "/products/jacket1/behind.webp"],
   "isNew": true,
   "name": "Jacket",
   "price": 100,

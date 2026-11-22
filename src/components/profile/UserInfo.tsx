@@ -1,5 +1,5 @@
-import { useAuth } from "@/context/auth";
 import { Mail, MapPin, PenLine, Phone, UserRound } from "lucide-react";
+import { useAuth } from "@/context/auth";
 
 export const UserInfo = () => {
   const { user } = useAuth();

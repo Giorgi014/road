@@ -1,5 +1,4 @@
-import type { ReactNode } from "react";
-import type { InputHTMLAttributes } from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
 
 export interface ContactPage {
   eyebrow: string;

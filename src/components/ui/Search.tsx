@@ -21,7 +21,9 @@ export const SearchValue = ({ onClose }: SearchProps) => {
       }
       if (event.key !== "Tab" || !panelRef.current) return;
       const focusable = Array.from(
-        panelRef.current.querySelectorAll<HTMLElement>("button, input, a[href]"),
+        panelRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]):not([tabindex="-1"]), input:not([disabled]), a[href]',
+        ),
       );
       if (!focusable.length) return;
       const first = focusable[0];
@@ -56,17 +58,14 @@ export const SearchValue = ({ onClose }: SearchProps) => {
   return (
     <div
       ref={panelRef}
-      className="fixed inset-0 z-99999 flex items-start justify-center bg-ink-900/85 backdrop-blur-sm"
+      className="fixed inset-0 z-99999 flex items-start justify-center"
       role="presentation"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-label="Search products"
-        className="w-[90%] max-w-170 mt-20 lg:mt-10 flex flex-col gap-3"
+        className="relative z-10 mt-20 flex w-[90%] max-w-170 flex-col gap-3 lg:mt-10"
       >
         <div className="relative flex items-center rounded-full border border-ink-400 bg-ink-800/70 backdrop-blur-xl transition-colors focus-within:border-electric-400">
           <input
@@ -102,6 +101,13 @@ export const SearchValue = ({ onClose }: SearchProps) => {
       >
         <X size={18} />
       </button>
+      <button
+        type="button"
+        tabIndex={-1}
+        aria-label="Close product search"
+        className="absolute inset-0 cursor-default bg-ink-900/85 backdrop-blur-sm"
+        onClick={onClose}
+      />
     </div>
   );
 };
