@@ -44,6 +44,10 @@ export const ProductCard = ({
 
   const handleToggleWishlist = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
+    if (!user) {
+      openAuth(() => toggleWishlist(id));
+      return;
+    }
     toggleWishlist(id);
   };
 

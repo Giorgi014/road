@@ -2,10 +2,15 @@ import { Calendar1, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/context/auth";
 import { useData } from "@/context/data";
 import { USER_INFO } from "@/data";
+import { useSavedOrders } from "@/hooks";
 
 export const UserCard = () => {
   const { user } = useAuth();
   const { wishlistIds } = useData();
+  const { orders } = useSavedOrders();
+  const orderCount = orders.filter(
+    (order) => order.customerEmail === user?.email,
+  ).length;
 
   return (
     <section className="relative flex w-full flex-col gap-6 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6 lg:flex-row lg:items-stretch">
@@ -49,7 +54,7 @@ export const UserCard = () => {
               Orders
             </p>
             <p className="mt-2 font-display text-[clamp(18px,2vw,24px)] font-bold text-white">
-              {USER_INFO.orders}
+              {orderCount}
             </p>
           </div>
           <div className="border-x border-white/10 px-3 py-4 sm:px-5">

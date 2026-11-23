@@ -1,8 +1,6 @@
 import {
   Bell,
   Bitcoin,
-  Circle,
-  CircleCheck,
   ClipboardList,
   Cpu,
   CreditCard,
@@ -28,10 +26,8 @@ import type {
   FooterContent,
   HeroCopyContent,
   HomeHeroCopyContent,
-  MockOrder,
   NavLink,
   OptionsType,
-  OrderStatus,
   RanksType,
   SavedAddress,
   SidebarLink,
@@ -367,7 +363,6 @@ export const USER_INFO: UserInfo = {
   level: 27,
   month: "May",
   year: 2024,
-  orders: 12,
   points: 2450,
 };
 
@@ -411,22 +406,6 @@ export const ADDRESS_FIELDS: AddressFieldConfig[] = [
     fullWidth: true,
   },
 ];
-
-export const MOCK_ORDERS: MockOrder[] = [
-  { productId: 1, size: "M", qty: 1, status: "Delivered" },
-  { productId: 13, size: "M", qty: 1, status: "Delivered" },
-  { productId: 24, size: "M", qty: 1, status: "Processing" },
-  { productId: 18, qty: 1, status: "Shipped" },
-];
-
-export const STATUS_STYLES: Record<
-  OrderStatus,
-  { color: string; Icon: typeof Circle }
-> = {
-  Delivered: { color: "text-emerald-400", Icon: CircleCheck },
-  Processing: { color: "text-electric-300", Icon: Circle },
-  Shipped: { color: "text-sky-400", Icon: CircleCheck },
-};
 
 export const RANKS: RanksType[] = [
   {

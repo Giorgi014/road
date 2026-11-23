@@ -27,7 +27,7 @@ const isFutureExpiry = (value: string) => {
   return year > currentYear || (year === currentYear && month >= currentMonth);
 };
 
-const cardNumberSchema = z
+export const cardNumberSchema = z
   .string()
   .trim()
   .transform((value) => value.replace(/[\s-]/g, ""))
@@ -38,7 +38,7 @@ const cardNumberSchema = z
       .refine(isValidCardNumber, "Enter a valid card number."),
   );
 
-const expirySchema = z
+export const expirySchema = z
   .string()
   .trim()
   .regex(/^(0[1-9]|1[0-2])\/\d{2}$/, "Use MM/YY format.")

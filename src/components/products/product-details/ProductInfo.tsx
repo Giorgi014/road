@@ -1,5 +1,6 @@
 import { ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/auth";
 import { useData } from "@/context/data";
 import { useModal } from "@/context/modal";
@@ -20,7 +21,7 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
   const [selectedColor, setSelectedColor] = useState(details.color[0] ?? "");
   const [selectedSize, setSelectedSize] = useState(details.size[0] ?? "");
   const { openAuth } = useModal();
-  const [buyStatus, setBuyStatus] = useState("");
+  const navigate = useNavigate();
   const isInCart = cartItems.some((item) => item.id === details.id);
 
   const activeColor = selectedColor;
@@ -40,15 +41,24 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
 
   const handleBuyNow = () => {
     if (!selectedSize || !activeColor) return;
-    if (!user) {
-      openAuth(() => {
-        addSelectedItem();
-        setBuyStatus("Added to cart");
+    const buyNowItem = {
+      ...details,
+      quantity: 1,
+      selectedSize,
+      selectedColor: activeColor,
+    };
+
+    const goToCheckout = () => {
+      navigate("/checkout", {
+        state: { items: [buyNowItem], source: "buy-now" },
       });
+    };
+
+    if (!user) {
+      openAuth(goToCheckout);
       return;
     }
-    addSelectedItem();
-    setBuyStatus("Added to cart");
+    goToCheckout();
   };
 
   return (
@@ -142,11 +152,6 @@ export const ProductInfo = ({ details, addCart }: ProductInfoProps) => {
       >
         Buy Now
       </button>
-      {buyStatus && (
-        <p role="status" className="text-sm text-emerald-500">
-          {buyStatus}
-        </p>
-      )}
     </article>
   );
 };

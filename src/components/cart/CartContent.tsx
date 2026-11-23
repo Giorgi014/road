@@ -1,13 +1,36 @@
 import { Minus, Plus, Trash2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useData } from "@/context/data";
+import { useAuth } from "@/context/auth";
+import { useModal } from "@/context/modal";
 
-export const CartContent = () => {
+export const CartContent = ({ onCheckout }: { onCheckout?: () => void }) => {
   const { cartItems, increaseCart, decreaseCart, removeCart } = useData();
+  const { user } = useAuth();
+  const { openAuth } = useModal();
+  const navigate = useNavigate();
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
   );
+
+  const handleCheckout = () => {
+    if (cartItems.length === 0) return;
+
+    const goToCheckout = () => {
+      onCheckout?.();
+      navigate("/checkout", {
+        state: { items: cartItems, source: "cart" },
+      });
+    };
+
+    if (!user) {
+      openAuth(goToCheckout);
+      return;
+    }
+    goToCheckout();
+  };
 
   return (
     <div className="flex min-h-0 flex-1 flex-col text-white">
@@ -92,9 +115,14 @@ export const CartContent = () => {
           <span className="text-sm text-white/60">Subtotal</span>
           <span>${subtotal.toFixed(2)}</span>
         </div>
-        <p className="mt-3 text-xs text-white/40">
-          Checkout is not available yet.
-        </p>
+        <button
+          type="button"
+          onClick={handleCheckout}
+          disabled={cartItems.length === 0}
+          className="mt-4 w-full rounded-xl bg-(image:--pill-grad) py-3.5 font-display text-sm uppercase tracking-wide text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 cursor-pointer"
+        >
+          Continue to checkout
+        </button>
       </footer>
     </div>
   );

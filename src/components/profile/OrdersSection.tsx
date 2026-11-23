@@ -1,69 +1,46 @@
 import { ArrowRight } from "lucide-react";
-import { useData } from "@/context/data/use-data";
-import { MOCK_ORDERS, STATUS_STYLES } from "@/data";
+import { Link } from "react-router-dom";
+import { OrdersList } from "@/components/profile/orders";
+import { useAuth } from "@/context/auth";
+import { useSavedOrders } from "@/hooks";
 
 export const OrdersSection = () => {
-  const { data } = useData();
-
-  const orders = MOCK_ORDERS.flatMap((order) => {
-    const product = data?.find((p) => p.id === order.productId);
-    return product ? [{ ...order, product }] : [];
-  });
+  const { user } = useAuth();
+  const { orders, storageError, cancelOrder, deleteOrder } = useSavedOrders();
+  const recentOrders = orders
+    .filter(
+      (order) =>
+        order.customerEmail.toLowerCase() === user?.email.toLowerCase(),
+    )
+    .slice(0, 3);
 
   return (
-    <section className="relative flex h-full max-h-103.75 w-full flex-col gap-6 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6">
+    <section className="relative flex h-full max-h-103.75 w-full flex-col gap-5 overflow-hidden rounded-2xl border border-ink-400/40 bg-ink-800/60 p-5 backdrop-blur-sm transition-all duration-300 sm:p-6">
       <div className="flex w-full items-center justify-between">
         <ol className="list-disc pl-5 uppercase marker:text-electric-300">
           <li>Recent Orders</li>
         </ol>
-        <button
-          type="button"
-          className="flex cursor-pointer items-center gap-2 text-xs uppercase tracking-ultra text-electric-300 transition-colors hover:text-white"
+        <Link
+          to="/profile/orders"
+          className="flex items-center gap-2 text-xs uppercase tracking-ultra text-electric-300 transition-colors hover:text-white"
         >
           View all
           <ArrowRight size={16} strokeWidth={1.6} />
-        </button>
+        </Link>
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto pr-1">
-        <ul className="flex w-full flex-col">
-          {orders.map(({ product, size, qty, status }) => {
-            const { color, Icon } = STATUS_STYLES[status];
-
-            return (
-              <li
-                key={product.id}
-                className="flex w-full items-center gap-4 border-b border-b-white/10 py-4 first:pt-0 last:border-b-0 last:pb-0"
-              >
-                <div className="relative size-20 shrink-0 overflow-hidden rounded-xl border border-ink-400/40 bg-ink-800/60 backdrop-blur-sm sm:size-24">
-                  <img
-                    src={product.src}
-                    alt={product.name}
-                    className="absolute top-1/2 z-0 h-[85%] w-full -translate-y-1/2 object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-1 self-start">
-                  <p className="truncate font-semibold text-white">
-                    {product.name}
-                  </p>
-                  <p className="text-sm text-white/50">
-                    {size && <>Size: {size} &nbsp;•&nbsp; </>}
-                    Qty: {qty}
-                  </p>
-                  <p className="text-white">${product.price.toFixed(2)}</p>
-                </div>
-
-                <div
-                  className={`flex items-center gap-2 self-end text-sm ${color}`}
-                >
-                  <Icon size={18} strokeWidth={1.6} />
-                  {status}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        {storageError && (
+          <p role="alert" className="mb-3 text-xs text-red-300">
+            {storageError}
+          </p>
+        )}
+        <OrdersList
+          orders={recentOrders}
+          emptyMessage="Your placed orders will appear here."
+          onCancel={cancelOrder}
+          onDelete={deleteOrder}
+        />
       </div>
     </section>
   );

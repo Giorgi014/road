@@ -15,7 +15,7 @@ export const MenuSidebar = ({ view, isOpen, onClose }: MenuSidebarProps) => {
         onClose={onClose}
       >
         {view === "cart" ? (
-          <CartContent />
+          <CartContent onCheckout={onClose} />
         ) : (
           <MenuContent
             onClose={onClose}

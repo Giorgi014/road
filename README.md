@@ -15,8 +15,13 @@ The visual system uses Tailwind CSS, dark surfaces, custom typography, GSAP anim
 - Product galleries with color and size selection
 - Cart prototype persisted in `localStorage`
 - Registration and sign-in forms using React Hook Form, Zod, and `js-cookie`
-- Profile page with static order, loyalty, and wishlist data
+- Profile page with browser-saved orders, loyalty, and wishlist data
+- Orders are saved after checkout and grouped by order in the profile dashboard and order history
+- Processing orders can be cancelled; saved orders can be removed from local order history
 - Lazy-loaded About, Contact, Marketplace, and profile routes
+- Four-step front-end checkout from cart or product detail purchase
+- Validated card, crypto, digital wallet, and bank transfer checkout methods
+- Browser-saved checkout details with profile address and payment-method reuse
 - GSAP scroll and entrance animations with reduced-motion support
 - Vercel SPA rewrites for direct application URLs
 
@@ -119,7 +124,8 @@ The production build is written to `dist/`.
 | `/about`             | About       | Brand history, positioning, and timeline              |
 | `/contact`           | Contact     | Contact information and inquiry interface             |
 | `/product/:id/:name` | Details     | Product gallery, color, size, and cart actions        |
-| `/profile`           | Profile     | User profile and mock dashboard                       |
+| `/profile`           | Profile     | User profile and recent order summary                 |
+| `/profile/orders`    | Orders      | Searchable order history grouped by checkout          |
 
 No catch-all route is currently configured. `vercel.json` rewrites application requests to `index.html` so direct URLs can be handled by the SPA.
 
@@ -179,7 +185,7 @@ Authentication is a browser-side prototype:
 - Passwords are not sent to a backend and are not securely verified.
 - Passwords are stored in the same browser data used for the prototype and are not suitable as production credentials.
 - The user icon is displayed only when a user cookie exists.
-- Profile orders, loyalty statistics, and wishlist entries use static mock data.
+- Loyalty statistics and wishlist content include demo data; placed orders are saved in browser `localStorage`.
 
 This authentication flow must be replaced with server-side authentication and secure credential handling before production use.
 
@@ -208,10 +214,10 @@ The existing `vercel.json` provides the required SPA fallback for Vercel.
 - Authentication is not connected to a backend API.
 - The cart badge always displays 0 and is not connected to live cart state.
 - There is no cart drawer or checkout page.
-- `Buy Now` does not submit a checkout action.
 - The contact form does not submit to a backend.
-- Products, profile orders, and wishlist items come from static JSON or source data.
-- Profile sidebar links for orders, wishlist, addresses, payments, settings, security, and notifications are currently not registered as application routes.
+- Orders are local demo records and are not synchronized across devices or backed by a server.
+- Wishlist items come from browser storage; product data comes from static JSON.
+- Profile sidebar links for wishlist, addresses, payments, settings, security, and notifications are currently not registered as application routes.
 
 ## License
 

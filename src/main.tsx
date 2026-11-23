@@ -4,17 +4,19 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "@/App";
 import { ProtectedRoute } from "@/components/authorization";
 import { AuthProvider } from "@/context/auth";
-import { DataProvider } from "@/context/data";
+import { AccountDataProvider } from "@/context/data";
 import { ModalProvider } from "@/context/modal";
 import { Loader } from "./components/ui";
 import {
   About,
   Contact,
+  Checkout,
   Details,
   ErrorPage,
   Home,
   MaintenancePage,
   Marketplace,
+  Orders,
   Profile,
   Wishlist,
 } from "./pages/lazy";
@@ -31,11 +33,20 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "product/:id/:name", element: <Details /> },
+      { path: "checkout", element: <Checkout /> },
       {
         path: "profile/wishlist",
         element: (
           <ProtectedRoute>
             <Wishlist />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "profile/orders",
+        element: (
+          <ProtectedRoute>
+            <Orders />
           </ProtectedRoute>
         ),
       },
@@ -59,14 +70,14 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <DataProvider>
-      <AuthProvider>
+    <AuthProvider>
+      <AccountDataProvider>
         <ModalProvider>
           <Suspense fallback={<Loader />}>
             <RouterProvider router={router} />
           </Suspense>
         </ModalProvider>
-      </AuthProvider>
-    </DataProvider>
+      </AccountDataProvider>
+    </AuthProvider>
   </StrictMode>,
 );

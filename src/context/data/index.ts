@@ -1,4 +1,5 @@
 export { DataProvider } from "./DataProvider";
+export { AccountDataProvider } from "./AccountDataProvider";
 export {
   type CartItem,
   DataContext,

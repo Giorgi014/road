@@ -44,7 +44,6 @@ export interface UserInfo {
   level: number;
   month: string;
   year: number;
-  orders: number;
   points: number;
 }
 
@@ -67,15 +66,6 @@ export interface AddressFieldConfig {
   type?: InputHTMLAttributes<HTMLInputElement>["type"];
   fullWidth?: boolean;
 }
-
-export type OrderStatus = "Delivered" | "Processing" | "Shipped";
-
-export type MockOrder = {
-  productId: number;
-  size?: string;
-  qty: number;
-  status: OrderStatus;
-};
 
 export type RanksType = {
   name: string;
